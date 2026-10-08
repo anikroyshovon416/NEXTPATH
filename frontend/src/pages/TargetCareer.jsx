@@ -885,11 +885,17 @@ function normalizeCareer(career, index) {
         backendSalary?.senior ||
         fallback.salary.senior,
     },
-    experience:
-      backendMarket.experience_required ||
-      career.experience_required ||
-      career.experience ||
-      fallback.experience,
+   experience:
+  backendMarket.experience_required ||
+  career.experience_required ||
+  (
+    typeof career.experience === "object"
+      ? career.experience?.entry ||
+        career.experience?.mid ||
+        career.experience?.senior
+      : career.experience
+  ) ||
+  fallback.experience,
     outlook:
       backendMarket.outlook ||
       career.outlook ||
