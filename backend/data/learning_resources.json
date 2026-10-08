@@ -1,681 +1,2726 @@
-[
-  {
-    "skill": "SQL",
-    "topics": [
-      "SQL Fundamentals",
-      "Filtering and Sorting",
-      "GROUP BY and Aggregations",
-      "JOINs",
-      "Subqueries",
-      "Window Functions"
-    ],
-    "free_resources": [
-      {
-        "name": "SQLBolt",
-        "url": "https://sqlbolt.com/"
-      },
-      {
-        "name": "W3Schools SQL",
-        "url": "https://www.w3schools.com/sql/"
-      },
-      {
-        "name": "PostgreSQL Tutorial",
-        "url": "https://www.postgresql.org/docs/current/tutorial.html"
-      }
-    ],
-    "practice_resources": [
-      {
-        "name": "HackerRank SQL",
-        "url": "https://www.hackerrank.com/domains/sql"
-      },
-      {
-        "name": "LeetCode Database",
-        "url": "https://leetcode.com/problemset/database/"
-      }
-    ],
-    "paid_resources": [
-      {
-        "name": "Coursera SQL Courses",
-        "url": "https://www.coursera.org/search?query=sql"
-      },
-      {
-        "name": "Udemy SQL Courses",
-        "url": "https://www.udemy.com/courses/search/?q=sql"
-      },
-      {
-        "name": "DataCamp SQL Courses",
-        "url": "https://www.datacamp.com/search?q=sql"
-      }
-    ],
-    "project": "Build an Employee Analytics Database and answer business questions using SQL."
+{
+  "metadata": {
+    "title": "NEXTPATH Learning Resource Catalog",
+    "version": "3.0.0",
+    "last_updated": "2026-10-09",
+    "resource_model": "skills -> topics + free resources + practice + paid resources + project",
+    "notes": [
+      "Estimated learning hours are planning estimates, not guarantees.",
+      "External course availability, pricing, URLs, and curricula can change.",
+      "NEXTPATH should verify external links periodically before presenting them as active.",
+      "The roadmap should prioritize the largest demonstrated skill gaps first."
+    ]
   },
-  {
-    "skill": "Python",
-    "topics": [
-      "Python Fundamentals",
-      "Functions",
-      "Lists and Dictionaries",
-      "File Handling",
-      "Pandas",
-      "Data Analysis"
-    ],
-    "free_resources": [
-      {
-        "name": "Python Official Tutorial",
-        "url": "https://docs.python.org/3/tutorial/"
-      },
-      {
-        "name": "Kaggle Python",
-        "url": "https://www.kaggle.com/learn/python"
+  "resources": {
+    "SQL": {
+      "category": "Data & Databases",
+      "level": "Beginner to Advanced",
+      "estimated_total_hours": 45,
+      "description": "Learn relational databases, querying, joins, aggregation, subqueries, CTEs, window functions, data cleaning, and performance-aware SQL.",
+      "topics": [
+        {
+          "id": "sql-1",
+          "title": "Database fundamentals and relational thinking",
+          "hours": 3
+        },
+        {
+          "id": "sql-2",
+          "title": "SELECT, WHERE, ORDER BY, LIMIT",
+          "hours": 4
+        },
+        {
+          "id": "sql-3",
+          "title": "GROUP BY, HAVING, aggregate functions",
+          "hours": 5
+        },
+        {
+          "id": "sql-4",
+          "title": "INNER, LEFT, RIGHT and FULL joins",
+          "hours": 6
+        },
+        {
+          "id": "sql-5",
+          "title": "Subqueries and common table expressions",
+          "hours": 5
+        },
+        {
+          "id": "sql-6",
+          "title": "CASE expressions and data cleaning",
+          "hours": 4
+        },
+        {
+          "id": "sql-7",
+          "title": "Window functions",
+          "hours": 6
+        },
+        {
+          "id": "sql-8",
+          "title": "Indexes and query optimization concepts",
+          "hours": 5
+        },
+        {
+          "id": "sql-9",
+          "title": "Business analytics case studies",
+          "hours": 7
+        }
+      ],
+      "free_resources": [
+        {
+          "title": "SQLBolt",
+          "provider": "SQLBolt",
+          "type": "Interactive Course",
+          "url": "https://sqlbolt.com/"
+        },
+        {
+          "title": "SQL Tutorial",
+          "provider": "W3Schools",
+          "type": "Tutorial",
+          "url": "https://www.w3schools.com/sql/"
+        },
+        {
+          "title": "PostgreSQL Tutorial",
+          "provider": "PostgreSQL",
+          "type": "Documentation",
+          "url": "https://www.postgresql.org/docs/current/tutorial.html"
+        }
+      ],
+      "practice_resources": [
+        {
+          "title": "SQL Practice",
+          "provider": "HackerRank",
+          "type": "Practice",
+          "url": "https://www.hackerrank.com/domains/sql"
+        },
+        {
+          "title": "Database Problems",
+          "provider": "LeetCode",
+          "type": "Practice",
+          "url": "https://leetcode.com/problemset/database/"
+        }
+      ],
+      "paid_resources": [
+        {
+          "title": "Search SQL Courses",
+          "provider": "Coursera",
+          "url": "https://www.coursera.org/search?query=sql"
+        },
+        {
+          "title": "Search SQL Courses",
+          "provider": "Udemy",
+          "url": "https://www.udemy.com/courses/search/?q=sql"
+        }
+      ],
+      "project": {
+        "title": "Business Sales Analytics Database",
+        "description": "Create and analyze a sales database with customers, products, orders, revenue trends, repeat customers, and executive KPIs.",
+        "deliverables": [
+          "SQL schema",
+          "20+ analytical queries",
+          "README",
+          "screenshots or dashboard"
+        ]
       }
-    ],
-    "practice_resources": [
-      {
-        "name": "HackerRank Python",
-        "url": "https://www.hackerrank.com/domains/python"
-      },
-      {
-        "name": "Exercism Python",
-        "url": "https://exercism.org/tracks/python"
+    },
+    "Python": {
+      "category": "Programming",
+      "level": "Beginner to Advanced",
+      "estimated_total_hours": 60,
+      "description": "Build a strong Python foundation for data analysis, automation, AI, backend services, and problem solving.",
+      "topics": [
+        {
+          "id": "python-1",
+          "title": "Syntax, variables, data types and operators",
+          "hours": 5
+        },
+        {
+          "id": "python-2",
+          "title": "Conditions, loops and functions",
+          "hours": 7
+        },
+        {
+          "id": "python-3",
+          "title": "Lists, tuples, dictionaries and sets",
+          "hours": 6
+        },
+        {
+          "id": "python-4",
+          "title": "File handling and exceptions",
+          "hours": 5
+        },
+        {
+          "id": "python-5",
+          "title": "Object-oriented programming",
+          "hours": 7
+        },
+        {
+          "id": "python-6",
+          "title": "Modules, packages and virtual environments",
+          "hours": 4
+        },
+        {
+          "id": "python-7",
+          "title": "NumPy fundamentals",
+          "hours": 6
+        },
+        {
+          "id": "python-8",
+          "title": "pandas data analysis",
+          "hours": 9
+        },
+        {
+          "id": "python-9",
+          "title": "APIs, automation and practical scripting",
+          "hours": 6
+        },
+        {
+          "id": "python-10",
+          "title": "Testing, clean code and project structure",
+          "hours": 5
+        }
+      ],
+      "free_resources": [
+        {
+          "title": "Python Tutorial",
+          "provider": "Python.org",
+          "type": "Official Documentation",
+          "url": "https://docs.python.org/3/tutorial/"
+        },
+        {
+          "title": "Python Full Course",
+          "provider": "freeCodeCamp",
+          "type": "Video Course",
+          "url": "https://www.youtube.com/@freecodecamp/search?query=python"
+        },
+        {
+          "title": "Python",
+          "provider": "Kaggle Learn",
+          "type": "Micro-course",
+          "url": "https://www.kaggle.com/learn/python"
+        }
+      ],
+      "practice_resources": [
+        {
+          "title": "Python Practice",
+          "provider": "HackerRank",
+          "type": "Practice",
+          "url": "https://www.hackerrank.com/domains/python"
+        },
+        {
+          "title": "Python Exercises",
+          "provider": "Exercism",
+          "type": "Practice",
+          "url": "https://exercism.org/tracks/python"
+        }
+      ],
+      "paid_resources": [
+        {
+          "title": "Search Python Courses",
+          "provider": "Coursera",
+          "url": "https://www.coursera.org/search?query=python"
+        },
+        {
+          "title": "Search Python Courses",
+          "provider": "Udemy",
+          "url": "https://www.udemy.com/courses/search/?q=python"
+        }
+      ],
+      "project": {
+        "title": "Python Data Automation Toolkit",
+        "description": "Build a Python application that imports CSV files, cleans data, calculates metrics, and exports reports.",
+        "deliverables": [
+          "Python source code",
+          "sample dataset",
+          "README",
+          "generated report"
+        ]
       }
-    ],
-    "paid_resources": [
-      {
-        "name": "Coursera Python Courses",
-        "url": "https://www.coursera.org/search?query=python"
-      },
-      {
-        "name": "Udemy Python Courses",
-        "url": "https://www.udemy.com/courses/search/?q=python"
-      },
-      {
-        "name": "DataCamp Python Courses",
-        "url": "https://www.datacamp.com/search?q=python"
+    },
+    "Excel": {
+      "category": "Analytics Tools",
+      "level": "Beginner to Advanced",
+      "estimated_total_hours": 35,
+      "description": "Develop practical spreadsheet skills for analysis, reporting, cleaning, modeling, and business decision support.",
+      "topics": [
+        {
+          "id": "excel-1",
+          "title": "Workbook structure and data formatting",
+          "hours": 3
+        },
+        {
+          "id": "excel-2",
+          "title": "Core formulas and cell references",
+          "hours": 5
+        },
+        {
+          "id": "excel-3",
+          "title": "IF, SUMIFS, COUNTIFS and logical formulas",
+          "hours": 5
+        },
+        {
+          "id": "excel-4",
+          "title": "XLOOKUP, INDEX and MATCH",
+          "hours": 5
+        },
+        {
+          "id": "excel-5",
+          "title": "Data cleaning and validation",
+          "hours": 4
+        },
+        {
+          "id": "excel-6",
+          "title": "Pivot tables and pivot charts",
+          "hours": 5
+        },
+        {
+          "id": "excel-7",
+          "title": "Dashboards and business reporting",
+          "hours": 5
+        },
+        {
+          "id": "excel-8",
+          "title": "Power Query introduction",
+          "hours": 3
+        }
+      ],
+      "free_resources": [
+        {
+          "title": "Excel Help & Learning",
+          "provider": "Microsoft",
+          "type": "Official Learning",
+          "url": "https://support.microsoft.com/excel"
+        },
+        {
+          "title": "Excel Tutorial",
+          "provider": "GCFGlobal",
+          "type": "Tutorial",
+          "url": "https://edu.gcfglobal.org/en/excel/"
+        }
+      ],
+      "practice_resources": [
+        {
+          "title": "Excel Practice Online",
+          "provider": "Excel Practice Online",
+          "type": "Practice",
+          "url": "https://excel-practice-online.com/"
+        }
+      ],
+      "paid_resources": [
+        {
+          "title": "Search Excel Courses",
+          "provider": "Coursera",
+          "url": "https://www.coursera.org/search?query=excel"
+        },
+        {
+          "title": "Search Excel Courses",
+          "provider": "Udemy",
+          "url": "https://www.udemy.com/courses/search/?q=excel"
+        }
+      ],
+      "project": {
+        "title": "Executive Sales Dashboard in Excel",
+        "description": "Build an interactive Excel dashboard using cleaned transactional data, pivots, formulas, KPIs, and charts.",
+        "deliverables": [
+          "Excel workbook",
+          "dashboard",
+          "data dictionary",
+          "short insight summary"
+        ]
       }
-    ],
-    "project": "Build a Python data-analysis project using a real CSV dataset."
-  },
-  {
-    "skill": "Excel",
-    "topics": [
-      "Formulas",
-      "Lookup Functions",
-      "Pivot Tables",
-      "Charts",
-      "Data Cleaning",
-      "Dashboard Creation"
-    ],
-    "free_resources": [
-      {
-        "name": "Microsoft Excel Help",
-        "url": "https://support.microsoft.com/excel"
+    },
+    "Power BI": {
+      "category": "Business Intelligence",
+      "level": "Beginner to Advanced",
+      "estimated_total_hours": 40,
+      "description": "Learn Power BI data modeling, Power Query, DAX, visualization, dashboard design, and publishing workflows.",
+      "topics": [
+        {
+          "id": "powerbi-1",
+          "title": "Power BI Desktop and data import",
+          "hours": 4
+        },
+        {
+          "id": "powerbi-2",
+          "title": "Power Query transformations",
+          "hours": 6
+        },
+        {
+          "id": "powerbi-3",
+          "title": "Data modeling and relationships",
+          "hours": 6
+        },
+        {
+          "id": "powerbi-4",
+          "title": "DAX fundamentals",
+          "hours": 7
+        },
+        {
+          "id": "powerbi-5",
+          "title": "Measures, time intelligence and KPIs",
+          "hours": 6
+        },
+        {
+          "id": "powerbi-6",
+          "title": "Visual design and storytelling",
+          "hours": 5
+        },
+        {
+          "id": "powerbi-7",
+          "title": "Publishing, refresh and sharing concepts",
+          "hours": 3
+        },
+        {
+          "id": "powerbi-8",
+          "title": "Capstone dashboard",
+          "hours": 3
+        }
+      ],
+      "free_resources": [
+        {
+          "title": "Power BI Learning",
+          "provider": "Microsoft Learn",
+          "type": "Official Learning",
+          "url": "https://learn.microsoft.com/training/powerplatform/power-bi/"
+        },
+        {
+          "title": "Power BI Documentation",
+          "provider": "Microsoft",
+          "type": "Documentation",
+          "url": "https://learn.microsoft.com/power-bi/"
+        }
+      ],
+      "practice_resources": [
+        {
+          "title": "Power BI Samples",
+          "provider": "Microsoft",
+          "type": "Datasets & Samples",
+          "url": "https://learn.microsoft.com/power-bi/create-reports/sample-datasets"
+        }
+      ],
+      "paid_resources": [
+        {
+          "title": "Search Power BI Courses",
+          "provider": "Coursera",
+          "url": "https://www.coursera.org/search?query=power%20bi"
+        },
+        {
+          "title": "Search Power BI Courses",
+          "provider": "Udemy",
+          "url": "https://www.udemy.com/courses/search/?q=power%20bi"
+        }
+      ],
+      "project": {
+        "title": "Business Performance Intelligence Dashboard",
+        "description": "Create a multi-page Power BI dashboard covering revenue, customer performance, products, regions, trends, and executive KPIs.",
+        "deliverables": [
+          "PBIX file",
+          "dashboard screenshots",
+          "KPI documentation",
+          "insight summary"
+        ]
       }
-    ],
-    "practice_resources": [
-      {
-        "name": "Excel Practice Online",
-        "url": "https://excel-practice-online.com/"
+    },
+    "Statistics": {
+      "category": "Mathematics & Analytics",
+      "level": "Beginner to Advanced",
+      "estimated_total_hours": 50,
+      "description": "Learn descriptive statistics, probability, distributions, inference, confidence intervals, hypothesis testing, correlation, and regression foundations.",
+      "topics": [
+        {
+          "id": "stats-1",
+          "title": "Descriptive statistics",
+          "hours": 5
+        },
+        {
+          "id": "stats-2",
+          "title": "Probability foundations",
+          "hours": 6
+        },
+        {
+          "id": "stats-3",
+          "title": "Random variables and distributions",
+          "hours": 7
+        },
+        {
+          "id": "stats-4",
+          "title": "Sampling and central limit theorem",
+          "hours": 5
+        },
+        {
+          "id": "stats-5",
+          "title": "Confidence intervals",
+          "hours": 5
+        },
+        {
+          "id": "stats-6",
+          "title": "Hypothesis testing",
+          "hours": 7
+        },
+        {
+          "id": "stats-7",
+          "title": "Correlation and simple regression",
+          "hours": 6
+        },
+        {
+          "id": "stats-8",
+          "title": "Applied statistical case studies",
+          "hours": 9
+        }
+      ],
+      "free_resources": [
+        {
+          "title": "Statistics and Probability",
+          "provider": "Khan Academy",
+          "type": "Course",
+          "url": "https://www.khanacademy.org/math/statistics-probability"
+        },
+        {
+          "title": "Intro to Statistics",
+          "provider": "OpenStax",
+          "type": "Textbook",
+          "url": "https://openstax.org/details/books/introductory-statistics"
+        }
+      ],
+      "practice_resources": [
+        {
+          "title": "Statistics Exercises",
+          "provider": "Khan Academy",
+          "type": "Practice",
+          "url": "https://www.khanacademy.org/math/statistics-probability"
+        }
+      ],
+      "paid_resources": [
+        {
+          "title": "Search Statistics Courses",
+          "provider": "Coursera",
+          "url": "https://www.coursera.org/search?query=statistics"
+        },
+        {
+          "title": "Search Statistics Courses",
+          "provider": "Udemy",
+          "url": "https://www.udemy.com/courses/search/?q=statistics"
+        }
+      ],
+      "project": {
+        "title": "Statistical Study of Student Performance",
+        "description": "Analyze a dataset using descriptive statistics, distributions, confidence intervals, hypothesis tests, correlation, and regression.",
+        "deliverables": [
+          "analysis notebook",
+          "plots",
+          "statistical interpretation",
+          "final report"
+        ]
       }
-    ],
-    "paid_resources": [
-      {
-        "name": "Coursera Excel Courses",
-        "url": "https://www.coursera.org/search?query=excel"
-      },
-      {
-        "name": "Udemy Excel Courses",
-        "url": "https://www.udemy.com/courses/search/?q=excel"
+    },
+    "Machine Learning": {
+      "category": "AI & Machine Learning",
+      "level": "Intermediate to Advanced",
+      "estimated_total_hours": 75,
+      "description": "Learn supervised and unsupervised learning, model evaluation, feature engineering, tuning, pipelines, and responsible model development.",
+      "topics": [
+        {
+          "id": "ml-1",
+          "title": "Machine learning workflow and problem framing",
+          "hours": 5
+        },
+        {
+          "id": "ml-2",
+          "title": "Data preprocessing and feature engineering",
+          "hours": 8
+        },
+        {
+          "id": "ml-3",
+          "title": "Linear and logistic regression",
+          "hours": 8
+        },
+        {
+          "id": "ml-4",
+          "title": "Decision trees and ensemble models",
+          "hours": 9
+        },
+        {
+          "id": "ml-5",
+          "title": "KNN, SVM and distance-based learning",
+          "hours": 7
+        },
+        {
+          "id": "ml-6",
+          "title": "Clustering and dimensionality reduction",
+          "hours": 8
+        },
+        {
+          "id": "ml-7",
+          "title": "Cross-validation and model evaluation",
+          "hours": 8
+        },
+        {
+          "id": "ml-8",
+          "title": "Hyperparameter tuning and pipelines",
+          "hours": 7
+        },
+        {
+          "id": "ml-9",
+          "title": "Model interpretability and bias awareness",
+          "hours": 6
+        },
+        {
+          "id": "ml-10",
+          "title": "End-to-end ML capstone",
+          "hours": 9
+        }
+      ],
+      "free_resources": [
+        {
+          "title": "Intro to Machine Learning",
+          "provider": "Kaggle Learn",
+          "type": "Micro-course",
+          "url": "https://www.kaggle.com/learn/intro-to-machine-learning"
+        },
+        {
+          "title": "Machine Learning",
+          "provider": "Google Developers",
+          "type": "Course",
+          "url": "https://developers.google.com/machine-learning/crash-course"
+        }
+      ],
+      "practice_resources": [
+        {
+          "title": "Kaggle Competitions",
+          "provider": "Kaggle",
+          "type": "Projects",
+          "url": "https://www.kaggle.com/competitions"
+        }
+      ],
+      "paid_resources": [
+        {
+          "title": "Machine Learning Specialization",
+          "provider": "Coursera",
+          "url": "https://www.coursera.org/specializations/machine-learning-introduction"
+        },
+        {
+          "title": "Search ML Courses",
+          "provider": "Udemy",
+          "url": "https://www.udemy.com/courses/search/?q=machine%20learning"
+        }
+      ],
+      "project": {
+        "title": "Customer Churn Prediction System",
+        "description": "Train, compare, evaluate, and explain multiple classification models for customer churn.",
+        "deliverables": [
+          "notebook",
+          "trained pipeline",
+          "evaluation report",
+          "README",
+          "demo"
+        ]
       }
-    ],
-    "project": "Build an Excel sales dashboard with KPIs, charts and pivot tables."
-  },
-  {
-    "skill": "Power BI",
-    "topics": [
-      "Data Import",
-      "Power Query",
-      "Data Modeling",
-      "DAX",
-      "Dashboard Design",
-      "Data Storytelling"
-    ],
-    "free_resources": [
-      {
-        "name": "Microsoft Learn Power BI",
-        "url": "https://learn.microsoft.com/training/powerplatform/power-bi/"
+    },
+    "Deep Learning": {
+      "category": "AI & Machine Learning",
+      "level": "Intermediate to Advanced",
+      "estimated_total_hours": 65,
+      "description": "Learn neural networks, optimization, CNNs, sequence models, transformers, and practical deep-learning workflows.",
+      "topics": [
+        {
+          "id": "dl-1",
+          "title": "Neural network foundations",
+          "hours": 7
+        },
+        {
+          "id": "dl-2",
+          "title": "Forward propagation and backpropagation",
+          "hours": 7
+        },
+        {
+          "id": "dl-3",
+          "title": "Optimization and regularization",
+          "hours": 7
+        },
+        {
+          "id": "dl-4",
+          "title": "TensorFlow or PyTorch fundamentals",
+          "hours": 8
+        },
+        {
+          "id": "dl-5",
+          "title": "Convolutional neural networks",
+          "hours": 8
+        },
+        {
+          "id": "dl-6",
+          "title": "Sequence models and attention",
+          "hours": 8
+        },
+        {
+          "id": "dl-7",
+          "title": "Transformer concepts",
+          "hours": 8
+        },
+        {
+          "id": "dl-8",
+          "title": "Deep-learning capstone",
+          "hours": 12
+        }
+      ],
+      "free_resources": [
+        {
+          "title": "Neural Networks and Deep Learning",
+          "provider": "DeepLearning.AI / YouTube",
+          "type": "Learning Resource",
+          "url": "https://www.youtube.com/@Deeplearningai"
+        },
+        {
+          "title": "PyTorch Tutorials",
+          "provider": "PyTorch",
+          "type": "Official Tutorials",
+          "url": "https://pytorch.org/tutorials/"
+        }
+      ],
+      "practice_resources": [
+        {
+          "title": "Computer Vision Datasets",
+          "provider": "Kaggle",
+          "type": "Practice",
+          "url": "https://www.kaggle.com/datasets"
+        }
+      ],
+      "paid_resources": [
+        {
+          "title": "Deep Learning Specialization",
+          "provider": "Coursera",
+          "url": "https://www.coursera.org/specializations/deep-learning"
+        },
+        {
+          "title": "Search Deep Learning Courses",
+          "provider": "Udemy",
+          "url": "https://www.udemy.com/courses/search/?q=deep%20learning"
+        }
+      ],
+      "project": {
+        "title": "Image Classification Application",
+        "description": "Train and evaluate a CNN-based image classifier and expose predictions through a simple application.",
+        "deliverables": [
+          "model",
+          "training notebook",
+          "evaluation charts",
+          "demo app",
+          "README"
+        ]
       }
-    ],
-    "practice_resources": [
-      {
-        "name": "Power BI Sample Datasets",
-        "url": "https://learn.microsoft.com/power-bi/create-reports/sample-datasets"
+    },
+    "Data Visualization": {
+      "category": "Analytics",
+      "level": "Beginner to Advanced",
+      "estimated_total_hours": 30,
+      "description": "Learn visual encoding, chart selection, storytelling, dashboard design, and clear communication of analytical insights.",
+      "topics": [
+        {
+          "id": "dataviz-1",
+          "title": "Visual perception and chart selection",
+          "hours": 4
+        },
+        {
+          "id": "dataviz-2",
+          "title": "Comparisons, distributions and trends",
+          "hours": 5
+        },
+        {
+          "id": "dataviz-3",
+          "title": "Color, labels and accessibility",
+          "hours": 4
+        },
+        {
+          "id": "dataviz-4",
+          "title": "Matplotlib and plotting basics",
+          "hours": 5
+        },
+        {
+          "id": "dataviz-5",
+          "title": "Dashboard layout and KPI design",
+          "hours": 5
+        },
+        {
+          "id": "dataviz-6",
+          "title": "Data storytelling",
+          "hours": 4
+        },
+        {
+          "id": "dataviz-7",
+          "title": "Visualization redesign capstone",
+          "hours": 3
+        }
+      ],
+      "free_resources": [
+        {
+          "title": "Data Visualization",
+          "provider": "Kaggle Learn",
+          "type": "Micro-course",
+          "url": "https://www.kaggle.com/learn/data-visualization"
+        },
+        {
+          "title": "Fundamentals of Data Visualization",
+          "provider": "Claus Wilke",
+          "type": "Open Book",
+          "url": "https://clauswilke.com/dataviz/"
+        }
+      ],
+      "practice_resources": [
+        {
+          "title": "Makeover Monday",
+          "provider": "Makeover Monday",
+          "type": "Practice",
+          "url": "https://www.makeovermonday.co.uk/"
+        }
+      ],
+      "paid_resources": [
+        {
+          "title": "Search Data Visualization Courses",
+          "provider": "Coursera",
+          "url": "https://www.coursera.org/search?query=data%20visualization"
+        }
+      ],
+      "project": {
+        "title": "Executive Data Story",
+        "description": "Turn a raw dataset into a concise visual story with KPIs, trends, key findings, and recommendations.",
+        "deliverables": [
+          "visual report",
+          "dashboard",
+          "story summary"
+        ]
       }
-    ],
-    "paid_resources": [
-      {
-        "name": "Coursera Power BI Courses",
-        "url": "https://www.coursera.org/search?query=power%20bi"
-      },
-      {
-        "name": "Udemy Power BI Courses",
-        "url": "https://www.udemy.com/courses/search/?q=power%20bi"
+    },
+    "Business Analysis": {
+      "category": "Business",
+      "level": "Beginner to Advanced",
+      "estimated_total_hours": 40,
+      "description": "Learn problem framing, stakeholder analysis, business requirements, KPI design, process improvement, and decision support.",
+      "topics": [
+        {
+          "id": "ba-1",
+          "title": "Business analysis fundamentals",
+          "hours": 4
+        },
+        {
+          "id": "ba-2",
+          "title": "Stakeholders and problem definition",
+          "hours": 5
+        },
+        {
+          "id": "ba-3",
+          "title": "Requirements elicitation",
+          "hours": 6
+        },
+        {
+          "id": "ba-4",
+          "title": "Functional and non-functional requirements",
+          "hours": 5
+        },
+        {
+          "id": "ba-5",
+          "title": "KPIs and business metrics",
+          "hours": 5
+        },
+        {
+          "id": "ba-6",
+          "title": "Root-cause analysis and prioritization",
+          "hours": 5
+        },
+        {
+          "id": "ba-7",
+          "title": "Solution evaluation",
+          "hours": 4
+        },
+        {
+          "id": "ba-8",
+          "title": "Business case capstone",
+          "hours": 6
+        }
+      ],
+      "free_resources": [
+        {
+          "title": "Business Analysis Resources",
+          "provider": "IIBA",
+          "type": "Reference",
+          "url": "https://www.iiba.org/"
+        }
+      ],
+      "practice_resources": [
+        {
+          "title": "Business Case Practice",
+          "provider": "Case Interview",
+          "type": "Practice",
+          "url": "https://www.caseinterview.com/"
+        }
+      ],
+      "paid_resources": [
+        {
+          "title": "Search Business Analysis Courses",
+          "provider": "Coursera",
+          "url": "https://www.coursera.org/search?query=business%20analysis"
+        },
+        {
+          "title": "Search Business Analysis Courses",
+          "provider": "Udemy",
+          "url": "https://www.udemy.com/courses/search/?q=business%20analysis"
+        }
+      ],
+      "project": {
+        "title": "Digital Service Improvement Case",
+        "description": "Analyze an existing process, identify stakeholders and pain points, define requirements, KPIs, and recommend an improved solution.",
+        "deliverables": [
+          "problem statement",
+          "stakeholder map",
+          "requirements",
+          "process diagram",
+          "recommendation"
+        ]
       }
-    ],
-    "project": "Build an interactive business-intelligence dashboard."
-  },
-  {
-    "skill": "Statistics",
-    "topics": [
-      "Descriptive Statistics",
-      "Probability",
-      "Probability Distributions",
-      "Sampling",
-      "Confidence Intervals",
-      "Hypothesis Testing"
-    ],
-    "free_resources": [
-      {
-        "name": "Khan Academy Statistics",
-        "url": "https://www.khanacademy.org/math/statistics-probability"
-      },
-      {
-        "name": "StatQuest",
-        "url": "https://www.youtube.com/@statquest"
+    },
+    "Communication": {
+      "category": "Professional Skills",
+      "level": "Beginner to Advanced",
+      "estimated_total_hours": 25,
+      "description": "Improve professional writing, presentations, stakeholder communication, analytical storytelling, interviews, and collaboration.",
+      "topics": [
+        {
+          "id": "comm-1",
+          "title": "Clear professional writing",
+          "hours": 4
+        },
+        {
+          "id": "comm-2",
+          "title": "Structured explanations",
+          "hours": 4
+        },
+        {
+          "id": "comm-3",
+          "title": "Presentation fundamentals",
+          "hours": 4
+        },
+        {
+          "id": "comm-4",
+          "title": "Data storytelling",
+          "hours": 4
+        },
+        {
+          "id": "comm-5",
+          "title": "Stakeholder communication",
+          "hours": 3
+        },
+        {
+          "id": "comm-6",
+          "title": "Interview communication",
+          "hours": 3
+        },
+        {
+          "id": "comm-7",
+          "title": "Professional speaking practice",
+          "hours": 3
+        }
+      ],
+      "free_resources": [
+        {
+          "title": "Communication Courses",
+          "provider": "OpenLearn",
+          "type": "Free Courses",
+          "url": "https://www.open.edu/openlearn/"
+        },
+        {
+          "title": "Public Speaking Resources",
+          "provider": "Toastmasters",
+          "type": "Reference",
+          "url": "https://www.toastmasters.org/resources"
+        }
+      ],
+      "practice_resources": [
+        {
+          "title": "TED Talks",
+          "provider": "TED",
+          "type": "Presentation Analysis",
+          "url": "https://www.ted.com/talks"
+        }
+      ],
+      "paid_resources": [
+        {
+          "title": "Search Communication Courses",
+          "provider": "Coursera",
+          "url": "https://www.coursera.org/search?query=communication%20skills"
+        }
+      ],
+      "project": {
+        "title": "Five-Minute Career Presentation",
+        "description": "Create and deliver a concise presentation explaining a technical project to a non-technical audience.",
+        "deliverables": [
+          "slides",
+          "speech notes",
+          "recording",
+          "self-review"
+        ]
       }
-    ],
-    "practice_resources": [
-      {
-        "name": "Kaggle Learn",
-        "url": "https://www.kaggle.com/learn"
+    },
+    "Data Warehousing": {
+      "category": "Data Engineering",
+      "level": "Intermediate to Advanced",
+      "estimated_total_hours": 45,
+      "description": "Learn dimensional modeling, fact and dimension tables, star schemas, warehouse architecture, ELT patterns, and analytical data design.",
+      "topics": [
+        {
+          "id": "dw-1",
+          "title": "Warehouse architecture concepts",
+          "hours": 5
+        },
+        {
+          "id": "dw-2",
+          "title": "Dimensional modeling",
+          "hours": 7
+        },
+        {
+          "id": "dw-3",
+          "title": "Facts, dimensions and grain",
+          "hours": 6
+        },
+        {
+          "id": "dw-4",
+          "title": "Star and snowflake schemas",
+          "hours": 5
+        },
+        {
+          "id": "dw-5",
+          "title": "Slowly changing dimensions",
+          "hours": 5
+        },
+        {
+          "id": "dw-6",
+          "title": "ETL versus ELT",
+          "hours": 4
+        },
+        {
+          "id": "dw-7",
+          "title": "Cloud warehouse concepts",
+          "hours": 6
+        },
+        {
+          "id": "dw-8",
+          "title": "Warehouse design capstone",
+          "hours": 7
+        }
+      ],
+      "free_resources": [
+        {
+          "title": "Data Warehousing Concepts",
+          "provider": "Microsoft Learn",
+          "type": "Learning",
+          "url": "https://learn.microsoft.com/training/"
+        },
+        {
+          "title": "BigQuery Documentation",
+          "provider": "Google Cloud",
+          "type": "Documentation",
+          "url": "https://cloud.google.com/bigquery/docs"
+        }
+      ],
+      "practice_resources": [
+        {
+          "title": "BigQuery Sandbox",
+          "provider": "Google Cloud",
+          "type": "Hands-on",
+          "url": "https://cloud.google.com/bigquery/docs/sandbox"
+        }
+      ],
+      "paid_resources": [
+        {
+          "title": "Search Data Warehouse Courses",
+          "provider": "Coursera",
+          "url": "https://www.coursera.org/search?query=data%20warehouse"
+        }
+      ],
+      "project": {
+        "title": "Retail Analytics Warehouse",
+        "description": "Design a dimensional model for retail sales with facts, dimensions, business grain, and analytical queries.",
+        "deliverables": [
+          "schema diagram",
+          "DDL",
+          "sample data",
+          "analytics queries",
+          "documentation"
+        ]
       }
-    ],
-    "paid_resources": [
-      {
-        "name": "Coursera Statistics Courses",
-        "url": "https://www.coursera.org/search?query=statistics"
-      },
-      {
-        "name": "Udemy Statistics Courses",
-        "url": "https://www.udemy.com/courses/search/?q=statistics"
+    },
+    "ETL": {
+      "category": "Data Engineering",
+      "level": "Intermediate",
+      "estimated_total_hours": 35,
+      "description": "Learn extraction, transformation, loading, validation, scheduling, incremental processing, and reliable data-pipeline design.",
+      "topics": [
+        {
+          "id": "etl-1",
+          "title": "ETL architecture and pipeline stages",
+          "hours": 4
+        },
+        {
+          "id": "etl-2",
+          "title": "Data extraction techniques",
+          "hours": 4
+        },
+        {
+          "id": "etl-3",
+          "title": "Transformation patterns",
+          "hours": 6
+        },
+        {
+          "id": "etl-4",
+          "title": "Loading and upsert strategies",
+          "hours": 5
+        },
+        {
+          "id": "etl-5",
+          "title": "Data validation and quality checks",
+          "hours": 5
+        },
+        {
+          "id": "etl-6",
+          "title": "Scheduling and orchestration concepts",
+          "hours": 5
+        },
+        {
+          "id": "etl-7",
+          "title": "Incremental pipeline capstone",
+          "hours": 6
+        }
+      ],
+      "free_resources": [
+        {
+          "title": "Apache Airflow Documentation",
+          "provider": "Apache Airflow",
+          "type": "Documentation",
+          "url": "https://airflow.apache.org/docs/"
+        }
+      ],
+      "practice_resources": [
+        {
+          "title": "Airflow Tutorials",
+          "provider": "Astronomer",
+          "type": "Tutorials",
+          "url": "https://www.astronomer.io/docs/learn/"
+        }
+      ],
+      "paid_resources": [
+        {
+          "title": "Search ETL Courses",
+          "provider": "Udemy",
+          "url": "https://www.udemy.com/courses/search/?q=etl"
+        }
+      ],
+      "project": {
+        "title": "Automated ETL Pipeline",
+        "description": "Create a scheduled pipeline that loads raw CSV/API data, cleans and validates it, and writes analytics-ready output.",
+        "deliverables": [
+          "pipeline code",
+          "data validation",
+          "logs",
+          "README"
+        ]
       }
-    ],
-    "project": "Analyze a real dataset and prepare a statistical report."
-  },
-  {
-    "skill": "Machine Learning",
-    "topics": [
-      "Machine Learning Fundamentals",
-      "Data Preprocessing",
-      "Regression",
-      "Classification",
-      "Model Evaluation",
-      "Feature Engineering"
-    ],
-    "free_resources": [
-      {
-        "name": "Google Machine Learning Crash Course",
-        "url": "https://developers.google.com/machine-learning/crash-course"
-      },
-      {
-        "name": "Kaggle Intro to Machine Learning",
-        "url": "https://www.kaggle.com/learn/intro-to-machine-learning"
+    },
+    "Cloud Computing": {
+      "category": "Cloud & Infrastructure",
+      "level": "Beginner to Advanced",
+      "estimated_total_hours": 45,
+      "description": "Learn cloud fundamentals, compute, storage, networking, databases, identity, deployment, monitoring, and cost-awareness.",
+      "topics": [
+        {
+          "id": "cloud-1",
+          "title": "Cloud service models and architecture",
+          "hours": 4
+        },
+        {
+          "id": "cloud-2",
+          "title": "Compute and virtual machines",
+          "hours": 5
+        },
+        {
+          "id": "cloud-3",
+          "title": "Object and block storage",
+          "hours": 4
+        },
+        {
+          "id": "cloud-4",
+          "title": "Networking fundamentals",
+          "hours": 6
+        },
+        {
+          "id": "cloud-5",
+          "title": "Managed databases",
+          "hours": 5
+        },
+        {
+          "id": "cloud-6",
+          "title": "Identity and access management",
+          "hours": 5
+        },
+        {
+          "id": "cloud-7",
+          "title": "Monitoring, reliability and cost",
+          "hours": 6
+        },
+        {
+          "id": "cloud-8",
+          "title": "Cloud deployment project",
+          "hours": 10
+        }
+      ],
+      "free_resources": [
+        {
+          "title": "AWS Skill Builder",
+          "provider": "AWS",
+          "type": "Learning",
+          "url": "https://skillbuilder.aws/"
+        },
+        {
+          "title": "Microsoft Azure Fundamentals",
+          "provider": "Microsoft Learn",
+          "type": "Learning",
+          "url": "https://learn.microsoft.com/training/azure/"
+        }
+      ],
+      "practice_resources": [
+        {
+          "title": "Google Cloud Skills Boost",
+          "provider": "Google Cloud",
+          "type": "Labs",
+          "url": "https://www.cloudskillsboost.google/"
+        }
+      ],
+      "paid_resources": [
+        {
+          "title": "Search Cloud Computing Courses",
+          "provider": "Coursera",
+          "url": "https://www.coursera.org/search?query=cloud%20computing"
+        }
+      ],
+      "project": {
+        "title": "Cloud-Deployed Data Application",
+        "description": "Deploy a small data or AI application with cloud storage, environment configuration, monitoring, and documentation.",
+        "deliverables": [
+          "deployed app",
+          "architecture diagram",
+          "README",
+          "cost notes"
+        ]
       }
-    ],
-    "practice_resources": [
-      {
-        "name": "Kaggle Competitions",
-        "url": "https://www.kaggle.com/competitions"
+    },
+    "Apache Spark": {
+      "category": "Data Engineering",
+      "level": "Intermediate to Advanced",
+      "estimated_total_hours": 35,
+      "description": "Learn distributed data processing, Spark DataFrames, transformations, actions, Spark SQL, partitioning, and performance concepts.",
+      "topics": [
+        {
+          "id": "spark-1",
+          "title": "Distributed processing concepts",
+          "hours": 4
+        },
+        {
+          "id": "spark-2",
+          "title": "Spark architecture",
+          "hours": 4
+        },
+        {
+          "id": "spark-3",
+          "title": "DataFrames and transformations",
+          "hours": 6
+        },
+        {
+          "id": "spark-4",
+          "title": "Spark SQL",
+          "hours": 5
+        },
+        {
+          "id": "spark-5",
+          "title": "Joins and aggregations",
+          "hours": 5
+        },
+        {
+          "id": "spark-6",
+          "title": "Partitioning and performance",
+          "hours": 5
+        },
+        {
+          "id": "spark-7",
+          "title": "Large-data capstone",
+          "hours": 6
+        }
+      ],
+      "free_resources": [
+        {
+          "title": "Apache Spark Documentation",
+          "provider": "Apache Spark",
+          "type": "Official Documentation",
+          "url": "https://spark.apache.org/docs/latest/"
+        }
+      ],
+      "practice_resources": [
+        {
+          "title": "Databricks Community Learning",
+          "provider": "Databricks",
+          "type": "Learning",
+          "url": "https://www.databricks.com/learn"
+        }
+      ],
+      "paid_resources": [
+        {
+          "title": "Search Apache Spark Courses",
+          "provider": "Coursera",
+          "url": "https://www.coursera.org/search?query=apache%20spark"
+        }
+      ],
+      "project": {
+        "title": "Large-Scale Log Analytics",
+        "description": "Use Spark to process and aggregate a large event/log dataset and generate analytical outputs.",
+        "deliverables": [
+          "Spark notebook",
+          "transformations",
+          "performance notes",
+          "results"
+        ]
       }
-    ],
-    "paid_resources": [
-      {
-        "name": "Coursera Machine Learning Courses",
-        "url": "https://www.coursera.org/search?query=machine%20learning"
-      },
-      {
-        "name": "Udemy Machine Learning Courses",
-        "url": "https://www.udemy.com/courses/search/?q=machine%20learning"
+    },
+    "Data Modeling": {
+      "category": "Data Engineering",
+      "level": "Intermediate to Advanced",
+      "estimated_total_hours": 32,
+      "description": "Learn conceptual, logical, physical, relational, dimensional, and analytical data modeling.",
+      "topics": [
+        {
+          "id": "model-1",
+          "title": "Conceptual, logical and physical models",
+          "hours": 4
+        },
+        {
+          "id": "model-2",
+          "title": "Entities, attributes and relationships",
+          "hours": 5
+        },
+        {
+          "id": "model-3",
+          "title": "Normalization and denormalization",
+          "hours": 5
+        },
+        {
+          "id": "model-4",
+          "title": "Keys and constraints",
+          "hours": 4
+        },
+        {
+          "id": "model-5",
+          "title": "Dimensional modeling",
+          "hours": 5
+        },
+        {
+          "id": "model-6",
+          "title": "Analytical modeling",
+          "hours": 4
+        },
+        {
+          "id": "model-7",
+          "title": "Modeling capstone",
+          "hours": 5
+        }
+      ],
+      "free_resources": [
+        {
+          "title": "Database Design",
+          "provider": "PostgreSQL Documentation",
+          "type": "Reference",
+          "url": "https://www.postgresql.org/docs/current/ddl.html"
+        }
+      ],
+      "practice_resources": [
+        {
+          "title": "dbdiagram.io",
+          "provider": "dbdiagram.io",
+          "type": "Modeling Tool",
+          "url": "https://dbdiagram.io/"
+        }
+      ],
+      "paid_resources": [
+        {
+          "title": "Search Data Modeling Courses",
+          "provider": "Coursera",
+          "url": "https://www.coursera.org/search?query=data%20modeling"
+        }
+      ],
+      "project": {
+        "title": "University Information Data Model",
+        "description": "Design a complete relational and analytical model for students, courses, attendance, assessments, and performance.",
+        "deliverables": [
+          "ER diagram",
+          "schema",
+          "design decisions",
+          "sample SQL"
+        ]
       }
-    ],
-    "project": "Build and evaluate a predictive machine-learning model."
-  },
-  {
-    "skill": "Deep Learning",
-    "topics": [
-      "Neural Networks",
-      "Activation Functions",
-      "Backpropagation",
-      "CNN",
-      "Model Training",
-      "Model Evaluation"
-    ],
-    "free_resources": [
-      {
-        "name": "TensorFlow Tutorials",
-        "url": "https://www.tensorflow.org/tutorials"
-      },
-      {
-        "name": "PyTorch Tutorials",
-        "url": "https://pytorch.org/tutorials/"
+    },
+    "Git": {
+      "category": "Software Engineering",
+      "level": "Beginner to Intermediate",
+      "estimated_total_hours": 20,
+      "description": "Learn version control, commits, branches, merging, collaboration, pull requests, conflict resolution, and practical GitHub workflows.",
+      "topics": [
+        {
+          "id": "git-1",
+          "title": "Repositories, status, add and commit",
+          "hours": 3
+        },
+        {
+          "id": "git-2",
+          "title": "Branches and merging",
+          "hours": 4
+        },
+        {
+          "id": "git-3",
+          "title": "Remote repositories and GitHub",
+          "hours": 3
+        },
+        {
+          "id": "git-4",
+          "title": "Pull requests and collaboration",
+          "hours": 3
+        },
+        {
+          "id": "git-5",
+          "title": "Merge conflicts",
+          "hours": 3
+        },
+        {
+          "id": "git-6",
+          "title": "Tags, release basics and useful workflows",
+          "hours": 2
+        },
+        {
+          "id": "git-7",
+          "title": "Git capstone repository",
+          "hours": 2
+        }
+      ],
+      "free_resources": [
+        {
+          "title": "Pro Git",
+          "provider": "Git",
+          "type": "Free Book",
+          "url": "https://git-scm.com/book/en/v2"
+        },
+        {
+          "title": "GitHub Skills",
+          "provider": "GitHub",
+          "type": "Interactive Learning",
+          "url": "https://skills.github.com/"
+        }
+      ],
+      "practice_resources": [
+        {
+          "title": "Learn Git Branching",
+          "provider": "Learn Git Branching",
+          "type": "Interactive Practice",
+          "url": "https://learngitbranching.js.org/"
+        }
+      ],
+      "paid_resources": [
+        {
+          "title": "Search Git Courses",
+          "provider": "Udemy",
+          "url": "https://www.udemy.com/courses/search/?q=git"
+        }
+      ],
+      "project": {
+        "title": "Professional GitHub Project Repository",
+        "description": "Create a structured repository with branches, issues, pull requests, documentation, releases, and a clean commit history.",
+        "deliverables": [
+          "GitHub repository",
+          "README",
+          "branches",
+          "pull request",
+          "release"
+        ]
       }
-    ],
-    "practice_resources": [
-      {
-        "name": "Kaggle Deep Learning",
-        "url": "https://www.kaggle.com/learn/intro-to-deep-learning"
+    },
+    "DAX": {
+      "category": "Business Intelligence",
+      "level": "Intermediate to Advanced",
+      "estimated_total_hours": 30,
+      "description": "Learn DAX measures, filter context, row context, CALCULATE, iterators, time intelligence, and analytical modeling in Power BI.",
+      "topics": [
+        {
+          "id": "dax-1",
+          "title": "Measures and calculated columns",
+          "hours": 4
+        },
+        {
+          "id": "dax-2",
+          "title": "Row context and filter context",
+          "hours": 5
+        },
+        {
+          "id": "dax-3",
+          "title": "CALCULATE and filters",
+          "hours": 5
+        },
+        {
+          "id": "dax-4",
+          "title": "Iterators",
+          "hours": 4
+        },
+        {
+          "id": "dax-5",
+          "title": "Time intelligence",
+          "hours": 5
+        },
+        {
+          "id": "dax-6",
+          "title": "Advanced business measures",
+          "hours": 4
+        },
+        {
+          "id": "dax-7",
+          "title": "DAX capstone",
+          "hours": 3
+        }
+      ],
+      "free_resources": [
+        {
+          "title": "DAX Guide",
+          "provider": "SQLBI",
+          "type": "Reference",
+          "url": "https://dax.guide/"
+        },
+        {
+          "title": "DAX Documentation",
+          "provider": "Microsoft",
+          "type": "Documentation",
+          "url": "https://learn.microsoft.com/dax/"
+        }
+      ],
+      "practice_resources": [
+        {
+          "title": "Power BI Sample Data",
+          "provider": "Microsoft",
+          "type": "Practice",
+          "url": "https://learn.microsoft.com/power-bi/create-reports/sample-datasets"
+        }
+      ],
+      "paid_resources": [
+        {
+          "title": "Search DAX Courses",
+          "provider": "Udemy",
+          "url": "https://www.udemy.com/courses/search/?q=dax"
+        }
+      ],
+      "project": {
+        "title": "Advanced DAX KPI Dashboard",
+        "description": "Build a Power BI model with business measures, time intelligence, variance metrics, and dynamic KPI calculations.",
+        "deliverables": [
+          "PBIX",
+          "DAX measure list",
+          "dashboard",
+          "documentation"
+        ]
       }
-    ],
-    "paid_resources": [
-      {
-        "name": "Coursera Deep Learning Courses",
-        "url": "https://www.coursera.org/search?query=deep%20learning"
-      },
-      {
-        "name": "Udemy Deep Learning Courses",
-        "url": "https://www.udemy.com/courses/search/?q=deep%20learning"
+    },
+    "MLOps": {
+      "category": "AI Engineering",
+      "level": "Intermediate to Advanced",
+      "estimated_total_hours": 55,
+      "description": "Learn reproducible ML pipelines, model tracking, deployment, monitoring, CI/CD, containers, registries, and production reliability.",
+      "topics": [
+        {
+          "id": "mlops-1",
+          "title": "MLOps lifecycle and reproducibility",
+          "hours": 5
+        },
+        {
+          "id": "mlops-2",
+          "title": "Experiment tracking",
+          "hours": 6
+        },
+        {
+          "id": "mlops-3",
+          "title": "Model packaging and APIs",
+          "hours": 7
+        },
+        {
+          "id": "mlops-4",
+          "title": "Docker for ML",
+          "hours": 7
+        },
+        {
+          "id": "mlops-5",
+          "title": "CI/CD concepts",
+          "hours": 6
+        },
+        {
+          "id": "mlops-6",
+          "title": "Model registry and versioning",
+          "hours": 6
+        },
+        {
+          "id": "mlops-7",
+          "title": "Monitoring and drift",
+          "hours": 7
+        },
+        {
+          "id": "mlops-8",
+          "title": "Production ML capstone",
+          "hours": 11
+        }
+      ],
+      "free_resources": [
+        {
+          "title": "MLflow Documentation",
+          "provider": "MLflow",
+          "type": "Documentation",
+          "url": "https://mlflow.org/docs/latest/"
+        },
+        {
+          "title": "MLOps Guide",
+          "provider": "Google Cloud",
+          "type": "Guide",
+          "url": "https://cloud.google.com/architecture/mlops-continuous-delivery-and-automation-pipelines-in-machine-learning"
+        }
+      ],
+      "practice_resources": [
+        {
+          "title": "MLflow Tutorials",
+          "provider": "MLflow",
+          "type": "Hands-on",
+          "url": "https://mlflow.org/docs/latest/ml/getting-started/"
+        }
+      ],
+      "paid_resources": [
+        {
+          "title": "Search MLOps Courses",
+          "provider": "Coursera",
+          "url": "https://www.coursera.org/search?query=mlops"
+        }
+      ],
+      "project": {
+        "title": "Production ML Pipeline",
+        "description": "Train, track, package, containerize, deploy, and monitor a machine-learning model.",
+        "deliverables": [
+          "training pipeline",
+          "MLflow tracking",
+          "API",
+          "Dockerfile",
+          "monitoring plan"
+        ]
       }
-    ],
-    "project": "Build a neural-network classification project."
-  },
-  {
-    "skill": "Data Visualization",
-    "topics": [
-      "Chart Selection",
-      "Visual Encoding",
-      "Color and Layout",
-      "Data Storytelling",
-      "Dashboard Design",
-      "Presentation"
-    ],
-    "free_resources": [
-      {
-        "name": "Matplotlib Tutorials",
-        "url": "https://matplotlib.org/stable/tutorials/index.html"
-      },
-      {
-        "name": "Tableau Public",
-        "url": "https://public.tableau.com/"
+    },
+    "Docker": {
+      "category": "DevOps",
+      "level": "Beginner to Intermediate",
+      "estimated_total_hours": 25,
+      "description": "Learn images, containers, Dockerfiles, volumes, networks, Compose, registries, and application packaging.",
+      "topics": [
+        {
+          "id": "docker-1",
+          "title": "Container concepts",
+          "hours": 3
+        },
+        {
+          "id": "docker-2",
+          "title": "Images and containers",
+          "hours": 4
+        },
+        {
+          "id": "docker-3",
+          "title": "Dockerfiles",
+          "hours": 5
+        },
+        {
+          "id": "docker-4",
+          "title": "Volumes and networks",
+          "hours": 4
+        },
+        {
+          "id": "docker-5",
+          "title": "Docker Compose",
+          "hours": 4
+        },
+        {
+          "id": "docker-6",
+          "title": "Registry and deployment basics",
+          "hours": 2
+        },
+        {
+          "id": "docker-7",
+          "title": "Containerized application project",
+          "hours": 3
+        }
+      ],
+      "free_resources": [
+        {
+          "title": "Docker Get Started",
+          "provider": "Docker",
+          "type": "Official Tutorial",
+          "url": "https://docs.docker.com/get-started/"
+        }
+      ],
+      "practice_resources": [
+        {
+          "title": "Play with Docker",
+          "provider": "Docker",
+          "type": "Hands-on",
+          "url": "https://labs.play-with-docker.com/"
+        }
+      ],
+      "paid_resources": [
+        {
+          "title": "Search Docker Courses",
+          "provider": "Udemy",
+          "url": "https://www.udemy.com/courses/search/?q=docker"
+        }
+      ],
+      "project": {
+        "title": "Containerized FastAPI Application",
+        "description": "Package a FastAPI service and its dependencies into a reusable Docker image.",
+        "deliverables": [
+          "Dockerfile",
+          "application",
+          "README",
+          "run instructions"
+        ]
       }
-    ],
-    "practice_resources": [
-      {
-        "name": "Kaggle Data Visualization",
-        "url": "https://www.kaggle.com/learn/data-visualization"
+    },
+    "Generative AI": {
+      "category": "Artificial Intelligence",
+      "level": "Intermediate to Advanced",
+      "estimated_total_hours": 60,
+      "description": "Learn LLM foundations, prompting, embeddings, retrieval, RAG, structured output, agents, evaluation, safety, and production integration.",
+      "topics": [
+        {
+          "id": "genai-1",
+          "title": "LLM and transformer foundations",
+          "hours": 6
+        },
+        {
+          "id": "genai-2",
+          "title": "Prompt engineering",
+          "hours": 6
+        },
+        {
+          "id": "genai-3",
+          "title": "Embeddings and semantic search",
+          "hours": 7
+        },
+        {
+          "id": "genai-4",
+          "title": "Retrieval-Augmented Generation",
+          "hours": 9
+        },
+        {
+          "id": "genai-5",
+          "title": "Structured outputs and tool calling concepts",
+          "hours": 6
+        },
+        {
+          "id": "genai-6",
+          "title": "Agent workflows",
+          "hours": 7
+        },
+        {
+          "id": "genai-7",
+          "title": "LLM evaluation and safety",
+          "hours": 7
+        },
+        {
+          "id": "genai-8",
+          "title": "Generative AI capstone",
+          "hours": 12
+        }
+      ],
+      "free_resources": [
+        {
+          "title": "Hugging Face Course",
+          "provider": "Hugging Face",
+          "type": "Free Course",
+          "url": "https://huggingface.co/learn"
+        },
+        {
+          "title": "Generative AI Learning Path",
+          "provider": "Google Cloud",
+          "type": "Learning Path",
+          "url": "https://www.cloudskillsboost.google/paths/118"
+        }
+      ],
+      "practice_resources": [
+        {
+          "title": "Hugging Face Spaces",
+          "provider": "Hugging Face",
+          "type": "Project Practice",
+          "url": "https://huggingface.co/spaces"
+        }
+      ],
+      "paid_resources": [
+        {
+          "title": "Search Generative AI Courses",
+          "provider": "Coursera",
+          "url": "https://www.coursera.org/search?query=generative%20ai"
+        }
+      ],
+      "project": {
+        "title": "RAG Career Assistant",
+        "description": "Build a retrieval-augmented assistant that answers questions from a controlled career knowledge base.",
+        "deliverables": [
+          "retrieval pipeline",
+          "LLM integration",
+          "evaluation set",
+          "demo",
+          "README"
+        ]
       }
-    ],
-    "paid_resources": [
-      {
-        "name": "Coursera Data Visualization Courses",
-        "url": "https://www.coursera.org/search?query=data%20visualization"
-      },
-      {
-        "name": "Udemy Data Visualization Courses",
-        "url": "https://www.udemy.com/courses/search/?q=data%20visualization"
+    },
+    "NLP": {
+      "category": "Artificial Intelligence",
+      "level": "Intermediate to Advanced",
+      "estimated_total_hours": 45,
+      "description": "Learn text preprocessing, vectorization, embeddings, classification, sequence modeling, transformers, and NLP evaluation.",
+      "topics": [
+        {
+          "id": "nlp-1",
+          "title": "Text preprocessing and tokenization",
+          "hours": 5
+        },
+        {
+          "id": "nlp-2",
+          "title": "Bag-of-words and TF-IDF",
+          "hours": 5
+        },
+        {
+          "id": "nlp-3",
+          "title": "Text classification",
+          "hours": 6
+        },
+        {
+          "id": "nlp-4",
+          "title": "Embeddings",
+          "hours": 6
+        },
+        {
+          "id": "nlp-5",
+          "title": "Sequence models",
+          "hours": 6
+        },
+        {
+          "id": "nlp-6",
+          "title": "Transformers",
+          "hours": 8
+        },
+        {
+          "id": "nlp-7",
+          "title": "Evaluation and error analysis",
+          "hours": 4
+        },
+        {
+          "id": "nlp-8",
+          "title": "NLP capstone",
+          "hours": 5
+        }
+      ],
+      "free_resources": [
+        {
+          "title": "NLP Course",
+          "provider": "Hugging Face",
+          "type": "Free Course",
+          "url": "https://huggingface.co/learn/nlp-course/"
+        }
+      ],
+      "practice_resources": [
+        {
+          "title": "NLP Datasets",
+          "provider": "Kaggle",
+          "type": "Datasets",
+          "url": "https://www.kaggle.com/datasets?search=nlp"
+        }
+      ],
+      "paid_resources": [
+        {
+          "title": "Search NLP Courses",
+          "provider": "Coursera",
+          "url": "https://www.coursera.org/search?query=natural%20language%20processing"
+        }
+      ],
+      "project": {
+        "title": "Support Ticket Classifier",
+        "description": "Build a text-classification system that routes support tickets into predefined categories.",
+        "deliverables": [
+          "dataset pipeline",
+          "baseline model",
+          "advanced model",
+          "evaluation",
+          "demo"
+        ]
       }
-    ],
-    "project": "Create a visual data story from a public dataset."
-  },
-  {
-    "skill": "Generative AI",
-    "topics": [
-      "LLM Fundamentals",
-      "Prompt Engineering",
-      "Embeddings",
-      "RAG",
-      "LLM APIs",
-      "Evaluation"
-    ],
-    "free_resources": [
-      {
-        "name": "Hugging Face Learn",
-        "url": "https://huggingface.co/learn"
+    },
+    "API Development": {
+      "category": "Software Engineering",
+      "level": "Beginner to Intermediate",
+      "estimated_total_hours": 35,
+      "description": "Learn REST principles, HTTP, FastAPI, validation, authentication concepts, testing, documentation, and deployment-ready APIs.",
+      "topics": [
+        {
+          "id": "api-1",
+          "title": "HTTP and REST fundamentals",
+          "hours": 4
+        },
+        {
+          "id": "api-2",
+          "title": "FastAPI basics",
+          "hours": 5
+        },
+        {
+          "id": "api-3",
+          "title": "Request validation and Pydantic",
+          "hours": 5
+        },
+        {
+          "id": "api-4",
+          "title": "CRUD APIs",
+          "hours": 6
+        },
+        {
+          "id": "api-5",
+          "title": "Authentication concepts",
+          "hours": 4
+        },
+        {
+          "id": "api-6",
+          "title": "Testing APIs",
+          "hours": 4
+        },
+        {
+          "id": "api-7",
+          "title": "Documentation and deployment",
+          "hours": 3
+        },
+        {
+          "id": "api-8",
+          "title": "API capstone",
+          "hours": 4
+        }
+      ],
+      "free_resources": [
+        {
+          "title": "FastAPI Tutorial",
+          "provider": "FastAPI",
+          "type": "Official Tutorial",
+          "url": "https://fastapi.tiangolo.com/tutorial/"
+        },
+        {
+          "title": "HTTP Overview",
+          "provider": "MDN",
+          "type": "Reference",
+          "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview"
+        }
+      ],
+      "practice_resources": [
+        {
+          "title": "Postman Learning Center",
+          "provider": "Postman",
+          "type": "Practice",
+          "url": "https://learning.postman.com/"
+        }
+      ],
+      "paid_resources": [
+        {
+          "title": "Search FastAPI Courses",
+          "provider": "Udemy",
+          "url": "https://www.udemy.com/courses/search/?q=fastapi"
+        }
+      ],
+      "project": {
+        "title": "Career Recommendation REST API",
+        "description": "Build a documented FastAPI backend with CRUD endpoints, validation, authentication-ready structure, and tests.",
+        "deliverables": [
+          "FastAPI project",
+          "Swagger docs",
+          "tests",
+          "README"
+        ]
       }
-    ],
-    "practice_resources": [
-      {
-        "name": "Hugging Face Spaces",
-        "url": "https://huggingface.co/spaces"
+    },
+    "A/B Testing": {
+      "category": "Product Analytics",
+      "level": "Intermediate",
+      "estimated_total_hours": 28,
+      "description": "Learn experimental design, hypotheses, metrics, significance, power, sample size, pitfalls, and product experimentation.",
+      "topics": [
+        {
+          "id": "ab-1",
+          "title": "Experimentation foundations",
+          "hours": 3
+        },
+        {
+          "id": "ab-2",
+          "title": "Hypothesis and metric design",
+          "hours": 4
+        },
+        {
+          "id": "ab-3",
+          "title": "Randomization and experiment setup",
+          "hours": 4
+        },
+        {
+          "id": "ab-4",
+          "title": "Statistical significance",
+          "hours": 5
+        },
+        {
+          "id": "ab-5",
+          "title": "Power and sample size concepts",
+          "hours": 4
+        },
+        {
+          "id": "ab-6",
+          "title": "Common experimentation pitfalls",
+          "hours": 3
+        },
+        {
+          "id": "ab-7",
+          "title": "Experiment analysis capstone",
+          "hours": 5
+        }
+      ],
+      "free_resources": [
+        {
+          "title": "Online Experimentation Resources",
+          "provider": "Microsoft Research",
+          "type": "Research Resources",
+          "url": "https://www.microsoft.com/en-us/research/"
+        }
+      ],
+      "practice_resources": [
+        {
+          "title": "Experiment Dataset Practice",
+          "provider": "Kaggle",
+          "type": "Datasets",
+          "url": "https://www.kaggle.com/datasets"
+        }
+      ],
+      "paid_resources": [
+        {
+          "title": "Search A/B Testing Courses",
+          "provider": "Coursera",
+          "url": "https://www.coursera.org/search?query=a%2Fb%20testing"
+        }
+      ],
+      "project": {
+        "title": "Product Experiment Analysis",
+        "description": "Analyze a simulated A/B experiment, define success metrics, test hypotheses, and recommend whether to launch the change.",
+        "deliverables": [
+          "analysis notebook",
+          "statistical test",
+          "decision memo",
+          "visualizations"
+        ]
       }
-    ],
-    "paid_resources": [
-      {
-        "name": "Coursera Generative AI Courses",
-        "url": "https://www.coursera.org/search?query=generative%20ai"
-      },
-      {
-        "name": "Udemy Generative AI Courses",
-        "url": "https://www.udemy.com/courses/search/?q=generative%20ai"
+    },
+    "Product Analytics": {
+      "category": "Product Analytics",
+      "level": "Intermediate",
+      "estimated_total_hours": 35,
+      "description": "Learn funnels, cohorts, retention, activation, engagement, product metrics, event data, and product decision-making.",
+      "topics": [
+        {
+          "id": "pa-1",
+          "title": "Product analytics foundations",
+          "hours": 4
+        },
+        {
+          "id": "pa-2",
+          "title": "Event data and tracking plans",
+          "hours": 5
+        },
+        {
+          "id": "pa-3",
+          "title": "Funnels and conversion",
+          "hours": 5
+        },
+        {
+          "id": "pa-4",
+          "title": "Cohorts and retention",
+          "hours": 5
+        },
+        {
+          "id": "pa-5",
+          "title": "Activation and engagement metrics",
+          "hours": 5
+        },
+        {
+          "id": "pa-6",
+          "title": "North-star metrics",
+          "hours": 4
+        },
+        {
+          "id": "pa-7",
+          "title": "Product analytics case study",
+          "hours": 7
+        }
+      ],
+      "free_resources": [
+        {
+          "title": "Product Analytics Resources",
+          "provider": "Amplitude",
+          "type": "Learning",
+          "url": "https://amplitude.com/academy"
+        }
+      ],
+      "practice_resources": [
+        {
+          "title": "Product Analytics Datasets",
+          "provider": "Kaggle",
+          "type": "Datasets",
+          "url": "https://www.kaggle.com/datasets"
+        }
+      ],
+      "paid_resources": [
+        {
+          "title": "Search Product Analytics Courses",
+          "provider": "Coursera",
+          "url": "https://www.coursera.org/search?query=product%20analytics"
+        }
+      ],
+      "project": {
+        "title": "User Funnel and Retention Analysis",
+        "description": "Analyze user events to measure acquisition, activation, conversion, retention, and churn.",
+        "deliverables": [
+          "SQL analysis",
+          "cohort table",
+          "funnel dashboard",
+          "product recommendations"
+        ]
       }
-    ],
-    "project": "Build a small AI assistant using an LLM API or open-source model."
-  },
-  {
-    "skill": "APIs",
-    "topics": [
-      "HTTP Fundamentals",
-      "REST APIs",
-      "Requests and Responses",
-      "Authentication",
-      "FastAPI",
-      "API Testing"
-    ],
-    "free_resources": [
-      {
-        "name": "FastAPI Tutorial",
-        "url": "https://fastapi.tiangolo.com/tutorial/"
-      },
-      {
-        "name": "MDN HTTP Overview",
-        "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview"
+    },
+    "Marketing Analytics": {
+      "category": "Marketing",
+      "level": "Beginner to Advanced",
+      "estimated_total_hours": 35,
+      "description": "Learn campaign measurement, customer segmentation, acquisition metrics, conversion, ROI, attribution concepts, and marketing dashboards.",
+      "topics": [
+        {
+          "id": "ma-1",
+          "title": "Marketing metrics and funnel",
+          "hours": 4
+        },
+        {
+          "id": "ma-2",
+          "title": "Acquisition and conversion analysis",
+          "hours": 5
+        },
+        {
+          "id": "ma-3",
+          "title": "Customer segmentation",
+          "hours": 5
+        },
+        {
+          "id": "ma-4",
+          "title": "Campaign ROI",
+          "hours": 5
+        },
+        {
+          "id": "ma-5",
+          "title": "Attribution concepts",
+          "hours": 5
+        },
+        {
+          "id": "ma-6",
+          "title": "Customer lifetime value concepts",
+          "hours": 4
+        },
+        {
+          "id": "ma-7",
+          "title": "Marketing dashboard capstone",
+          "hours": 7
+        }
+      ],
+      "free_resources": [
+        {
+          "title": "Google Analytics Learning",
+          "provider": "Google",
+          "type": "Learning",
+          "url": "https://support.google.com/analytics/"
+        }
+      ],
+      "practice_resources": [
+        {
+          "title": "Marketing Datasets",
+          "provider": "Kaggle",
+          "type": "Datasets",
+          "url": "https://www.kaggle.com/datasets?search=marketing"
+        }
+      ],
+      "paid_resources": [
+        {
+          "title": "Search Marketing Analytics Courses",
+          "provider": "Coursera",
+          "url": "https://www.coursera.org/search?query=marketing%20analytics"
+        }
+      ],
+      "project": {
+        "title": "Multi-Channel Campaign Performance Analysis",
+        "description": "Compare marketing channels using conversion, CAC, revenue, ROI, and customer-segment performance.",
+        "deliverables": [
+          "analysis",
+          "dashboard",
+          "channel comparison",
+          "recommendations"
+        ]
       }
-    ],
-    "practice_resources": [
-      {
-        "name": "Postman Learning Center",
-        "url": "https://learning.postman.com/"
+    },
+    "Google Analytics": {
+      "category": "Marketing",
+      "level": "Beginner to Intermediate",
+      "estimated_total_hours": 22,
+      "description": "Learn digital analytics concepts, events, conversions, traffic acquisition, user behavior, reports, and measurement planning.",
+      "topics": [
+        {
+          "id": "ga-1",
+          "title": "Digital analytics foundations",
+          "hours": 3
+        },
+        {
+          "id": "ga-2",
+          "title": "GA4 account and event concepts",
+          "hours": 4
+        },
+        {
+          "id": "ga-3",
+          "title": "Acquisition reporting",
+          "hours": 3
+        },
+        {
+          "id": "ga-4",
+          "title": "Engagement and conversion",
+          "hours": 4
+        },
+        {
+          "id": "ga-5",
+          "title": "Audience analysis",
+          "hours": 3
+        },
+        {
+          "id": "ga-6",
+          "title": "Measurement plan",
+          "hours": 2
+        },
+        {
+          "id": "ga-7",
+          "title": "Digital analytics capstone",
+          "hours": 3
+        }
+      ],
+      "free_resources": [
+        {
+          "title": "Google Analytics Help",
+          "provider": "Google",
+          "type": "Official Learning",
+          "url": "https://support.google.com/analytics/"
+        }
+      ],
+      "practice_resources": [
+        {
+          "title": "Google Analytics Demo Account",
+          "provider": "Google",
+          "type": "Practice",
+          "url": "https://support.google.com/analytics/answer/6367342"
+        }
+      ],
+      "paid_resources": [
+        {
+          "title": "Search Google Analytics Courses",
+          "provider": "Udemy",
+          "url": "https://www.udemy.com/courses/search/?q=google%20analytics"
+        }
+      ],
+      "project": {
+        "title": "Website Measurement Plan",
+        "description": "Create a digital measurement plan with business objectives, events, conversions, traffic KPIs, and dashboard requirements.",
+        "deliverables": [
+          "measurement plan",
+          "event taxonomy",
+          "KPI list",
+          "dashboard mockup"
+        ]
       }
-    ],
-    "paid_resources": [
-      {
-        "name": "Coursera API Courses",
-        "url": "https://www.coursera.org/search?query=api"
-      },
-      {
-        "name": "Udemy REST API Courses",
-        "url": "https://www.udemy.com/courses/search/?q=rest%20api"
+    },
+    "Requirements Engineering": {
+      "category": "Business Analysis",
+      "level": "Intermediate",
+      "estimated_total_hours": 30,
+      "description": "Learn requirements elicitation, analysis, documentation, acceptance criteria, prioritization, traceability, and change management.",
+      "topics": [
+        {
+          "id": "req-1",
+          "title": "Requirements lifecycle",
+          "hours": 4
+        },
+        {
+          "id": "req-2",
+          "title": "Elicitation techniques",
+          "hours": 5
+        },
+        {
+          "id": "req-3",
+          "title": "User stories and use cases",
+          "hours": 5
+        },
+        {
+          "id": "req-4",
+          "title": "Functional and non-functional requirements",
+          "hours": 5
+        },
+        {
+          "id": "req-5",
+          "title": "Prioritization and acceptance criteria",
+          "hours": 4
+        },
+        {
+          "id": "req-6",
+          "title": "Traceability and change control",
+          "hours": 3
+        },
+        {
+          "id": "req-7",
+          "title": "Requirements capstone",
+          "hours": 4
+        }
+      ],
+      "free_resources": [
+        {
+          "title": "Business Analysis Knowledge Resources",
+          "provider": "IIBA",
+          "type": "Reference",
+          "url": "https://www.iiba.org/"
+        }
+      ],
+      "practice_resources": [
+        {
+          "title": "Atlassian User Stories Guide",
+          "provider": "Atlassian",
+          "type": "Practice Guide",
+          "url": "https://www.atlassian.com/agile/project-management/user-stories"
+        }
+      ],
+      "paid_resources": [
+        {
+          "title": "Search Requirements Engineering Courses",
+          "provider": "Coursera",
+          "url": "https://www.coursera.org/search?query=requirements%20engineering"
+        }
+      ],
+      "project": {
+        "title": "Career Platform Requirements Specification",
+        "description": "Create a structured requirements document for a career-guidance platform with users, workflows, acceptance criteria, and non-functional requirements.",
+        "deliverables": [
+          "SRS",
+          "user stories",
+          "acceptance criteria",
+          "traceability matrix"
+        ]
       }
-    ],
-    "project": "Build a REST API for a small career or skills dataset."
-  },
-  {
-    "skill": "MLOps",
-    "topics": [
-      "Experiment Tracking",
-      "Model Packaging",
-      "Docker",
-      "CI/CD",
-      "Model Deployment",
-      "Monitoring"
-    ],
-    "free_resources": [
-      {
-        "name": "MLflow Documentation",
-        "url": "https://mlflow.org/docs/latest/index.html"
-      },
-      {
-        "name": "Docker Get Started",
-        "url": "https://docs.docker.com/get-started/"
+    },
+    "Process Modeling": {
+      "category": "Business Analysis",
+      "level": "Beginner to Intermediate",
+      "estimated_total_hours": 24,
+      "description": "Learn process discovery, flowcharts, BPMN concepts, current-state and future-state analysis, bottlenecks, and process improvement.",
+      "topics": [
+        {
+          "id": "pm-1",
+          "title": "Process thinking fundamentals",
+          "hours": 3
+        },
+        {
+          "id": "pm-2",
+          "title": "Flowcharts",
+          "hours": 4
+        },
+        {
+          "id": "pm-3",
+          "title": "BPMN basics",
+          "hours": 4
+        },
+        {
+          "id": "pm-4",
+          "title": "As-is process modeling",
+          "hours": 4
+        },
+        {
+          "id": "pm-5",
+          "title": "Bottleneck and root-cause analysis",
+          "hours": 3
+        },
+        {
+          "id": "pm-6",
+          "title": "To-be process design",
+          "hours": 3
+        },
+        {
+          "id": "pm-7",
+          "title": "Process improvement project",
+          "hours": 3
+        }
+      ],
+      "free_resources": [
+        {
+          "title": "BPMN Resources",
+          "provider": "Camunda",
+          "type": "Learning",
+          "url": "https://camunda.com/bpmn/"
+        }
+      ],
+      "practice_resources": [
+        {
+          "title": "diagrams.net",
+          "provider": "diagrams.net",
+          "type": "Diagram Tool",
+          "url": "https://www.diagrams.net/"
+        }
+      ],
+      "paid_resources": [
+        {
+          "title": "Search BPMN Courses",
+          "provider": "Udemy",
+          "url": "https://www.udemy.com/courses/search/?q=bpmn"
+        }
+      ],
+      "project": {
+        "title": "University Registration Process Redesign",
+        "description": "Model the current registration process, identify bottlenecks, and design an improved future-state workflow.",
+        "deliverables": [
+          "as-is diagram",
+          "problem analysis",
+          "to-be diagram",
+          "improvement recommendations"
+        ]
       }
-    ],
-    "practice_resources": [
-      {
-        "name": "GitHub Actions Documentation",
-        "url": "https://docs.github.com/actions"
+    },
+    "Problem Solving": {
+      "category": "Professional Skills",
+      "level": "Beginner to Advanced",
+      "estimated_total_hours": 28,
+      "description": "Develop structured problem decomposition, root-cause analysis, prioritization, estimation, decision-making, and analytical reasoning.",
+      "topics": [
+        {
+          "id": "ps-1",
+          "title": "Problem framing",
+          "hours": 4
+        },
+        {
+          "id": "ps-2",
+          "title": "Decomposition and issue trees",
+          "hours": 4
+        },
+        {
+          "id": "ps-3",
+          "title": "Root-cause analysis",
+          "hours": 4
+        },
+        {
+          "id": "ps-4",
+          "title": "Prioritization",
+          "hours": 4
+        },
+        {
+          "id": "ps-5",
+          "title": "Hypothesis-driven thinking",
+          "hours": 4
+        },
+        {
+          "id": "ps-6",
+          "title": "Decision matrices and trade-offs",
+          "hours": 3
+        },
+        {
+          "id": "ps-7",
+          "title": "Case-solving capstone",
+          "hours": 5
+        }
+      ],
+      "free_resources": [
+        {
+          "title": "Problem Solving Resources",
+          "provider": "MindTools",
+          "type": "Reference",
+          "url": "https://www.mindtools.com/"
+        }
+      ],
+      "practice_resources": [
+        {
+          "title": "Case Interview Practice",
+          "provider": "Case Interview",
+          "type": "Practice",
+          "url": "https://www.caseinterview.com/"
+        }
+      ],
+      "paid_resources": [
+        {
+          "title": "Search Problem Solving Courses",
+          "provider": "Coursera",
+          "url": "https://www.coursera.org/search?query=problem%20solving"
+        }
+      ],
+      "project": {
+        "title": "Structured Business Problem Case",
+        "description": "Solve a realistic ambiguous business problem using decomposition, hypotheses, data, prioritization, and recommendation.",
+        "deliverables": [
+          "problem tree",
+          "analysis",
+          "decision framework",
+          "recommendation"
+        ]
       }
-    ],
-    "paid_resources": [
-      {
-        "name": "Coursera MLOps Courses",
-        "url": "https://www.coursera.org/search?query=mlops"
-      },
-      {
-        "name": "Udemy MLOps Courses",
-        "url": "https://www.udemy.com/courses/search/?q=mlops"
+    },
+    "Data Governance": {
+      "category": "Data Architecture",
+      "level": "Intermediate to Advanced",
+      "estimated_total_hours": 35,
+      "description": "Learn data ownership, quality, lineage, metadata, security, privacy, stewardship, policies, and governance operating models.",
+      "topics": [
+        {
+          "id": "dg-1",
+          "title": "Governance fundamentals",
+          "hours": 4
+        },
+        {
+          "id": "dg-2",
+          "title": "Data ownership and stewardship",
+          "hours": 4
+        },
+        {
+          "id": "dg-3",
+          "title": "Data quality",
+          "hours": 5
+        },
+        {
+          "id": "dg-4",
+          "title": "Metadata and catalog concepts",
+          "hours": 5
+        },
+        {
+          "id": "dg-5",
+          "title": "Data lineage",
+          "hours": 4
+        },
+        {
+          "id": "dg-6",
+          "title": "Security and privacy principles",
+          "hours": 5
+        },
+        {
+          "id": "dg-7",
+          "title": "Policies and governance operating model",
+          "hours": 4
+        },
+        {
+          "id": "dg-8",
+          "title": "Governance capstone",
+          "hours": 4
+        }
+      ],
+      "free_resources": [
+        {
+          "title": "Data Management Resources",
+          "provider": "DAMA International",
+          "type": "Reference",
+          "url": "https://www.dama.org/"
+        }
+      ],
+      "practice_resources": [
+        {
+          "title": "Data Governance Framework Exercise",
+          "provider": "NEXTPATH Project",
+          "type": "Project Practice",
+          "url": "https://github.com/"
+        }
+      ],
+      "paid_resources": [
+        {
+          "title": "Search Data Governance Courses",
+          "provider": "Coursera",
+          "url": "https://www.coursera.org/search?query=data%20governance"
+        }
+      ],
+      "project": {
+        "title": "Student Data Governance Framework",
+        "description": "Design a governance framework for academic and career data covering owners, quality rules, access, privacy, lineage, and retention.",
+        "deliverables": [
+          "governance policy",
+          "data ownership matrix",
+          "quality rules",
+          "lineage diagram"
+        ]
       }
-    ],
-    "project": "Package and deploy a machine-learning model with version tracking."
-  },
-  {
-    "skill": "Cloud",
-    "topics": [
-      "Cloud Fundamentals",
-      "Compute",
-      "Storage",
-      "Databases",
-      "Identity and Access",
-      "Deployment"
-    ],
-    "free_resources": [
-      {
-        "name": "AWS Skill Builder",
-        "url": "https://skillbuilder.aws/"
-      },
-      {
-        "name": "Microsoft Learn Azure",
-        "url": "https://learn.microsoft.com/azure/"
+    },
+    "System Design": {
+      "category": "Software & Architecture",
+      "level": "Intermediate to Advanced",
+      "estimated_total_hours": 50,
+      "description": "Learn scalable architecture, APIs, databases, caching, queues, reliability, security, trade-offs, and distributed-system design.",
+      "topics": [
+        {
+          "id": "sd-1",
+          "title": "System design fundamentals",
+          "hours": 5
+        },
+        {
+          "id": "sd-2",
+          "title": "Requirements and capacity thinking",
+          "hours": 5
+        },
+        {
+          "id": "sd-3",
+          "title": "APIs and service boundaries",
+          "hours": 6
+        },
+        {
+          "id": "sd-4",
+          "title": "Databases and storage choices",
+          "hours": 7
+        },
+        {
+          "id": "sd-5",
+          "title": "Caching and queues",
+          "hours": 6
+        },
+        {
+          "id": "sd-6",
+          "title": "Scaling and load balancing",
+          "hours": 6
+        },
+        {
+          "id": "sd-7",
+          "title": "Reliability and observability",
+          "hours": 5
+        },
+        {
+          "id": "sd-8",
+          "title": "Security and trade-offs",
+          "hours": 4
+        },
+        {
+          "id": "sd-9",
+          "title": "Architecture capstone",
+          "hours": 6
+        }
+      ],
+      "free_resources": [
+        {
+          "title": "System Design Primer",
+          "provider": "GitHub",
+          "type": "Open Resource",
+          "url": "https://github.com/donnemartin/system-design-primer"
+        }
+      ],
+      "practice_resources": [
+        {
+          "title": "Architecture Katas",
+          "provider": "nealford.com",
+          "type": "Practice",
+          "url": "https://nealford.com/katas/"
+        }
+      ],
+      "paid_resources": [
+        {
+          "title": "Search System Design Courses",
+          "provider": "Udemy",
+          "url": "https://www.udemy.com/courses/search/?q=system%20design"
+        }
+      ],
+      "project": {
+        "title": "NEXTPATH System Architecture",
+        "description": "Design a scalable architecture for NEXTPATH covering authentication, profiles, assessments, roadmap, certificates, storage, APIs, and deployment.",
+        "deliverables": [
+          "architecture diagram",
+          "API boundaries",
+          "database choices",
+          "scaling notes",
+          "trade-off document"
+        ]
       }
-    ],
-    "practice_resources": [
-      {
-        "name": "AWS Free Tier",
-        "url": "https://aws.amazon.com/free/"
+    },
+    "Leadership": {
+      "category": "Professional Skills",
+      "level": "Intermediate to Advanced",
+      "estimated_total_hours": 24,
+      "description": "Develop mentoring, delegation, feedback, prioritization, stakeholder alignment, decision-making, and team leadership skills.",
+      "topics": [
+        {
+          "id": "lead-1",
+          "title": "Leadership foundations",
+          "hours": 3
+        },
+        {
+          "id": "lead-2",
+          "title": "Delegation and ownership",
+          "hours": 3
+        },
+        {
+          "id": "lead-3",
+          "title": "Feedback and coaching",
+          "hours": 4
+        },
+        {
+          "id": "lead-4",
+          "title": "Prioritization and decision-making",
+          "hours": 4
+        },
+        {
+          "id": "lead-5",
+          "title": "Conflict and stakeholder alignment",
+          "hours": 4
+        },
+        {
+          "id": "lead-6",
+          "title": "Mentoring and team growth",
+          "hours": 3
+        },
+        {
+          "id": "lead-7",
+          "title": "Leadership reflection project",
+          "hours": 3
+        }
+      ],
+      "free_resources": [
+        {
+          "title": "Leadership Resources",
+          "provider": "OpenLearn",
+          "type": "Free Learning",
+          "url": "https://www.open.edu/openlearn/money-business/leadership-management"
+        }
+      ],
+      "practice_resources": [
+        {
+          "title": "Leadership Reflection Exercises",
+          "provider": "MindTools",
+          "type": "Practice",
+          "url": "https://www.mindtools.com/"
+        }
+      ],
+      "paid_resources": [
+        {
+          "title": "Search Leadership Courses",
+          "provider": "Coursera",
+          "url": "https://www.coursera.org/search?query=leadership"
+        }
+      ],
+      "project": {
+        "title": "Team Leadership Plan",
+        "description": "Create a leadership plan for a small analytics or AI project team covering goals, roles, feedback, milestones, and risks.",
+        "deliverables": [
+          "team charter",
+          "responsibility matrix",
+          "feedback plan",
+          "retrospective"
+        ]
       }
-    ],
-    "paid_resources": [
-      {
-        "name": "Coursera Cloud Courses",
-        "url": "https://www.coursera.org/search?query=cloud%20computing"
-      },
-      {
-        "name": "Udemy Cloud Courses",
-        "url": "https://www.udemy.com/courses/search/?q=cloud%20computing"
-      }
-    ],
-    "project": "Deploy a small web service or API to a cloud platform."
-  },
-  {
-    "skill": "ETL",
-    "topics": [
-      "Extract",
-      "Transform",
-      "Load",
-      "Data Cleaning",
-      "Scheduling",
-      "Pipeline Validation"
-    ],
-    "free_resources": [
-      {
-        "name": "Apache Airflow Tutorial",
-        "url": "https://airflow.apache.org/docs/apache-airflow/stable/tutorial/index.html"
-      }
-    ],
-    "practice_resources": [
-      {
-        "name": "Data Engineering Zoomcamp",
-        "url": "https://github.com/DataTalksClub/data-engineering-zoomcamp"
-      }
-    ],
-    "paid_resources": [
-      {
-        "name": "Coursera ETL Courses",
-        "url": "https://www.coursera.org/search?query=etl"
-      },
-      {
-        "name": "Udemy ETL Courses",
-        "url": "https://www.udemy.com/courses/search/?q=etl"
-      }
-    ],
-    "project": "Build an ETL pipeline that cleans a CSV and loads it into a database."
-  },
-  {
-    "skill": "Data Pipelines",
-    "topics": [
-      "Pipeline Design",
-      "Scheduling",
-      "Orchestration",
-      "Retries",
-      "Logging",
-      "Monitoring"
-    ],
-    "free_resources": [
-      {
-        "name": "Apache Airflow Documentation",
-        "url": "https://airflow.apache.org/docs/"
-      }
-    ],
-    "practice_resources": [
-      {
-        "name": "Data Engineering Zoomcamp",
-        "url": "https://github.com/DataTalksClub/data-engineering-zoomcamp"
-      }
-    ],
-    "paid_resources": [
-      {
-        "name": "Coursera Data Engineering Courses",
-        "url": "https://www.coursera.org/search?query=data%20engineering"
-      },
-      {
-        "name": "Udemy Data Pipeline Courses",
-        "url": "https://www.udemy.com/courses/search/?q=data%20pipeline"
-      }
-    ],
-    "project": "Build and schedule a small end-to-end data pipeline."
-  },
-  {
-    "skill": "Big Data",
-    "topics": [
-      "Distributed Computing",
-      "Spark Fundamentals",
-      "DataFrames",
-      "Transformations",
-      "Actions",
-      "Performance Basics"
-    ],
-    "free_resources": [
-      {
-        "name": "Apache Spark Quick Start",
-        "url": "https://spark.apache.org/docs/latest/quick-start.html"
-      },
-      {
-        "name": "Databricks Learning",
-        "url": "https://www.databricks.com/learn"
-      }
-    ],
-    "practice_resources": [
-      {
-        "name": "Kaggle Datasets",
-        "url": "https://www.kaggle.com/datasets"
-      }
-    ],
-    "paid_resources": [
-      {
-        "name": "Coursera Big Data Courses",
-        "url": "https://www.coursera.org/search?query=big%20data"
-      },
-      {
-        "name": "Udemy Spark Courses",
-        "url": "https://www.udemy.com/courses/search/?q=apache%20spark"
-      }
-    ],
-    "project": "Process a large dataset using Spark and summarize the results."
-  },
-  {
-    "skill": "Data Modeling",
-    "topics": [
-      "Entities and Relationships",
-      "Keys",
-      "Normalization",
-      "Dimensional Modeling",
-      "Star Schema",
-      "ER Diagrams"
-    ],
-    "free_resources": [
-      {
-        "name": "PostgreSQL Data Definition",
-        "url": "https://www.postgresql.org/docs/current/ddl.html"
-      },
-      {
-        "name": "dbdiagram.io",
-        "url": "https://dbdiagram.io/"
-      }
-    ],
-    "practice_resources": [
-      {
-        "name": "SQLBolt",
-        "url": "https://sqlbolt.com/"
-      }
-    ],
-    "paid_resources": [
-      {
-        "name": "Coursera Data Modeling Courses",
-        "url": "https://www.coursera.org/search?query=data%20modeling"
-      },
-      {
-        "name": "Udemy Database Design Courses",
-        "url": "https://www.udemy.com/courses/search/?q=database%20design"
-      }
-    ],
-    "project": "Design an ER model and star schema for a business scenario."
-  },
-  {
-    "skill": "Business Analysis",
-    "topics": [
-      "Requirements",
-      "Stakeholder Analysis",
-      "Process Mapping",
-      "KPIs",
-      "Gap Analysis",
-      "Documentation"
-    ],
-    "free_resources": [
-      {
-        "name": "IIBA Business Analysis Resources",
-        "url": "https://www.iiba.org/business-analysis-resources/"
-      }
-    ],
-    "practice_resources": [
-      {
-        "name": "Business Analysis Case Studies",
-        "url": "https://www.google.com/search?q=business+analysis+case+study+practice"
-      }
-    ],
-    "paid_resources": [
-      {
-        "name": "Coursera Business Analysis Courses",
-        "url": "https://www.coursera.org/search?query=business%20analysis"
-      },
-      {
-        "name": "Udemy Business Analysis Courses",
-        "url": "https://www.udemy.com/courses/search/?q=business%20analysis"
-      }
-    ],
-    "project": "Create a business requirements document and process map for a simple case."
-  },
-  {
-    "skill": "Communication",
-    "topics": [
-      "Clear Writing",
-      "Presentation Structure",
-      "Data Storytelling",
-      "Explaining Technical Work",
-      "Interview Communication"
-    ],
-    "free_resources": [
-      {
-        "name": "Toastmasters Resources",
-        "url": "https://www.toastmasters.org/resources"
-      },
-      {
-        "name": "Purdue OWL",
-        "url": "https://owl.purdue.edu/"
-      }
-    ],
-    "practice_resources": [
-      {
-        "name": "Technical Presentation Practice",
-        "url": "https://www.google.com/search?q=technical+presentation+practice"
-      }
-    ],
-    "paid_resources": [
-      {
-        "name": "Coursera Communication Courses",
-        "url": "https://www.coursera.org/search?query=communication%20skills"
-      },
-      {
-        "name": "Udemy Communication Courses",
-        "url": "https://www.udemy.com/courses/search/?q=communication%20skills"
-      }
-    ],
-    "project": "Prepare and deliver a 3-minute explanation of one technical project."
+    }
   }
-]
+}

@@ -1,184 +1,512 @@
-.counter {
-  font-size: 16px;
-  padding: 5px 10px;
-  border-radius: 5px;
-  color: var(--accent);
-  background: var(--accent-bg);
-  border: 2px solid transparent;
-  transition: border-color 0.3s;
-  margin-bottom: 24px;
+:root {
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
 
-  &:hover {
-    border-color: var(--accent-border);
-  }
-  &:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 2px;
-  }
+  color: #0f172a;
+  background: #f8fafc;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --surface-soft: #f1f5f9;
+
+  --text: #0f172a;
+  --muted: #64748b;
+  --muted-light: #94a3b8;
+
+  --border: #e2e8f0;
+  --border-strong: #cbd5e1;
+
+  --primary: #2563eb;
+  --primary-dark: #1d4ed8;
+  --primary-soft: #eff6ff;
+
+  --success: #16a34a;
+  --warning: #ca8a04;
+  --danger: #dc2626;
+  --purple: #7c3aed;
+
+  --shadow-sm:
+    0 4px 14px rgba(15, 23, 42, 0.04);
+
+  --shadow-md:
+    0 14px 40px rgba(15, 23, 42, 0.07);
+
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
+
+  --sidebar-width: 250px;
 }
 
-.hero {
-  position: relative;
-
-  .base,
-  .framework,
-  .vite {
-    inset-inline: 0;
-    margin: 0 auto;
-  }
-
-  .base {
-    width: 170px;
-    position: relative;
-    z-index: 0;
-  }
-
-  .framework,
-  .vite {
-    position: absolute;
-  }
-
-  .framework {
-    z-index: 1;
-    top: 34px;
-    height: 28px;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg)
-      scale(1.4);
-  }
-
-  .vite {
-    z-index: 0;
-    top: 107px;
-    height: 26px;
-    width: auto;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg)
-      scale(0.8);
-  }
+* {
+  box-sizing: border-box;
 }
 
-#center {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-  place-content: center;
-  place-items: center;
-  flex-grow: 1;
-
-  @media (max-width: 1024px) {
-    padding: 32px 20px 24px;
-    gap: 18px;
-  }
+html {
+  min-width: 320px;
+  min-height: 100%;
+  background: var(--bg);
 }
 
-#next-steps {
-  display: flex;
-  border-top: 1px solid var(--border);
-  text-align: left;
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
 
-  & > div {
-    flex: 1 1 0;
-    padding: 32px;
-    @media (max-width: 1024px) {
-      padding: 24px 20px;
-    }
-  }
+  background:
+    radial-gradient(
+      circle at top right,
+      rgba(37, 99, 235, 0.035),
+      transparent 28%
+    ),
+    var(--bg);
 
-  .icon {
-    margin-bottom: 16px;
-    width: 22px;
-    height: 22px;
-  }
-
-  @media (max-width: 1024px) {
-    flex-direction: column;
-    text-align: center;
-  }
+  color: var(--text);
 }
 
-#docs {
-  border-right: 1px solid var(--border);
-
-  @media (max-width: 1024px) {
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-  }
+body,
+button,
+input,
+textarea,
+select {
+  font-family: inherit;
 }
 
-#next-steps ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
+button,
+input,
+textarea,
+select {
+  font-size: inherit;
+}
+
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid rgba(37, 99, 235, 0.18);
+  outline-offset: 2px;
+}
+
+a {
+  color: inherit;
+}
+
+img {
+  max-width: 100%;
+}
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* =========================================================
+   APPLICATION SHELL
+   ========================================================= */
+
+.app-shell {
+  width: 100%;
+  min-height: 100vh;
+
+  display: grid;
+  grid-template-columns:
+    var(--sidebar-width)
+    minmax(0, 1fr);
+
+  background: var(--bg);
+}
+
+.app-main {
+  min-width: 0;
+  min-height: 100vh;
+
+  overflow-x: hidden;
+}
+
+/* =========================================================
+   SHARED CARD
+   ========================================================= */
+
+.app-card {
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+
+  background: var(--surface);
+
+  box-shadow: var(--shadow-sm);
+}
+
+/* =========================================================
+   SHARED TEXT UTILITIES
+   ========================================================= */
+
+.app-muted {
+  color: var(--muted);
+}
+
+.app-text-light {
+  color: var(--muted-light);
+}
+
+.app-success {
+  color: var(--success);
+}
+
+.app-danger {
+  color: var(--danger);
+}
+
+.app-warning {
+  color: var(--warning);
+}
+
+.app-primary {
+  color: var(--primary);
+}
+
+/* =========================================================
+   SHARED BUTTONS
+   ========================================================= */
+
+.app-primary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   gap: 8px;
-  margin: 32px 0 0;
 
-  .logo {
-    height: 18px;
-  }
+  min-height: 40px;
 
-  a {
-    color: var(--text-h);
-    font-size: 16px;
-    border-radius: 6px;
-    background: var(--social-bg);
-    display: flex;
-    padding: 6px 12px;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    transition: box-shadow 0.3s;
+  padding: 9px 14px;
 
-    &:hover {
-      box-shadow: var(--shadow);
-    }
-    .button-icon {
-      height: 18px;
-      width: 18px;
-    }
-  }
+  border: 1px solid var(--primary);
+  border-radius: var(--radius-sm);
 
-  @media (max-width: 1024px) {
-    margin-top: 20px;
-    flex-wrap: wrap;
-    justify-content: center;
+  background: var(--primary);
+  color: #ffffff;
 
-    li {
-      flex: 1 1 calc(50% - 8px);
-    }
+  font-weight: 800;
 
-    a {
-      width: 100%;
-      justify-content: center;
-      box-sizing: border-box;
-    }
-  }
+  cursor: pointer;
+
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    background 0.15s ease;
 }
 
-#spacer {
-  height: 88px;
-  border-top: 1px solid var(--border);
-  @media (max-width: 1024px) {
-    height: 48px;
-  }
+.app-primary-button:hover {
+  transform: translateY(-1px);
+
+  background: var(--primary-dark);
+
+  box-shadow:
+    0 8px 22px rgba(37, 99, 235, 0.18);
 }
 
-.ticks {
-  position: relative;
+.app-primary-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.app-secondary-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  min-height: 40px;
+
+  padding: 9px 14px;
+
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+
+  background: var(--surface);
+  color: #334155;
+
+  font-weight: 800;
+
+  cursor: pointer;
+
+  transition:
+    background 0.15s ease,
+    border-color 0.15s ease,
+    transform 0.15s ease;
+}
+
+.app-secondary-button:hover {
+  background: var(--surface-soft);
+  border-color: #94a3b8;
+  transform: translateY(-1px);
+}
+
+.app-danger-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+
+  min-height: 40px;
+
+  padding: 9px 14px;
+
+  border: 1px solid #fecaca;
+  border-radius: var(--radius-sm);
+
+  background: #ffffff;
+  color: #b91c1c;
+
+  font-weight: 800;
+
+  cursor: pointer;
+}
+
+.app-danger-button:hover {
+  background: #fef2f2;
+}
+
+/* =========================================================
+   SHARED INPUTS
+   ========================================================= */
+
+.app-input,
+.app-select,
+.app-textarea {
   width: 100%;
 
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    top: -4.5px;
-    border: 5px solid transparent;
+  padding: 10px 12px;
+
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+
+  background: #ffffff;
+  color: var(--text);
+
+  outline: none;
+
+  transition:
+    border-color 0.15s ease,
+    box-shadow 0.15s ease;
+}
+
+.app-input:focus,
+.app-select:focus,
+.app-textarea:focus {
+  border-color: var(--primary);
+
+  box-shadow:
+    0 0 0 3px rgba(37, 99, 235, 0.08);
+}
+
+.app-textarea {
+  resize: vertical;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   SHARED BADGES
+   ========================================================= */
+
+.app-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+
+  padding: 5px 8px;
+
+  border-radius: 999px;
+
+  background: var(--surface-soft);
+  color: #475569;
+
+  font-size: 8px;
+  font-weight: 800;
+}
+
+.app-badge.success {
+  background: #dcfce7;
+  color: #166534;
+}
+
+.app-badge.warning {
+  background: #fef3c7;
+  color: #92400e;
+}
+
+.app-badge.danger {
+  background: #fee2e2;
+  color: #991b1b;
+}
+
+.app-badge.primary {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.app-badge.purple {
+  background: #ede9fe;
+  color: #6d28d9;
+}
+
+/* =========================================================
+   COMMON PANELS
+   ========================================================= */
+
+.app-panel {
+  padding: 18px;
+
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+
+  background: #ffffff;
+
+  box-shadow:
+    0 8px 24px rgba(15, 23, 42, 0.025);
+}
+
+.app-section-title {
+  margin: 0;
+
+  font-size: 18px;
+  font-weight: 800;
+
+  color: var(--text);
+}
+
+.app-section-subtitle {
+  margin: 4px 0 0;
+
+  color: var(--muted);
+
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   EMPTY STATE
+   ========================================================= */
+
+.app-empty-state {
+  padding: 28px;
+
+  border: 1px dashed var(--border-strong);
+  border-radius: var(--radius-md);
+
+  background: var(--surface-soft);
+
+  text-align: center;
+}
+
+.app-empty-state h3 {
+  margin: 8px 0;
+}
+
+.app-empty-state p {
+  max-width: 520px;
+  margin: 0 auto;
+
+  color: var(--muted);
+
+  font-size: 9px;
+  line-height: 1.5;
+}
+
+/* =========================================================
+   SCROLLBARS
+   ========================================================= */
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color:
+    #cbd5e1
+    transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 9px;
+  height: 9px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  border: 2px solid transparent;
+  border-radius: 999px;
+
+  background-clip: padding-box;
+  background-color: #cbd5e1;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #94a3b8;
+}
+
+/* =========================================================
+   TEXT SELECTION
+   ========================================================= */
+
+::selection {
+  background: rgba(37, 99, 235, 0.18);
+  color: #0f172a;
+}
+
+/* =========================================================
+   RESPONSIVE APP SHELL
+   ========================================================= */
+
+@media (max-width: 1100px) {
+  :root {
+    --sidebar-width: 220px;
+  }
+}
+
+@media (max-width: 900px) {
+  .app-shell {
+    display: block;
   }
 
-  &::before {
-    left: 0;
-    border-left-color: var(--border);
+  .app-main {
+    width: 100%;
   }
-  &::after {
-    right: 0;
-    border-right-color: var(--border);
+}
+
+@media (max-width: 600px) {
+  .app-panel {
+    padding: 14px;
+  }
+}
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
   }
 }

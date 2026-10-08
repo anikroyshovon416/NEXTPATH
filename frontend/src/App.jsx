@@ -1,232 +1,164 @@
-import {
-  BrowserRouter,
-  Routes,
-  Route,
-  Navigate,
-} from "react-router-dom";
+import { Navigate, Route, Routes, useLocation } from "react-router-dom";
 
-import Login from "./pages/Login.jsx";
-import Register from "./pages/Register.jsx";
+import Sidebar from "./components/Sidebar";
 
-import Dashboard from "./pages/Dashboard.jsx";
-import TargetCareer from "./pages/TargetCareer.jsx";
-import RequiredSkills from "./pages/RequiredSkills.jsx";
-import Assessment from "./pages/Assessment.jsx";
-import AssessmentReport from "./pages/AssessmentReport.jsx";
-import SkillGap from "./pages/SkillGap.jsx";
-import Roadmap from "./pages/Roadmap.jsx";
-import Progress from "./pages/Progress.jsx";
-import Credentials from "./pages/Credentials.jsx";
-import Opportunities from "./pages/Opportunities.jsx";
-import Projects from "./pages/Projects.jsx";
-import Profile from "./pages/Profile.jsx";
+import Dashboard from "./pages/Dashboard";
+import TargetCareer from "./pages/TargetCareer";
+import RequiredSkills from "./pages/RequiredSkills";
+import Assessment from "./pages/Assessment";
+import AssessmentReport from "./pages/AssessmentReport";
+import SkillGap from "./pages/SkillGap";
+import Roadmap from "./pages/Roadmap";
+import Progress from "./pages/Progress";
+import Projects from "./pages/Projects";
+import Credentials from "./pages/Credentials";
+import Opportunities from "./pages/Opportunities";
+import Profile from "./pages/Profile";
+import Login from "./pages/Login";
+import Register from "./pages/Register";
 
-import Sidebar from "./components/Sidebar.jsx";
-import ProtectedRoute from "./components/ProtectedRoute.jsx";
+import "./App.css";
 
+function isLoggedIn() {
+  return localStorage.getItem("nextpathLoggedIn") === "true";
+}
 
-function AppLayout({ children }) {
+function ProtectedLayout() {
+  const location = useLocation();
+
+  if (!isLoggedIn()) {
+    return (
+      <Navigate
+        to="/login"
+        replace
+        state={{
+          from: location.pathname,
+        }}
+      />
+    );
+  }
+
   return (
     <div className="app-shell">
       <Sidebar />
 
-      <main className="main-content">
-        {children}
-      </main>
+      <div className="app-main">
+        <Routes>
+          <Route
+            path="/"
+            element={<Dashboard />}
+          />
+
+          <Route
+            path="/target-career"
+            element={<TargetCareer />}
+          />
+
+          <Route
+            path="/required-skills"
+            element={<RequiredSkills />}
+          />
+
+          <Route
+            path="/assessment"
+            element={<Assessment />}
+          />
+
+          <Route
+            path="/assessment-report"
+            element={<AssessmentReport />}
+          />
+
+          <Route
+            path="/skill-gap"
+            element={<SkillGap />}
+          />
+
+          <Route
+            path="/roadmap"
+            element={<Roadmap />}
+          />
+
+          <Route
+            path="/progress"
+            element={<Progress />}
+          />
+
+          <Route
+            path="/projects"
+            element={<Projects />}
+          />
+
+          <Route
+            path="/credentials"
+            element={<Credentials />}
+          />
+
+          <Route
+            path="/opportunities"
+            element={<Opportunities />}
+          />
+
+          <Route
+            path="/profile"
+            element={<Profile />}
+          />
+
+          <Route
+            path="*"
+            element={
+              <Navigate
+                to="/"
+                replace
+              />
+            }
+          />
+        </Routes>
+      </div>
     </div>
   );
 }
 
+function PublicOnlyRoute({ children }) {
+  if (isLoggedIn()) {
+    return (
+      <Navigate
+        to="/"
+        replace
+      />
+    );
+  }
 
-function ProtectedPage({ children }) {
-  return (
-    <ProtectedRoute>
-      <AppLayout>
-        {children}
-      </AppLayout>
-    </ProtectedRoute>
-  );
+  return children;
 }
 
-
-function App() {
+export default function App() {
   return (
-    <BrowserRouter>
-      <Routes>
+    <Routes>
+      <Route
+        path="/login"
+        element={
+          <PublicOnlyRoute>
+            <Login />
+          </PublicOnlyRoute>
+        }
+      />
 
-        {/* PUBLIC */}
+      <Route
+        path="/register"
+        element={
+          <PublicOnlyRoute>
+            <Register />
+          </PublicOnlyRoute>
+        }
+      />
 
-        <Route
-          path="/login"
-          element={<Login />}
-        />
-
-        <Route
-          path="/register"
-          element={<Register />}
-        />
-
-
-        {/* DASHBOARD */}
-
-        <Route
-          path="/"
-          element={
-            <ProtectedPage>
-              <Dashboard />
-            </ProtectedPage>
-          }
-        />
-
-
-        {/* CAREER */}
-
-        <Route
-          path="/target-career"
-          element={
-            <ProtectedPage>
-              <TargetCareer />
-            </ProtectedPage>
-          }
-        />
-
-
-        {/* REQUIRED SKILLS */}
-
-        <Route
-          path="/required-skills"
-          element={
-            <ProtectedPage>
-              <RequiredSkills />
-            </ProtectedPage>
-          }
-        />
-
-
-        {/* ASSESSMENT */}
-
-        <Route
-          path="/assessment"
-          element={
-            <ProtectedPage>
-              <Assessment />
-            </ProtectedPage>
-          }
-        />
-
-
-        {/* ASSESSMENT REPORT */}
-
-        <Route
-          path="/assessment-report"
-          element={
-            <ProtectedPage>
-              <AssessmentReport />
-            </ProtectedPage>
-          }
-        />
-
-
-        {/* SKILL GAP */}
-
-        <Route
-          path="/skill-gap"
-          element={
-            <ProtectedPage>
-              <SkillGap />
-            </ProtectedPage>
-          }
-        />
-
-
-        {/* ROADMAP */}
-
-        <Route
-          path="/roadmap"
-          element={
-            <ProtectedPage>
-              <Roadmap />
-            </ProtectedPage>
-          }
-        />
-
-
-        {/* PROGRESS */}
-
-        <Route
-          path="/progress"
-          element={
-            <ProtectedPage>
-              <Progress />
-            </ProtectedPage>
-          }
-        />
-
-
-        {/* CREDENTIALS */}
-
-        <Route
-          path="/credentials"
-          element={
-            <ProtectedPage>
-              <Credentials />
-            </ProtectedPage>
-          }
-        />
-
-
-        {/* OPPORTUNITIES */}
-
-        <Route
-          path="/opportunities"
-          element={
-            <ProtectedPage>
-              <Opportunities />
-            </ProtectedPage>
-          }
-        />
-
-
-        {/* PROJECTS */}
-
-        <Route
-          path="/projects"
-          element={
-            <ProtectedPage>
-              <Projects />
-            </ProtectedPage>
-          }
-        />
-
-
-        {/* PROFILE */}
-
-        <Route
-          path="/profile"
-          element={
-            <ProtectedPage>
-              <Profile />
-            </ProtectedPage>
-          }
-        />
-
-
-        {/* FALLBACK */}
-
-        <Route
-          path="*"
-          element={
-            <Navigate
-              to="/"
-              replace
-            />
-          }
-        />
-
-      </Routes>
-    </BrowserRouter>
+      <Route
+        path="/*"
+        element={
+          <ProtectedLayout />
+        }
+      />
+    </Routes>
   );
 }
-
-
-export default App;

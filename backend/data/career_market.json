@@ -1,194 +1,1363 @@
-[
-  {
-    "career": "Data Analyst",
-    "salary_min": 4.5,
-    "salary_max": 12,
-    "salary_average": 7.8,
-    "demand_score": 86,
-    "opportunity_score": 82,
-    "min_experience": 1,
-    "skills": [
-      { "name": "SQL", "required_score": 8.5 },
-      { "name": "Excel", "required_score": 8.0 },
-      { "name": "Power BI", "required_score": 9.0 },
-      { "name": "Python", "required_score": 7.0 },
-      { "name": "Statistics", "required_score": 7.5 }
-    ]
+{
+  "metadata": {
+    "title": "NEXTPATH Career Market Dataset",
+    "version": "3.0.0",
+    "last_updated": "2026-10-09",
+    "currency": "INR",
+    "salary_market": "India",
+    "score_scale": {
+      "required_skill_score": "0-10",
+      "market_demand_score": "0-100",
+      "skill_demand_score": "0-100",
+      "opportunity_score": "0-100"
+    },
+    "disclaimer": "Market-demand scores, salary ranges, and opportunity scores are NEXTPATH project estimates for career-planning and demonstration purposes. They are not live labor-market statistics and should not be represented as guaranteed salary or hiring outcomes."
   },
-  {
-    "career": "Data Scientist",
-    "salary_min": 6,
-    "salary_max": 18,
-    "salary_average": 11.5,
-    "demand_score": 92,
-    "opportunity_score": 89,
-    "min_experience": 2,
-    "skills": [
-      { "name": "Python", "required_score": 9.0 },
-      { "name": "Machine Learning", "required_score": 9.0 },
-      { "name": "Statistics", "required_score": 8.5 },
-      { "name": "SQL", "required_score": 7.5 },
-      { "name": "Data Visualization", "required_score": 7.0 }
-    ]
-  },
-  {
-    "career": "Data Engineer",
-    "salary_min": 6.5,
-    "salary_max": 18,
-    "salary_average": 12.2,
-    "demand_score": 88,
-    "opportunity_score": 85,
-    "min_experience": 2,
-    "skills": [
-      { "name": "SQL", "required_score": 9.0 },
-      { "name": "Python", "required_score": 8.0 },
-      { "name": "ETL", "required_score": 9.0 },
-      { "name": "Data Pipelines", "required_score": 8.5 },
-      { "name": "Big Data", "required_score": 8.0 }
-    ]
-  },
-  {
-    "career": "Business Analyst",
-    "salary_min": 5,
-    "salary_max": 14,
-    "salary_average": 8.5,
-    "demand_score": 84,
-    "opportunity_score": 80,
-    "min_experience": 1,
-    "skills": [
-      { "name": "Excel", "required_score": 8.5 },
-      { "name": "SQL", "required_score": 7.5 },
-      { "name": "Business Analysis", "required_score": 9.0 },
-      { "name": "Statistics", "required_score": 7.0 },
-      { "name": "Communication", "required_score": 8.5 }
-    ]
-  },
-  {
-    "career": "Machine Learning Engineer",
-    "salary_min": 7,
-    "salary_max": 22,
-    "salary_average": 14,
-    "demand_score": 91,
-    "opportunity_score": 92,
-    "min_experience": 2,
-    "skills": [
-      { "name": "Python", "required_score": 9.0 },
-      { "name": "Machine Learning", "required_score": 9.5 },
-      { "name": "Deep Learning", "required_score": 8.5 },
-      { "name": "MLOps", "required_score": 8.0 },
-      { "name": "SQL", "required_score": 7.0 }
-    ]
-  },
-  {
-    "career": "BI Analyst",
-    "salary_min": 5,
-    "salary_max": 14,
-    "salary_average": 8.5,
-    "demand_score": 82,
-    "opportunity_score": 80,
-    "min_experience": 1,
-    "skills": [
-      { "name": "Power BI", "required_score": 9.5 },
-      { "name": "SQL", "required_score": 8.5 },
-      { "name": "Excel", "required_score": 8.0 },
-      { "name": "Data Visualization", "required_score": 8.5 },
-      { "name": "Statistics", "required_score": 7.0 }
-    ]
-  },
-  {
-    "career": "AI Engineer",
-    "salary_min": 8,
-    "salary_max": 24,
-    "salary_average": 15,
-    "demand_score": 93,
-    "opportunity_score": 94,
-    "min_experience": 2,
-    "skills": [
-      { "name": "Python", "required_score": 9.0 },
-      { "name": "Machine Learning", "required_score": 9.0 },
-      { "name": "Deep Learning", "required_score": 9.0 },
-      { "name": "Generative AI", "required_score": 8.5 },
-      { "name": "APIs", "required_score": 7.5 }
-    ]
-  },
-  {
-    "career": "Product Analyst",
-    "salary_min": 5,
-    "salary_max": 15,
-    "salary_average": 9,
-    "demand_score": 81,
-    "opportunity_score": 79,
-    "min_experience": 1,
-    "skills": [
-      { "name": "SQL", "required_score": 8.5 },
-      { "name": "Statistics", "required_score": 8.0 },
-      { "name": "Excel", "required_score": 7.5 },
-      { "name": "Product Analytics", "required_score": 9.0 },
-      { "name": "Data Visualization", "required_score": 8.0 }
-    ]
-  },
-  {
-    "career": "Marketing Analyst",
-    "salary_min": 4,
-    "salary_max": 12,
-    "salary_average": 7,
-    "demand_score": 78,
-    "opportunity_score": 76,
-    "min_experience": 1,
-    "skills": [
-      { "name": "Excel", "required_score": 8.0 },
-      { "name": "Statistics", "required_score": 7.5 },
-      { "name": "Marketing Analytics", "required_score": 9.0 },
-      { "name": "Data Visualization", "required_score": 7.5 },
-      { "name": "SQL", "required_score": 7.0 }
-    ]
-  },
-  {
-    "career": "Analytics Consultant",
-    "salary_min": 7,
-    "salary_max": 20,
-    "salary_average": 12,
-    "demand_score": 80,
-    "opportunity_score": 82,
-    "min_experience": 2,
-    "skills": [
-      { "name": "SQL", "required_score": 8.0 },
-      { "name": "Python", "required_score": 7.5 },
-      { "name": "Business Analysis", "required_score": 8.5 },
-      { "name": "Communication", "required_score": 9.0 },
-      { "name": "Data Visualization", "required_score": 8.0 }
-    ]
-  },
-  {
-    "career": "Data Architect",
-    "salary_min": 10,
-    "salary_max": 28,
-    "salary_average": 18,
-    "demand_score": 79,
-    "opportunity_score": 86,
-    "min_experience": 4,
-    "skills": [
-      { "name": "SQL", "required_score": 9.0 },
-      { "name": "Data Modeling", "required_score": 9.5 },
-      { "name": "Cloud", "required_score": 8.5 },
-      { "name": "Big Data", "required_score": 8.5 },
-      { "name": "Data Architecture", "required_score": 9.5 }
-    ]
-  },
-  {
-    "career": "Senior Data Analyst",
-    "salary_min": 8,
-    "salary_max": 20,
-    "salary_average": 13,
-    "demand_score": 83,
-    "opportunity_score": 85,
-    "min_experience": 3,
-    "skills": [
-      { "name": "SQL", "required_score": 9.0 },
-      { "name": "Python", "required_score": 8.0 },
-      { "name": "Power BI", "required_score": 9.0 },
-      { "name": "Statistics", "required_score": 8.0 },
-      { "name": "Communication", "required_score": 8.5 }
-    ]
-  }
-]
+  "careers": [
+    {
+      "id": "data-analyst",
+      "name": "Data Analyst",
+      "category": "Data & Analytics",
+      "icon": "📊",
+      "summary": "Transforms raw business data into clear insights, dashboards, reports, and recommendations that support decision-making.",
+      "market_demand": {
+        "level": "High",
+        "score": 88,
+        "trend": "Growing",
+        "description": "Demand remains strong across technology, finance, consulting, retail, healthcare, logistics, education, and e-commerce because organizations increasingly rely on data-driven decisions."
+      },
+      "salary": {
+        "currency": "INR",
+        "entry_level": {
+          "min": 350000,
+          "max": 650000
+        },
+        "mid_level": {
+          "min": 700000,
+          "max": 1200000
+        },
+        "senior_level": {
+          "min": 1300000,
+          "max": 2200000
+        },
+        "note": "Illustrative India-market ranges for NEXTPATH project use. Actual compensation varies by company, city, experience, specialization, and market conditions."
+      },
+      "opportunity_score": 89,
+      "experience": {
+        "entry": "0-2 years",
+        "mid": "2-5 years",
+        "senior": "5+ years"
+      },
+      "common_roles": [
+        "Data Analyst",
+        "Junior Data Analyst",
+        "Reporting Analyst",
+        "Operations Analyst",
+        "MIS Analyst",
+        "Product Data Analyst"
+      ],
+      "industries": [
+        "Technology",
+        "Banking & Finance",
+        "Consulting",
+        "Retail",
+        "Healthcare",
+        "E-commerce",
+        "Telecommunications"
+      ],
+      "required_skills": [
+        {
+          "name": "SQL",
+          "required_score": 8.5,
+          "demand_score": 96,
+          "importance": "Critical",
+          "description": "Query, filter, join, aggregate, and transform relational data."
+        },
+        {
+          "name": "Excel",
+          "required_score": 8.0,
+          "demand_score": 90,
+          "importance": "Critical",
+          "description": "Data cleaning, formulas, pivot tables, lookups, and business reporting."
+        },
+        {
+          "name": "Power BI",
+          "required_score": 7.8,
+          "demand_score": 88,
+          "importance": "High",
+          "description": "Build interactive dashboards, reports, and business metrics."
+        },
+        {
+          "name": "Statistics",
+          "required_score": 7.5,
+          "demand_score": 84,
+          "importance": "High",
+          "description": "Understand distributions, variability, correlation, sampling, and hypothesis testing."
+        },
+        {
+          "name": "Python",
+          "required_score": 7.0,
+          "demand_score": 82,
+          "importance": "High",
+          "description": "Automate analysis and work with pandas, NumPy, and visualization libraries."
+        },
+        {
+          "name": "Data Visualization",
+          "required_score": 8.0,
+          "demand_score": 90,
+          "importance": "Critical",
+          "description": "Communicate patterns and insights clearly through charts and dashboards."
+        },
+        {
+          "name": "Business Analysis",
+          "required_score": 7.5,
+          "demand_score": 86,
+          "importance": "High",
+          "description": "Translate business questions into measurable analytical problems."
+        },
+        {
+          "name": "Communication",
+          "required_score": 7.2,
+          "demand_score": 82,
+          "importance": "High",
+          "description": "Explain analytical findings to technical and non-technical stakeholders."
+        }
+      ],
+      "career_path": [
+        "Junior Data Analyst",
+        "Data Analyst",
+        "Senior Data Analyst",
+        "Lead Analyst",
+        "Analytics Manager"
+      ]
+    },
+    {
+      "id": "data-scientist",
+      "name": "Data Scientist",
+      "category": "Data Science",
+      "icon": "🧠",
+      "summary": "Uses statistics, machine learning, experimentation, and programming to solve complex data problems and build predictive solutions.",
+      "market_demand": {
+        "level": "Very High",
+        "score": 93,
+        "trend": "Growing",
+        "description": "Organizations continue to invest in predictive analytics, AI-assisted decision systems, personalization, forecasting, risk modeling, and automation."
+      },
+      "salary": {
+        "currency": "INR",
+        "entry_level": {
+          "min": 600000,
+          "max": 1000000
+        },
+        "mid_level": {
+          "min": 1100000,
+          "max": 2000000
+        },
+        "senior_level": {
+          "min": 2200000,
+          "max": 4000000
+        },
+        "note": "Illustrative ranges for project use; actual compensation varies significantly."
+      },
+      "opportunity_score": 94,
+      "experience": {
+        "entry": "0-2 years",
+        "mid": "2-5 years",
+        "senior": "5+ years"
+      },
+      "common_roles": [
+        "Data Scientist",
+        "Junior Data Scientist",
+        "Applied Data Scientist",
+        "Decision Scientist",
+        "Research Data Scientist"
+      ],
+      "industries": [
+        "Technology",
+        "FinTech",
+        "Healthcare",
+        "E-commerce",
+        "Manufacturing",
+        "Consulting",
+        "Telecommunications"
+      ],
+      "required_skills": [
+        {
+          "name": "Python",
+          "required_score": 9.0,
+          "demand_score": 98,
+          "importance": "Critical",
+          "description": "Core programming language for analysis, modeling, and experimentation."
+        },
+        {
+          "name": "Statistics",
+          "required_score": 8.8,
+          "demand_score": 96,
+          "importance": "Critical",
+          "description": "Probability, inference, experimentation, distributions, and model evaluation."
+        },
+        {
+          "name": "Machine Learning",
+          "required_score": 8.8,
+          "demand_score": 97,
+          "importance": "Critical",
+          "description": "Build and evaluate predictive and descriptive models."
+        },
+        {
+          "name": "SQL",
+          "required_score": 8.0,
+          "demand_score": 92,
+          "importance": "High",
+          "description": "Retrieve and analyze structured business data."
+        },
+        {
+          "name": "Data Visualization",
+          "required_score": 7.8,
+          "demand_score": 86,
+          "importance": "High",
+          "description": "Communicate data stories, model behavior, and business outcomes."
+        },
+        {
+          "name": "Deep Learning",
+          "required_score": 7.0,
+          "demand_score": 81,
+          "importance": "Medium",
+          "description": "Useful for advanced NLP, computer vision, and complex representation learning."
+        },
+        {
+          "name": "Feature Engineering",
+          "required_score": 8.2,
+          "demand_score": 90,
+          "importance": "High",
+          "description": "Design informative inputs that improve model performance."
+        },
+        {
+          "name": "Communication",
+          "required_score": 7.5,
+          "demand_score": 82,
+          "importance": "High",
+          "description": "Explain assumptions, uncertainty, and model outcomes to stakeholders."
+        }
+      ],
+      "career_path": [
+        "Junior Data Scientist",
+        "Data Scientist",
+        "Senior Data Scientist",
+        "Lead Data Scientist",
+        "Head of Data Science"
+      ]
+    },
+    {
+      "id": "data-engineer",
+      "name": "Data Engineer",
+      "category": "Data Engineering",
+      "icon": "⚙️",
+      "summary": "Designs, builds, and maintains reliable data pipelines, storage systems, and platforms used by analytics and AI teams.",
+      "market_demand": {
+        "level": "Very High",
+        "score": 95,
+        "trend": "Strong Growth",
+        "description": "Modern AI and analytics programs depend on reliable, scalable, governed data infrastructure, making data engineering a critical function."
+      },
+      "salary": {
+        "currency": "INR",
+        "entry_level": {
+          "min": 600000,
+          "max": 1000000
+        },
+        "mid_level": {
+          "min": 1200000,
+          "max": 2200000
+        },
+        "senior_level": {
+          "min": 2400000,
+          "max": 4500000
+        },
+        "note": "Illustrative project ranges; cloud and distributed-systems expertise can materially affect compensation."
+      },
+      "opportunity_score": 96,
+      "experience": {
+        "entry": "0-2 years",
+        "mid": "2-5 years",
+        "senior": "5+ years"
+      },
+      "common_roles": [
+        "Data Engineer",
+        "ETL Developer",
+        "Cloud Data Engineer",
+        "Analytics Engineer",
+        "Big Data Engineer"
+      ],
+      "industries": [
+        "Technology",
+        "Cloud Services",
+        "Banking",
+        "E-commerce",
+        "Healthcare",
+        "Consulting",
+        "Telecommunications"
+      ],
+      "required_skills": [
+        {
+          "name": "SQL",
+          "required_score": 9.0,
+          "demand_score": 98,
+          "importance": "Critical",
+          "description": "Core skill for working with relational and analytical data stores."
+        },
+        {
+          "name": "Python",
+          "required_score": 8.5,
+          "demand_score": 94,
+          "importance": "Critical",
+          "description": "Build data ingestion, transformation, automation, and orchestration logic."
+        },
+        {
+          "name": "Data Warehousing",
+          "required_score": 8.5,
+          "demand_score": 94,
+          "importance": "Critical",
+          "description": "Design analytical data models and scalable storage architectures."
+        },
+        {
+          "name": "ETL",
+          "required_score": 8.8,
+          "demand_score": 96,
+          "importance": "Critical",
+          "description": "Build reliable extract, transform, and load pipelines."
+        },
+        {
+          "name": "Cloud Computing",
+          "required_score": 8.0,
+          "demand_score": 94,
+          "importance": "High",
+          "description": "Work with AWS, Azure, or GCP data infrastructure."
+        },
+        {
+          "name": "Apache Spark",
+          "required_score": 7.5,
+          "demand_score": 88,
+          "importance": "High",
+          "description": "Distributed data processing for large datasets."
+        },
+        {
+          "name": "Data Modeling",
+          "required_score": 8.2,
+          "demand_score": 89,
+          "importance": "High",
+          "description": "Design efficient, understandable schemas for analytical workloads."
+        },
+        {
+          "name": "Git",
+          "required_score": 7.0,
+          "demand_score": 80,
+          "importance": "High",
+          "description": "Version-control data pipeline and infrastructure code."
+        }
+      ],
+      "career_path": [
+        "Junior Data Engineer",
+        "Data Engineer",
+        "Senior Data Engineer",
+        "Lead Data Engineer",
+        "Data Platform Architect"
+      ]
+    },
+    {
+      "id": "business-analyst",
+      "name": "Business Analyst",
+      "category": "Business & Analytics",
+      "icon": "📈",
+      "summary": "Bridges business teams and technical teams by identifying requirements, analyzing processes, and recommending data-supported improvements.",
+      "market_demand": {
+        "level": "High",
+        "score": 87,
+        "trend": "Stable Growth",
+        "description": "Organizations need analysts who can translate business needs into structured requirements, measurable outcomes, and technology initiatives."
+      },
+      "salary": {
+        "currency": "INR",
+        "entry_level": {
+          "min": 400000,
+          "max": 700000
+        },
+        "mid_level": {
+          "min": 800000,
+          "max": 1400000
+        },
+        "senior_level": {
+          "min": 1500000,
+          "max": 2600000
+        },
+        "note": "Illustrative ranges for NEXTPATH project use."
+      },
+      "opportunity_score": 88,
+      "experience": {
+        "entry": "0-2 years",
+        "mid": "2-5 years",
+        "senior": "5+ years"
+      },
+      "common_roles": [
+        "Business Analyst",
+        "IT Business Analyst",
+        "Process Analyst",
+        "Functional Analyst",
+        "Business Systems Analyst"
+      ],
+      "industries": [
+        "Consulting",
+        "Banking",
+        "Technology",
+        "Insurance",
+        "Retail",
+        "Healthcare",
+        "Manufacturing"
+      ],
+      "required_skills": [
+        {
+          "name": "Business Analysis",
+          "required_score": 9.0,
+          "demand_score": 97,
+          "importance": "Critical",
+          "description": "Understand business problems, stakeholders, requirements, and value."
+        },
+        {
+          "name": "Communication",
+          "required_score": 9.0,
+          "demand_score": 96,
+          "importance": "Critical",
+          "description": "Communicate requirements, risks, decisions, and recommendations clearly."
+        },
+        {
+          "name": "Excel",
+          "required_score": 8.0,
+          "demand_score": 89,
+          "importance": "High",
+          "description": "Support analysis, reporting, modeling, and decision making."
+        },
+        {
+          "name": "SQL",
+          "required_score": 7.0,
+          "demand_score": 82,
+          "importance": "High",
+          "description": "Extract and validate business data when needed."
+        },
+        {
+          "name": "Requirements Engineering",
+          "required_score": 8.5,
+          "demand_score": 90,
+          "importance": "Critical",
+          "description": "Document functional and non-functional requirements."
+        },
+        {
+          "name": "Process Modeling",
+          "required_score": 8.0,
+          "demand_score": 86,
+          "importance": "High",
+          "description": "Map current and future-state business processes."
+        },
+        {
+          "name": "Power BI",
+          "required_score": 6.8,
+          "demand_score": 78,
+          "importance": "Medium",
+          "description": "Build simple dashboards and business reports."
+        }
+      ],
+      "career_path": [
+        "Junior Business Analyst",
+        "Business Analyst",
+        "Senior Business Analyst",
+        "Lead Business Analyst",
+        "Business Analysis Manager"
+      ]
+    },
+    {
+      "id": "machine-learning-engineer",
+      "name": "Machine Learning Engineer",
+      "category": "AI & Machine Learning",
+      "icon": "🤖",
+      "summary": "Builds, deploys, scales, and maintains machine-learning systems that operate reliably in real products and services.",
+      "market_demand": {
+        "level": "Very High",
+        "score": 97,
+        "trend": "Strong Growth",
+        "description": "The adoption of AI products, generative AI, recommendations, automation, and intelligent platforms continues to increase demand for production-focused ML engineers."
+      },
+      "salary": {
+        "currency": "INR",
+        "entry_level": {
+          "min": 700000,
+          "max": 1200000
+        },
+        "mid_level": {
+          "min": 1400000,
+          "max": 2600000
+        },
+        "senior_level": {
+          "min": 2800000,
+          "max": 5000000
+        },
+        "note": "Illustrative project ranges; compensation can vary significantly for specialized AI roles."
+      },
+      "opportunity_score": 98,
+      "experience": {
+        "entry": "0-2 years",
+        "mid": "2-5 years",
+        "senior": "5+ years"
+      },
+      "common_roles": [
+        "Machine Learning Engineer",
+        "ML Platform Engineer",
+        "Applied ML Engineer",
+        "MLOps Engineer",
+        "AI/ML Engineer"
+      ],
+      "industries": [
+        "Technology",
+        "FinTech",
+        "Healthcare",
+        "Automotive",
+        "E-commerce",
+        "Robotics",
+        "Cloud Services"
+      ],
+      "required_skills": [
+        {
+          "name": "Python",
+          "required_score": 9.2,
+          "demand_score": 99,
+          "importance": "Critical",
+          "description": "Develop models, pipelines, services, and ML applications."
+        },
+        {
+          "name": "Machine Learning",
+          "required_score": 9.0,
+          "demand_score": 99,
+          "importance": "Critical",
+          "description": "Train, evaluate, tune, and select appropriate models."
+        },
+        {
+          "name": "Deep Learning",
+          "required_score": 8.0,
+          "demand_score": 91,
+          "importance": "High",
+          "description": "Build advanced neural-network-based solutions."
+        },
+        {
+          "name": "MLOps",
+          "required_score": 8.3,
+          "demand_score": 95,
+          "importance": "Critical",
+          "description": "Deploy, monitor, version, and maintain machine-learning systems."
+        },
+        {
+          "name": "Cloud Computing",
+          "required_score": 7.8,
+          "demand_score": 92,
+          "importance": "High",
+          "description": "Deploy scalable ML workloads using cloud platforms."
+        },
+        {
+          "name": "Docker",
+          "required_score": 7.5,
+          "demand_score": 90,
+          "importance": "High",
+          "description": "Package ML services and runtime dependencies."
+        },
+        {
+          "name": "SQL",
+          "required_score": 7.5,
+          "demand_score": 86,
+          "importance": "High",
+          "description": "Retrieve training and production data."
+        },
+        {
+          "name": "Git",
+          "required_score": 7.5,
+          "demand_score": 85,
+          "importance": "High",
+          "description": "Collaborative version control and reproducible development."
+        }
+      ],
+      "career_path": [
+        "Junior ML Engineer",
+        "Machine Learning Engineer",
+        "Senior ML Engineer",
+        "Lead ML Engineer",
+        "ML Engineering Manager"
+      ]
+    },
+    {
+      "id": "bi-analyst",
+      "name": "BI Analyst",
+      "category": "Business Intelligence",
+      "icon": "📉",
+      "summary": "Builds dashboards, reporting systems, KPIs, and decision-support tools that help teams understand business performance.",
+      "market_demand": {
+        "level": "High",
+        "score": 89,
+        "trend": "Growing",
+        "description": "Self-service analytics and executive reporting continue to drive demand for professionals skilled in BI platforms and data modeling."
+      },
+      "salary": {
+        "currency": "INR",
+        "entry_level": {
+          "min": 400000,
+          "max": 700000
+        },
+        "mid_level": {
+          "min": 800000,
+          "max": 1400000
+        },
+        "senior_level": {
+          "min": 1500000,
+          "max": 2500000
+        },
+        "note": "Illustrative project ranges."
+      },
+      "opportunity_score": 90,
+      "experience": {
+        "entry": "0-2 years",
+        "mid": "2-5 years",
+        "senior": "5+ years"
+      },
+      "common_roles": [
+        "BI Analyst",
+        "Business Intelligence Analyst",
+        "Reporting Analyst",
+        "Dashboard Analyst",
+        "BI Developer"
+      ],
+      "industries": [
+        "Retail",
+        "Banking",
+        "Technology",
+        "Consulting",
+        "Healthcare",
+        "Manufacturing"
+      ],
+      "required_skills": [
+        {
+          "name": "Power BI",
+          "required_score": 9.0,
+          "demand_score": 98,
+          "importance": "Critical",
+          "description": "Build analytical dashboards and interactive reports."
+        },
+        {
+          "name": "SQL",
+          "required_score": 8.5,
+          "demand_score": 95,
+          "importance": "Critical",
+          "description": "Query and transform structured data."
+        },
+        {
+          "name": "Excel",
+          "required_score": 8.0,
+          "demand_score": 90,
+          "importance": "High",
+          "description": "Support reporting, validation, and ad-hoc analysis."
+        },
+        {
+          "name": "Data Modeling",
+          "required_score": 8.0,
+          "demand_score": 90,
+          "importance": "High",
+          "description": "Design models for accurate and fast BI reporting."
+        },
+        {
+          "name": "DAX",
+          "required_score": 8.2,
+          "demand_score": 91,
+          "importance": "High",
+          "description": "Create measures and calculations in Power BI."
+        },
+        {
+          "name": "Data Visualization",
+          "required_score": 8.5,
+          "demand_score": 92,
+          "importance": "Critical",
+          "description": "Present KPIs and trends clearly."
+        },
+        {
+          "name": "Business Analysis",
+          "required_score": 7.5,
+          "demand_score": 84,
+          "importance": "High",
+          "description": "Understand performance questions and business metrics."
+        }
+      ],
+      "career_path": [
+        "Junior BI Analyst",
+        "BI Analyst",
+        "Senior BI Analyst",
+        "BI Lead",
+        "BI Manager"
+      ]
+    },
+    {
+      "id": "ai-engineer",
+      "name": "AI Engineer",
+      "category": "Artificial Intelligence",
+      "icon": "✨",
+      "summary": "Develops intelligent applications using machine learning, deep learning, NLP, computer vision, generative AI, and AI service integration.",
+      "market_demand": {
+        "level": "Very High",
+        "score": 98,
+        "trend": "Rapid Growth",
+        "description": "Generative AI, intelligent assistants, automation, multimodal applications, and enterprise AI adoption are creating strong demand for engineers who can build production AI systems."
+      },
+      "salary": {
+        "currency": "INR",
+        "entry_level": {
+          "min": 700000,
+          "max": 1300000
+        },
+        "mid_level": {
+          "min": 1500000,
+          "max": 3000000
+        },
+        "senior_level": {
+          "min": 3200000,
+          "max": 6000000
+        },
+        "note": "Illustrative project ranges; advanced specialization can substantially change compensation."
+      },
+      "opportunity_score": 99,
+      "experience": {
+        "entry": "0-2 years",
+        "mid": "2-5 years",
+        "senior": "5+ years"
+      },
+      "common_roles": [
+        "AI Engineer",
+        "Generative AI Engineer",
+        "NLP Engineer",
+        "Computer Vision Engineer",
+        "Applied AI Engineer"
+      ],
+      "industries": [
+        "Technology",
+        "Healthcare",
+        "Finance",
+        "Automotive",
+        "Robotics",
+        "Education",
+        "Enterprise Software"
+      ],
+      "required_skills": [
+        {
+          "name": "Python",
+          "required_score": 9.2,
+          "demand_score": 99,
+          "importance": "Critical",
+          "description": "Core language for AI development and integration."
+        },
+        {
+          "name": "Machine Learning",
+          "required_score": 8.8,
+          "demand_score": 98,
+          "importance": "Critical",
+          "description": "Foundation for modern AI systems."
+        },
+        {
+          "name": "Deep Learning",
+          "required_score": 8.5,
+          "demand_score": 96,
+          "importance": "Critical",
+          "description": "Neural architectures for language, vision, and multimodal tasks."
+        },
+        {
+          "name": "Generative AI",
+          "required_score": 8.5,
+          "demand_score": 99,
+          "importance": "Critical",
+          "description": "LLMs, prompt design, retrieval augmentation, agents, and generative applications."
+        },
+        {
+          "name": "NLP",
+          "required_score": 7.8,
+          "demand_score": 91,
+          "importance": "High",
+          "description": "Text understanding, embeddings, classification, extraction, and language systems."
+        },
+        {
+          "name": "MLOps",
+          "required_score": 7.8,
+          "demand_score": 92,
+          "importance": "High",
+          "description": "Deploy and monitor production AI systems."
+        },
+        {
+          "name": "Cloud Computing",
+          "required_score": 7.5,
+          "demand_score": 90,
+          "importance": "High",
+          "description": "Deploy AI workloads and services."
+        },
+        {
+          "name": "API Development",
+          "required_score": 7.8,
+          "demand_score": 90,
+          "importance": "High",
+          "description": "Expose AI capabilities through reliable application interfaces."
+        }
+      ],
+      "career_path": [
+        "Junior AI Engineer",
+        "AI Engineer",
+        "Senior AI Engineer",
+        "Lead AI Engineer",
+        "AI Engineering Manager"
+      ]
+    },
+    {
+      "id": "product-analyst",
+      "name": "Product Analyst",
+      "category": "Product Analytics",
+      "icon": "🧩",
+      "summary": "Uses user behavior, product metrics, experimentation, and business data to improve digital products and product strategy.",
+      "market_demand": {
+        "level": "High",
+        "score": 90,
+        "trend": "Growing",
+        "description": "Digital products increasingly depend on experimentation, retention analytics, funnel analysis, and evidence-based product decisions."
+      },
+      "salary": {
+        "currency": "INR",
+        "entry_level": {
+          "min": 500000,
+          "max": 850000
+        },
+        "mid_level": {
+          "min": 900000,
+          "max": 1700000
+        },
+        "senior_level": {
+          "min": 1800000,
+          "max": 3000000
+        },
+        "note": "Illustrative project ranges."
+      },
+      "opportunity_score": 91,
+      "experience": {
+        "entry": "0-2 years",
+        "mid": "2-5 years",
+        "senior": "5+ years"
+      },
+      "common_roles": [
+        "Product Analyst",
+        "Growth Analyst",
+        "Product Data Analyst",
+        "Digital Analyst",
+        "Experimentation Analyst"
+      ],
+      "industries": [
+        "SaaS",
+        "E-commerce",
+        "FinTech",
+        "Consumer Apps",
+        "EdTech",
+        "Travel"
+      ],
+      "required_skills": [
+        {
+          "name": "SQL",
+          "required_score": 8.8,
+          "demand_score": 96,
+          "importance": "Critical",
+          "description": "Analyze product event and user behavior data."
+        },
+        {
+          "name": "Product Analytics",
+          "required_score": 8.8,
+          "demand_score": 95,
+          "importance": "Critical",
+          "description": "Funnels, retention, cohorts, activation, engagement, and conversion."
+        },
+        {
+          "name": "Statistics",
+          "required_score": 8.0,
+          "demand_score": 90,
+          "importance": "High",
+          "description": "Measure uncertainty and evaluate product changes."
+        },
+        {
+          "name": "A/B Testing",
+          "required_score": 8.2,
+          "demand_score": 92,
+          "importance": "Critical",
+          "description": "Design and interpret controlled product experiments."
+        },
+        {
+          "name": "Data Visualization",
+          "required_score": 7.8,
+          "demand_score": 86,
+          "importance": "High",
+          "description": "Communicate product performance and insights."
+        },
+        {
+          "name": "Business Analysis",
+          "required_score": 7.8,
+          "demand_score": 84,
+          "importance": "High",
+          "description": "Connect product metrics to user and business outcomes."
+        },
+        {
+          "name": "Communication",
+          "required_score": 8.0,
+          "demand_score": 86,
+          "importance": "High",
+          "description": "Partner with product managers, designers, and engineers."
+        }
+      ],
+      "career_path": [
+        "Junior Product Analyst",
+        "Product Analyst",
+        "Senior Product Analyst",
+        "Lead Product Analyst",
+        "Product Analytics Manager"
+      ]
+    },
+    {
+      "id": "marketing-analyst",
+      "name": "Marketing Analyst",
+      "category": "Marketing Analytics",
+      "icon": "📣",
+      "summary": "Analyzes campaign, customer, channel, and market data to improve marketing effectiveness and return on investment.",
+      "market_demand": {
+        "level": "High",
+        "score": 85,
+        "trend": "Growing",
+        "description": "Performance marketing, attribution, CRM, customer analytics, and digital commerce create steady demand for analytically skilled marketers."
+      },
+      "salary": {
+        "currency": "INR",
+        "entry_level": {
+          "min": 350000,
+          "max": 650000
+        },
+        "mid_level": {
+          "min": 700000,
+          "max": 1300000
+        },
+        "senior_level": {
+          "min": 1400000,
+          "max": 2400000
+        },
+        "note": "Illustrative project ranges."
+      },
+      "opportunity_score": 86,
+      "experience": {
+        "entry": "0-2 years",
+        "mid": "2-5 years",
+        "senior": "5+ years"
+      },
+      "common_roles": [
+        "Marketing Analyst",
+        "Digital Marketing Analyst",
+        "Campaign Analyst",
+        "Growth Marketing Analyst",
+        "Customer Insights Analyst"
+      ],
+      "industries": [
+        "E-commerce",
+        "Retail",
+        "Media",
+        "SaaS",
+        "Consumer Goods",
+        "Agencies"
+      ],
+      "required_skills": [
+        {
+          "name": "Excel",
+          "required_score": 8.0,
+          "demand_score": 88,
+          "importance": "High",
+          "description": "Analyze campaign data and marketing reports."
+        },
+        {
+          "name": "SQL",
+          "required_score": 7.5,
+          "demand_score": 84,
+          "importance": "High",
+          "description": "Analyze customer and transaction data."
+        },
+        {
+          "name": "Marketing Analytics",
+          "required_score": 9.0,
+          "demand_score": 96,
+          "importance": "Critical",
+          "description": "Campaign measurement, attribution, segmentation, and ROI analysis."
+        },
+        {
+          "name": "Data Visualization",
+          "required_score": 7.5,
+          "demand_score": 83,
+          "importance": "High",
+          "description": "Present channel and campaign performance."
+        },
+        {
+          "name": "Statistics",
+          "required_score": 7.2,
+          "demand_score": 80,
+          "importance": "High",
+          "description": "Evaluate campaign performance and customer behavior."
+        },
+        {
+          "name": "Google Analytics",
+          "required_score": 8.0,
+          "demand_score": 88,
+          "importance": "High",
+          "description": "Measure digital acquisition, engagement, and conversion."
+        },
+        {
+          "name": "Communication",
+          "required_score": 7.8,
+          "demand_score": 82,
+          "importance": "High",
+          "description": "Explain marketing performance and recommendations."
+        }
+      ],
+      "career_path": [
+        "Junior Marketing Analyst",
+        "Marketing Analyst",
+        "Senior Marketing Analyst",
+        "Growth Analytics Lead",
+        "Marketing Analytics Manager"
+      ]
+    },
+    {
+      "id": "analytics-consultant",
+      "name": "Analytics Consultant",
+      "category": "Consulting & Analytics",
+      "icon": "💼",
+      "summary": "Combines analytics, business problem-solving, communication, and stakeholder management to deliver data-driven recommendations for clients.",
+      "market_demand": {
+        "level": "High",
+        "score": 89,
+        "trend": "Growing",
+        "description": "Consulting firms and transformation teams need professionals who can combine technical analysis with business communication and structured problem-solving."
+      },
+      "salary": {
+        "currency": "INR",
+        "entry_level": {
+          "min": 600000,
+          "max": 1000000
+        },
+        "mid_level": {
+          "min": 1200000,
+          "max": 2200000
+        },
+        "senior_level": {
+          "min": 2400000,
+          "max": 4000000
+        },
+        "note": "Illustrative project ranges; compensation varies widely across consulting organizations."
+      },
+      "opportunity_score": 91,
+      "experience": {
+        "entry": "0-2 years",
+        "mid": "2-5 years",
+        "senior": "5+ years"
+      },
+      "common_roles": [
+        "Analytics Consultant",
+        "Data & Analytics Consultant",
+        "Business Analytics Consultant",
+        "Decision Science Consultant",
+        "Transformation Analyst"
+      ],
+      "industries": [
+        "Consulting",
+        "Banking",
+        "Technology",
+        "Healthcare",
+        "Retail",
+        "Manufacturing"
+      ],
+      "required_skills": [
+        {
+          "name": "Business Analysis",
+          "required_score": 8.8,
+          "demand_score": 95,
+          "importance": "Critical",
+          "description": "Frame business problems and connect analysis to value."
+        },
+        {
+          "name": "Communication",
+          "required_score": 9.2,
+          "demand_score": 98,
+          "importance": "Critical",
+          "description": "Present findings and recommendations to clients and executives."
+        },
+        {
+          "name": "SQL",
+          "required_score": 8.0,
+          "demand_score": 88,
+          "importance": "High",
+          "description": "Analyze structured client data."
+        },
+        {
+          "name": "Python",
+          "required_score": 7.5,
+          "demand_score": 84,
+          "importance": "High",
+          "description": "Perform advanced analysis and automation."
+        },
+        {
+          "name": "Power BI",
+          "required_score": 7.5,
+          "demand_score": 84,
+          "importance": "High",
+          "description": "Build client dashboards and reporting solutions."
+        },
+        {
+          "name": "Statistics",
+          "required_score": 7.8,
+          "demand_score": 82,
+          "importance": "High",
+          "description": "Support rigorous analysis and decision-making."
+        },
+        {
+          "name": "Problem Solving",
+          "required_score": 9.0,
+          "demand_score": 97,
+          "importance": "Critical",
+          "description": "Structure ambiguous problems and develop practical recommendations."
+        }
+      ],
+      "career_path": [
+        "Analyst",
+        "Analytics Consultant",
+        "Senior Consultant",
+        "Manager",
+        "Principal / Director"
+      ]
+    },
+    {
+      "id": "data-architect",
+      "name": "Data Architect",
+      "category": "Data Architecture",
+      "icon": "🏗️",
+      "summary": "Designs enterprise data structures, integration patterns, governance approaches, and scalable architectures that support analytics and AI.",
+      "market_demand": {
+        "level": "Very High",
+        "score": 92,
+        "trend": "Growing",
+        "description": "Organizations modernizing cloud data platforms and AI infrastructure need experienced professionals who can design secure and scalable enterprise data architectures."
+      },
+      "salary": {
+        "currency": "INR",
+        "entry_level": {
+          "min": 1000000,
+          "max": 1600000
+        },
+        "mid_level": {
+          "min": 1800000,
+          "max": 3000000
+        },
+        "senior_level": {
+          "min": 3200000,
+          "max": 5500000
+        },
+        "note": "Data Architect is commonly a senior role; entry-level figures represent related architecture-track positions."
+      },
+      "opportunity_score": 92,
+      "experience": {
+        "entry": "2-4 years related experience",
+        "mid": "5-8 years",
+        "senior": "8+ years"
+      },
+      "common_roles": [
+        "Data Architect",
+        "Enterprise Data Architect",
+        "Cloud Data Architect",
+        "Solutions Data Architect",
+        "Data Platform Architect"
+      ],
+      "industries": [
+        "Technology",
+        "Banking",
+        "Cloud Services",
+        "Consulting",
+        "Healthcare",
+        "Telecommunications"
+      ],
+      "required_skills": [
+        {
+          "name": "Data Modeling",
+          "required_score": 9.3,
+          "demand_score": 98,
+          "importance": "Critical",
+          "description": "Design conceptual, logical, and physical data models."
+        },
+        {
+          "name": "Data Warehousing",
+          "required_score": 9.0,
+          "demand_score": 96,
+          "importance": "Critical",
+          "description": "Design scalable analytical data platforms."
+        },
+        {
+          "name": "Cloud Computing",
+          "required_score": 8.8,
+          "demand_score": 96,
+          "importance": "Critical",
+          "description": "Architect modern cloud data solutions."
+        },
+        {
+          "name": "SQL",
+          "required_score": 8.5,
+          "demand_score": 90,
+          "importance": "High",
+          "description": "Understand relational design and query behavior."
+        },
+        {
+          "name": "Data Governance",
+          "required_score": 8.8,
+          "demand_score": 94,
+          "importance": "Critical",
+          "description": "Define standards for quality, lineage, access, security, and compliance."
+        },
+        {
+          "name": "System Design",
+          "required_score": 9.0,
+          "demand_score": 96,
+          "importance": "Critical",
+          "description": "Design scalable systems and integration patterns."
+        },
+        {
+          "name": "Communication",
+          "required_score": 8.5,
+          "demand_score": 86,
+          "importance": "High",
+          "description": "Align architecture decisions with engineering and business stakeholders."
+        }
+      ],
+      "career_path": [
+        "Data Engineer",
+        "Senior Data Engineer",
+        "Data Architect",
+        "Senior Data Architect",
+        "Enterprise Data Architect"
+      ]
+    },
+    {
+      "id": "senior-data-analyst",
+      "name": "Senior Data Analyst",
+      "category": "Data & Analytics",
+      "icon": "📊",
+      "summary": "Leads complex analysis, develops business metrics, mentors analysts, and translates data into high-impact strategic recommendations.",
+      "market_demand": {
+        "level": "High",
+        "score": 91,
+        "trend": "Growing",
+        "description": "Experienced analysts are valuable because they combine technical depth, business context, stakeholder communication, and analytical leadership."
+      },
+      "salary": {
+        "currency": "INR",
+        "entry_level": {
+          "min": 900000,
+          "max": 1300000
+        },
+        "mid_level": {
+          "min": 1400000,
+          "max": 2200000
+        },
+        "senior_level": {
+          "min": 2300000,
+          "max": 3500000
+        },
+        "note": "This is an experienced role; 'entry' indicates the lower end of senior-analyst appointments."
+      },
+      "opportunity_score": 92,
+      "experience": {
+        "entry": "3-5 years",
+        "mid": "5-7 years",
+        "senior": "7+ years"
+      },
+      "common_roles": [
+        "Senior Data Analyst",
+        "Lead Data Analyst",
+        "Senior Business Data Analyst",
+        "Analytics Lead",
+        "Decision Support Analyst"
+      ],
+      "industries": [
+        "Technology",
+        "Finance",
+        "Consulting",
+        "E-commerce",
+        "Healthcare",
+        "Telecommunications"
+      ],
+      "required_skills": [
+        {
+          "name": "SQL",
+          "required_score": 9.2,
+          "demand_score": 98,
+          "importance": "Critical",
+          "description": "Advanced querying, optimization, analytical SQL, and complex transformations."
+        },
+        {
+          "name": "Python",
+          "required_score": 8.0,
+          "demand_score": 88,
+          "importance": "High",
+          "description": "Advanced analysis, automation, and reproducible workflows."
+        },
+        {
+          "name": "Statistics",
+          "required_score": 8.3,
+          "demand_score": 90,
+          "importance": "High",
+          "description": "Apply statistical reasoning to business decisions."
+        },
+        {
+          "name": "Power BI",
+          "required_score": 8.5,
+          "demand_score": 90,
+          "importance": "High",
+          "description": "Design advanced dashboards and semantic reporting models."
+        },
+        {
+          "name": "Data Visualization",
+          "required_score": 9.0,
+          "demand_score": 93,
+          "importance": "Critical",
+          "description": "Communicate complex findings clearly and efficiently."
+        },
+        {
+          "name": "Business Analysis",
+          "required_score": 8.8,
+          "demand_score": 94,
+          "importance": "Critical",
+          "description": "Connect analysis directly to strategic business outcomes."
+        },
+        {
+          "name": "Communication",
+          "required_score": 9.0,
+          "demand_score": 95,
+          "importance": "Critical",
+          "description": "Influence stakeholders using concise, evidence-based communication."
+        },
+        {
+          "name": "Leadership",
+          "required_score": 8.0,
+          "demand_score": 85,
+          "importance": "High",
+          "description": "Mentor analysts and lead analytical initiatives."
+        }
+      ],
+      "career_path": [
+        "Data Analyst",
+        "Senior Data Analyst",
+        "Lead Data Analyst",
+        "Analytics Manager",
+        "Head of Analytics"
+      ]
+    }
+  ]
+}
