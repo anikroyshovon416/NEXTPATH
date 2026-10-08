@@ -1,0 +1,152 @@
+[
+  {
+    "skill": "Python",
+    "topics": [
+      "Python fundamentals",
+      "Functions",
+      "Lists and dictionaries",
+      "NumPy",
+      "Pandas",
+      "Data cleaning"
+    ],
+    "free_resources": [
+      {
+        "title": "Official Python Tutorial",
+        "provider": "Python.org",
+        "url": "https://docs.python.org/3/tutorial/"
+      }
+    ],
+    "paid_resources": [
+      {
+        "title": "Search Python Courses",
+        "provider": "Coursera",
+        "url": "https://www.coursera.org/search?query=python"
+      }
+    ]
+  },
+  {
+    "skill": "SQL",
+    "topics": [
+      "SELECT and WHERE",
+      "GROUP BY",
+      "JOIN",
+      "Subqueries",
+      "CASE",
+      "Window functions"
+    ],
+    "free_resources": [
+      {
+        "title": "SQLBolt",
+        "provider": "SQLBolt",
+        "url": "https://sqlbolt.com/"
+      }
+    ],
+    "paid_resources": [
+      {
+        "title": "Search SQL Courses",
+        "provider": "Coursera",
+        "url": "https://www.coursera.org/search?query=sql"
+      }
+    ]
+  },
+  {
+    "skill": "Power BI",
+    "topics": [
+      "Power BI interface",
+      "Power Query",
+      "Data modelling",
+      "DAX",
+      "Visualizations",
+      "Dashboard design"
+    ],
+    "free_resources": [
+      {
+        "title": "Microsoft Power BI Training",
+        "provider": "Microsoft Learn",
+        "url": "https://learn.microsoft.com/en-us/training/powerplatform/power-bi/"
+      }
+    ],
+    "paid_resources": [
+      {
+        "title": "Search Power BI Courses",
+        "provider": "Coursera",
+        "url": "https://www.coursera.org/search?query=power%20bi"
+      }
+    ]
+  },
+  {
+    "skill": "Statistics",
+    "topics": [
+      "Mean median mode",
+      "Variance",
+      "Standard deviation",
+      "Probability",
+      "Correlation",
+      "Regression"
+    ],
+    "free_resources": [
+      {
+        "title": "Statistics and Probability",
+        "provider": "Khan Academy",
+        "url": "https://www.khanacademy.org/math/statistics-probability"
+      }
+    ],
+    "paid_resources": [
+      {
+        "title": "Search Statistics Courses",
+        "provider": "Coursera",
+        "url": "https://www.coursera.org/search?query=statistics"
+      }
+    ]
+  },
+  {
+    "skill": "Machine Learning",
+    "topics": [
+      "Supervised learning",
+      "Regression",
+      "Classification",
+      "Feature engineering",
+      "Model evaluation",
+      "Scikit-learn"
+    ],
+    "free_resources": [
+      {
+        "title": "Machine Learning Crash Course",
+        "provider": "Google",
+        "url": "https://developers.google.com/machine-learning/crash-course"
+      }
+    ],
+    "paid_resources": [
+      {
+        "title": "Search Machine Learning Courses",
+        "provider": "Coursera",
+        "url": "https://www.coursera.org/search?query=machine%20learning"
+      }
+    ]
+  },
+  {
+    "skill": "Excel",
+    "topics": [
+      "Formulas",
+      "Lookup functions",
+      "Pivot tables",
+      "Charts",
+      "Data cleaning",
+      "Analysis"
+    ],
+    "free_resources": [
+      {
+        "title": "Excel Help and Learning",
+        "provider": "Microsoft",
+        "url": "https://support.microsoft.com/excel"
+      }
+    ],
+    "paid_resources": [
+      {
+        "title": "Search Excel Courses",
+        "provider": "Coursera",
+        "url": "https://www.coursera.org/search?query=excel"
+      }
+    ]
+  }
+]

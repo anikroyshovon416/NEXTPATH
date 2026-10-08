@@ -1,0 +1,194 @@
+[
+  {
+    "career": "Data Analyst",
+    "salary_min": 4.5,
+    "salary_max": 12,
+    "salary_average": 7.8,
+    "demand_score": 86,
+    "opportunity_score": 82,
+    "min_experience": 1,
+    "skills": [
+      { "name": "SQL", "required_score": 8.5 },
+      { "name": "Excel", "required_score": 8.0 },
+      { "name": "Power BI", "required_score": 9.0 },
+      { "name": "Python", "required_score": 7.0 },
+      { "name": "Statistics", "required_score": 7.5 }
+    ]
+  },
+  {
+    "career": "Data Scientist",
+    "salary_min": 6,
+    "salary_max": 18,
+    "salary_average": 11.5,
+    "demand_score": 92,
+    "opportunity_score": 89,
+    "min_experience": 2,
+    "skills": [
+      { "name": "Python", "required_score": 9.0 },
+      { "name": "Machine Learning", "required_score": 9.0 },
+      { "name": "Statistics", "required_score": 8.5 },
+      { "name": "SQL", "required_score": 7.5 },
+      { "name": "Data Visualization", "required_score": 7.0 }
+    ]
+  },
+  {
+    "career": "Data Engineer",
+    "salary_min": 6.5,
+    "salary_max": 18,
+    "salary_average": 12.2,
+    "demand_score": 88,
+    "opportunity_score": 85,
+    "min_experience": 2,
+    "skills": [
+      { "name": "SQL", "required_score": 9.0 },
+      { "name": "Python", "required_score": 8.0 },
+      { "name": "ETL", "required_score": 9.0 },
+      { "name": "Data Pipelines", "required_score": 8.5 },
+      { "name": "Big Data", "required_score": 8.0 }
+    ]
+  },
+  {
+    "career": "Business Analyst",
+    "salary_min": 5,
+    "salary_max": 14,
+    "salary_average": 8.5,
+    "demand_score": 84,
+    "opportunity_score": 80,
+    "min_experience": 1,
+    "skills": [
+      { "name": "Excel", "required_score": 8.5 },
+      { "name": "SQL", "required_score": 7.5 },
+      { "name": "Business Analysis", "required_score": 9.0 },
+      { "name": "Statistics", "required_score": 7.0 },
+      { "name": "Communication", "required_score": 8.5 }
+    ]
+  },
+  {
+    "career": "Machine Learning Engineer",
+    "salary_min": 7,
+    "salary_max": 22,
+    "salary_average": 14,
+    "demand_score": 91,
+    "opportunity_score": 92,
+    "min_experience": 2,
+    "skills": [
+      { "name": "Python", "required_score": 9.0 },
+      { "name": "Machine Learning", "required_score": 9.5 },
+      { "name": "Deep Learning", "required_score": 8.5 },
+      { "name": "MLOps", "required_score": 8.0 },
+      { "name": "SQL", "required_score": 7.0 }
+    ]
+  },
+  {
+    "career": "BI Analyst",
+    "salary_min": 5,
+    "salary_max": 14,
+    "salary_average": 8.5,
+    "demand_score": 82,
+    "opportunity_score": 80,
+    "min_experience": 1,
+    "skills": [
+      { "name": "Power BI", "required_score": 9.5 },
+      { "name": "SQL", "required_score": 8.5 },
+      { "name": "Excel", "required_score": 8.0 },
+      { "name": "Data Visualization", "required_score": 8.5 },
+      { "name": "Statistics", "required_score": 7.0 }
+    ]
+  },
+  {
+    "career": "AI Engineer",
+    "salary_min": 8,
+    "salary_max": 24,
+    "salary_average": 15,
+    "demand_score": 93,
+    "opportunity_score": 94,
+    "min_experience": 2,
+    "skills": [
+      { "name": "Python", "required_score": 9.0 },
+      { "name": "Machine Learning", "required_score": 9.0 },
+      { "name": "Deep Learning", "required_score": 9.0 },
+      { "name": "Generative AI", "required_score": 8.5 },
+      { "name": "APIs", "required_score": 7.5 }
+    ]
+  },
+  {
+    "career": "Product Analyst",
+    "salary_min": 5,
+    "salary_max": 15,
+    "salary_average": 9,
+    "demand_score": 81,
+    "opportunity_score": 79,
+    "min_experience": 1,
+    "skills": [
+      { "name": "SQL", "required_score": 8.5 },
+      { "name": "Statistics", "required_score": 8.0 },
+      { "name": "Excel", "required_score": 7.5 },
+      { "name": "Product Analytics", "required_score": 9.0 },
+      { "name": "Data Visualization", "required_score": 8.0 }
+    ]
+  },
+  {
+    "career": "Marketing Analyst",
+    "salary_min": 4,
+    "salary_max": 12,
+    "salary_average": 7,
+    "demand_score": 78,
+    "opportunity_score": 76,
+    "min_experience": 1,
+    "skills": [
+      { "name": "Excel", "required_score": 8.0 },
+      { "name": "Statistics", "required_score": 7.5 },
+      { "name": "Marketing Analytics", "required_score": 9.0 },
+      { "name": "Data Visualization", "required_score": 7.5 },
+      { "name": "SQL", "required_score": 7.0 }
+    ]
+  },
+  {
+    "career": "Analytics Consultant",
+    "salary_min": 7,
+    "salary_max": 20,
+    "salary_average": 12,
+    "demand_score": 80,
+    "opportunity_score": 82,
+    "min_experience": 2,
+    "skills": [
+      { "name": "SQL", "required_score": 8.0 },
+      { "name": "Python", "required_score": 7.5 },
+      { "name": "Business Analysis", "required_score": 8.5 },
+      { "name": "Communication", "required_score": 9.0 },
+      { "name": "Data Visualization", "required_score": 8.0 }
+    ]
+  },
+  {
+    "career": "Data Architect",
+    "salary_min": 10,
+    "salary_max": 28,
+    "salary_average": 18,
+    "demand_score": 79,
+    "opportunity_score": 86,
+    "min_experience": 4,
+    "skills": [
+      { "name": "SQL", "required_score": 9.0 },
+      { "name": "Data Modeling", "required_score": 9.5 },
+      { "name": "Cloud", "required_score": 8.5 },
+      { "name": "Big Data", "required_score": 8.5 },
+      { "name": "Data Architecture", "required_score": 9.5 }
+    ]
+  },
+  {
+    "career": "Senior Data Analyst",
+    "salary_min": 8,
+    "salary_max": 20,
+    "salary_average": 13,
+    "demand_score": 83,
+    "opportunity_score": 85,
+    "min_experience": 3,
+    "skills": [
+      { "name": "SQL", "required_score": 9.0 },
+      { "name": "Python", "required_score": 8.0 },
+      { "name": "Power BI", "required_score": 9.0 },
+      { "name": "Statistics", "required_score": 8.0 },
+      { "name": "Communication", "required_score": 8.5 }
+    ]
+  }
+]
