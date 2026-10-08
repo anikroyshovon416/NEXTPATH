@@ -1,152 +1,681 @@
 [
   {
-    "skill": "Python",
-    "topics": [
-      "Python fundamentals",
-      "Functions",
-      "Lists and dictionaries",
-      "NumPy",
-      "Pandas",
-      "Data cleaning"
-    ],
-    "free_resources": [
-      {
-        "title": "Official Python Tutorial",
-        "provider": "Python.org",
-        "url": "https://docs.python.org/3/tutorial/"
-      }
-    ],
-    "paid_resources": [
-      {
-        "title": "Search Python Courses",
-        "provider": "Coursera",
-        "url": "https://www.coursera.org/search?query=python"
-      }
-    ]
-  },
-  {
     "skill": "SQL",
     "topics": [
-      "SELECT and WHERE",
-      "GROUP BY",
-      "JOIN",
+      "SQL Fundamentals",
+      "Filtering and Sorting",
+      "GROUP BY and Aggregations",
+      "JOINs",
       "Subqueries",
-      "CASE",
-      "Window functions"
+      "Window Functions"
     ],
     "free_resources": [
       {
-        "title": "SQLBolt",
-        "provider": "SQLBolt",
+        "name": "SQLBolt",
         "url": "https://sqlbolt.com/"
+      },
+      {
+        "name": "W3Schools SQL",
+        "url": "https://www.w3schools.com/sql/"
+      },
+      {
+        "name": "PostgreSQL Tutorial",
+        "url": "https://www.postgresql.org/docs/current/tutorial.html"
+      }
+    ],
+    "practice_resources": [
+      {
+        "name": "HackerRank SQL",
+        "url": "https://www.hackerrank.com/domains/sql"
+      },
+      {
+        "name": "LeetCode Database",
+        "url": "https://leetcode.com/problemset/database/"
       }
     ],
     "paid_resources": [
       {
-        "title": "Search SQL Courses",
-        "provider": "Coursera",
+        "name": "Coursera SQL Courses",
         "url": "https://www.coursera.org/search?query=sql"
+      },
+      {
+        "name": "Udemy SQL Courses",
+        "url": "https://www.udemy.com/courses/search/?q=sql"
+      },
+      {
+        "name": "DataCamp SQL Courses",
+        "url": "https://www.datacamp.com/search?q=sql"
       }
-    ]
+    ],
+    "project": "Build an Employee Analytics Database and answer business questions using SQL."
   },
   {
-    "skill": "Power BI",
+    "skill": "Python",
     "topics": [
-      "Power BI interface",
-      "Power Query",
-      "Data modelling",
-      "DAX",
-      "Visualizations",
-      "Dashboard design"
+      "Python Fundamentals",
+      "Functions",
+      "Lists and Dictionaries",
+      "File Handling",
+      "Pandas",
+      "Data Analysis"
     ],
     "free_resources": [
       {
-        "title": "Microsoft Power BI Training",
-        "provider": "Microsoft Learn",
-        "url": "https://learn.microsoft.com/en-us/training/powerplatform/power-bi/"
+        "name": "Python Official Tutorial",
+        "url": "https://docs.python.org/3/tutorial/"
+      },
+      {
+        "name": "Kaggle Python",
+        "url": "https://www.kaggle.com/learn/python"
+      }
+    ],
+    "practice_resources": [
+      {
+        "name": "HackerRank Python",
+        "url": "https://www.hackerrank.com/domains/python"
+      },
+      {
+        "name": "Exercism Python",
+        "url": "https://exercism.org/tracks/python"
       }
     ],
     "paid_resources": [
       {
-        "title": "Search Power BI Courses",
-        "provider": "Coursera",
-        "url": "https://www.coursera.org/search?query=power%20bi"
-      }
-    ]
-  },
-  {
-    "skill": "Statistics",
-    "topics": [
-      "Mean median mode",
-      "Variance",
-      "Standard deviation",
-      "Probability",
-      "Correlation",
-      "Regression"
-    ],
-    "free_resources": [
+        "name": "Coursera Python Courses",
+        "url": "https://www.coursera.org/search?query=python"
+      },
       {
-        "title": "Statistics and Probability",
-        "provider": "Khan Academy",
-        "url": "https://www.khanacademy.org/math/statistics-probability"
+        "name": "Udemy Python Courses",
+        "url": "https://www.udemy.com/courses/search/?q=python"
+      },
+      {
+        "name": "DataCamp Python Courses",
+        "url": "https://www.datacamp.com/search?q=python"
       }
     ],
-    "paid_resources": [
-      {
-        "title": "Search Statistics Courses",
-        "provider": "Coursera",
-        "url": "https://www.coursera.org/search?query=statistics"
-      }
-    ]
-  },
-  {
-    "skill": "Machine Learning",
-    "topics": [
-      "Supervised learning",
-      "Regression",
-      "Classification",
-      "Feature engineering",
-      "Model evaluation",
-      "Scikit-learn"
-    ],
-    "free_resources": [
-      {
-        "title": "Machine Learning Crash Course",
-        "provider": "Google",
-        "url": "https://developers.google.com/machine-learning/crash-course"
-      }
-    ],
-    "paid_resources": [
-      {
-        "title": "Search Machine Learning Courses",
-        "provider": "Coursera",
-        "url": "https://www.coursera.org/search?query=machine%20learning"
-      }
-    ]
+    "project": "Build a Python data-analysis project using a real CSV dataset."
   },
   {
     "skill": "Excel",
     "topics": [
       "Formulas",
-      "Lookup functions",
-      "Pivot tables",
+      "Lookup Functions",
+      "Pivot Tables",
       "Charts",
-      "Data cleaning",
-      "Analysis"
+      "Data Cleaning",
+      "Dashboard Creation"
     ],
     "free_resources": [
       {
-        "title": "Excel Help and Learning",
-        "provider": "Microsoft",
+        "name": "Microsoft Excel Help",
         "url": "https://support.microsoft.com/excel"
+      }
+    ],
+    "practice_resources": [
+      {
+        "name": "Excel Practice Online",
+        "url": "https://excel-practice-online.com/"
       }
     ],
     "paid_resources": [
       {
-        "title": "Search Excel Courses",
-        "provider": "Coursera",
+        "name": "Coursera Excel Courses",
         "url": "https://www.coursera.org/search?query=excel"
+      },
+      {
+        "name": "Udemy Excel Courses",
+        "url": "https://www.udemy.com/courses/search/?q=excel"
       }
-    ]
+    ],
+    "project": "Build an Excel sales dashboard with KPIs, charts and pivot tables."
+  },
+  {
+    "skill": "Power BI",
+    "topics": [
+      "Data Import",
+      "Power Query",
+      "Data Modeling",
+      "DAX",
+      "Dashboard Design",
+      "Data Storytelling"
+    ],
+    "free_resources": [
+      {
+        "name": "Microsoft Learn Power BI",
+        "url": "https://learn.microsoft.com/training/powerplatform/power-bi/"
+      }
+    ],
+    "practice_resources": [
+      {
+        "name": "Power BI Sample Datasets",
+        "url": "https://learn.microsoft.com/power-bi/create-reports/sample-datasets"
+      }
+    ],
+    "paid_resources": [
+      {
+        "name": "Coursera Power BI Courses",
+        "url": "https://www.coursera.org/search?query=power%20bi"
+      },
+      {
+        "name": "Udemy Power BI Courses",
+        "url": "https://www.udemy.com/courses/search/?q=power%20bi"
+      }
+    ],
+    "project": "Build an interactive business-intelligence dashboard."
+  },
+  {
+    "skill": "Statistics",
+    "topics": [
+      "Descriptive Statistics",
+      "Probability",
+      "Probability Distributions",
+      "Sampling",
+      "Confidence Intervals",
+      "Hypothesis Testing"
+    ],
+    "free_resources": [
+      {
+        "name": "Khan Academy Statistics",
+        "url": "https://www.khanacademy.org/math/statistics-probability"
+      },
+      {
+        "name": "StatQuest",
+        "url": "https://www.youtube.com/@statquest"
+      }
+    ],
+    "practice_resources": [
+      {
+        "name": "Kaggle Learn",
+        "url": "https://www.kaggle.com/learn"
+      }
+    ],
+    "paid_resources": [
+      {
+        "name": "Coursera Statistics Courses",
+        "url": "https://www.coursera.org/search?query=statistics"
+      },
+      {
+        "name": "Udemy Statistics Courses",
+        "url": "https://www.udemy.com/courses/search/?q=statistics"
+      }
+    ],
+    "project": "Analyze a real dataset and prepare a statistical report."
+  },
+  {
+    "skill": "Machine Learning",
+    "topics": [
+      "Machine Learning Fundamentals",
+      "Data Preprocessing",
+      "Regression",
+      "Classification",
+      "Model Evaluation",
+      "Feature Engineering"
+    ],
+    "free_resources": [
+      {
+        "name": "Google Machine Learning Crash Course",
+        "url": "https://developers.google.com/machine-learning/crash-course"
+      },
+      {
+        "name": "Kaggle Intro to Machine Learning",
+        "url": "https://www.kaggle.com/learn/intro-to-machine-learning"
+      }
+    ],
+    "practice_resources": [
+      {
+        "name": "Kaggle Competitions",
+        "url": "https://www.kaggle.com/competitions"
+      }
+    ],
+    "paid_resources": [
+      {
+        "name": "Coursera Machine Learning Courses",
+        "url": "https://www.coursera.org/search?query=machine%20learning"
+      },
+      {
+        "name": "Udemy Machine Learning Courses",
+        "url": "https://www.udemy.com/courses/search/?q=machine%20learning"
+      }
+    ],
+    "project": "Build and evaluate a predictive machine-learning model."
+  },
+  {
+    "skill": "Deep Learning",
+    "topics": [
+      "Neural Networks",
+      "Activation Functions",
+      "Backpropagation",
+      "CNN",
+      "Model Training",
+      "Model Evaluation"
+    ],
+    "free_resources": [
+      {
+        "name": "TensorFlow Tutorials",
+        "url": "https://www.tensorflow.org/tutorials"
+      },
+      {
+        "name": "PyTorch Tutorials",
+        "url": "https://pytorch.org/tutorials/"
+      }
+    ],
+    "practice_resources": [
+      {
+        "name": "Kaggle Deep Learning",
+        "url": "https://www.kaggle.com/learn/intro-to-deep-learning"
+      }
+    ],
+    "paid_resources": [
+      {
+        "name": "Coursera Deep Learning Courses",
+        "url": "https://www.coursera.org/search?query=deep%20learning"
+      },
+      {
+        "name": "Udemy Deep Learning Courses",
+        "url": "https://www.udemy.com/courses/search/?q=deep%20learning"
+      }
+    ],
+    "project": "Build a neural-network classification project."
+  },
+  {
+    "skill": "Data Visualization",
+    "topics": [
+      "Chart Selection",
+      "Visual Encoding",
+      "Color and Layout",
+      "Data Storytelling",
+      "Dashboard Design",
+      "Presentation"
+    ],
+    "free_resources": [
+      {
+        "name": "Matplotlib Tutorials",
+        "url": "https://matplotlib.org/stable/tutorials/index.html"
+      },
+      {
+        "name": "Tableau Public",
+        "url": "https://public.tableau.com/"
+      }
+    ],
+    "practice_resources": [
+      {
+        "name": "Kaggle Data Visualization",
+        "url": "https://www.kaggle.com/learn/data-visualization"
+      }
+    ],
+    "paid_resources": [
+      {
+        "name": "Coursera Data Visualization Courses",
+        "url": "https://www.coursera.org/search?query=data%20visualization"
+      },
+      {
+        "name": "Udemy Data Visualization Courses",
+        "url": "https://www.udemy.com/courses/search/?q=data%20visualization"
+      }
+    ],
+    "project": "Create a visual data story from a public dataset."
+  },
+  {
+    "skill": "Generative AI",
+    "topics": [
+      "LLM Fundamentals",
+      "Prompt Engineering",
+      "Embeddings",
+      "RAG",
+      "LLM APIs",
+      "Evaluation"
+    ],
+    "free_resources": [
+      {
+        "name": "Hugging Face Learn",
+        "url": "https://huggingface.co/learn"
+      }
+    ],
+    "practice_resources": [
+      {
+        "name": "Hugging Face Spaces",
+        "url": "https://huggingface.co/spaces"
+      }
+    ],
+    "paid_resources": [
+      {
+        "name": "Coursera Generative AI Courses",
+        "url": "https://www.coursera.org/search?query=generative%20ai"
+      },
+      {
+        "name": "Udemy Generative AI Courses",
+        "url": "https://www.udemy.com/courses/search/?q=generative%20ai"
+      }
+    ],
+    "project": "Build a small AI assistant using an LLM API or open-source model."
+  },
+  {
+    "skill": "APIs",
+    "topics": [
+      "HTTP Fundamentals",
+      "REST APIs",
+      "Requests and Responses",
+      "Authentication",
+      "FastAPI",
+      "API Testing"
+    ],
+    "free_resources": [
+      {
+        "name": "FastAPI Tutorial",
+        "url": "https://fastapi.tiangolo.com/tutorial/"
+      },
+      {
+        "name": "MDN HTTP Overview",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Overview"
+      }
+    ],
+    "practice_resources": [
+      {
+        "name": "Postman Learning Center",
+        "url": "https://learning.postman.com/"
+      }
+    ],
+    "paid_resources": [
+      {
+        "name": "Coursera API Courses",
+        "url": "https://www.coursera.org/search?query=api"
+      },
+      {
+        "name": "Udemy REST API Courses",
+        "url": "https://www.udemy.com/courses/search/?q=rest%20api"
+      }
+    ],
+    "project": "Build a REST API for a small career or skills dataset."
+  },
+  {
+    "skill": "MLOps",
+    "topics": [
+      "Experiment Tracking",
+      "Model Packaging",
+      "Docker",
+      "CI/CD",
+      "Model Deployment",
+      "Monitoring"
+    ],
+    "free_resources": [
+      {
+        "name": "MLflow Documentation",
+        "url": "https://mlflow.org/docs/latest/index.html"
+      },
+      {
+        "name": "Docker Get Started",
+        "url": "https://docs.docker.com/get-started/"
+      }
+    ],
+    "practice_resources": [
+      {
+        "name": "GitHub Actions Documentation",
+        "url": "https://docs.github.com/actions"
+      }
+    ],
+    "paid_resources": [
+      {
+        "name": "Coursera MLOps Courses",
+        "url": "https://www.coursera.org/search?query=mlops"
+      },
+      {
+        "name": "Udemy MLOps Courses",
+        "url": "https://www.udemy.com/courses/search/?q=mlops"
+      }
+    ],
+    "project": "Package and deploy a machine-learning model with version tracking."
+  },
+  {
+    "skill": "Cloud",
+    "topics": [
+      "Cloud Fundamentals",
+      "Compute",
+      "Storage",
+      "Databases",
+      "Identity and Access",
+      "Deployment"
+    ],
+    "free_resources": [
+      {
+        "name": "AWS Skill Builder",
+        "url": "https://skillbuilder.aws/"
+      },
+      {
+        "name": "Microsoft Learn Azure",
+        "url": "https://learn.microsoft.com/azure/"
+      }
+    ],
+    "practice_resources": [
+      {
+        "name": "AWS Free Tier",
+        "url": "https://aws.amazon.com/free/"
+      }
+    ],
+    "paid_resources": [
+      {
+        "name": "Coursera Cloud Courses",
+        "url": "https://www.coursera.org/search?query=cloud%20computing"
+      },
+      {
+        "name": "Udemy Cloud Courses",
+        "url": "https://www.udemy.com/courses/search/?q=cloud%20computing"
+      }
+    ],
+    "project": "Deploy a small web service or API to a cloud platform."
+  },
+  {
+    "skill": "ETL",
+    "topics": [
+      "Extract",
+      "Transform",
+      "Load",
+      "Data Cleaning",
+      "Scheduling",
+      "Pipeline Validation"
+    ],
+    "free_resources": [
+      {
+        "name": "Apache Airflow Tutorial",
+        "url": "https://airflow.apache.org/docs/apache-airflow/stable/tutorial/index.html"
+      }
+    ],
+    "practice_resources": [
+      {
+        "name": "Data Engineering Zoomcamp",
+        "url": "https://github.com/DataTalksClub/data-engineering-zoomcamp"
+      }
+    ],
+    "paid_resources": [
+      {
+        "name": "Coursera ETL Courses",
+        "url": "https://www.coursera.org/search?query=etl"
+      },
+      {
+        "name": "Udemy ETL Courses",
+        "url": "https://www.udemy.com/courses/search/?q=etl"
+      }
+    ],
+    "project": "Build an ETL pipeline that cleans a CSV and loads it into a database."
+  },
+  {
+    "skill": "Data Pipelines",
+    "topics": [
+      "Pipeline Design",
+      "Scheduling",
+      "Orchestration",
+      "Retries",
+      "Logging",
+      "Monitoring"
+    ],
+    "free_resources": [
+      {
+        "name": "Apache Airflow Documentation",
+        "url": "https://airflow.apache.org/docs/"
+      }
+    ],
+    "practice_resources": [
+      {
+        "name": "Data Engineering Zoomcamp",
+        "url": "https://github.com/DataTalksClub/data-engineering-zoomcamp"
+      }
+    ],
+    "paid_resources": [
+      {
+        "name": "Coursera Data Engineering Courses",
+        "url": "https://www.coursera.org/search?query=data%20engineering"
+      },
+      {
+        "name": "Udemy Data Pipeline Courses",
+        "url": "https://www.udemy.com/courses/search/?q=data%20pipeline"
+      }
+    ],
+    "project": "Build and schedule a small end-to-end data pipeline."
+  },
+  {
+    "skill": "Big Data",
+    "topics": [
+      "Distributed Computing",
+      "Spark Fundamentals",
+      "DataFrames",
+      "Transformations",
+      "Actions",
+      "Performance Basics"
+    ],
+    "free_resources": [
+      {
+        "name": "Apache Spark Quick Start",
+        "url": "https://spark.apache.org/docs/latest/quick-start.html"
+      },
+      {
+        "name": "Databricks Learning",
+        "url": "https://www.databricks.com/learn"
+      }
+    ],
+    "practice_resources": [
+      {
+        "name": "Kaggle Datasets",
+        "url": "https://www.kaggle.com/datasets"
+      }
+    ],
+    "paid_resources": [
+      {
+        "name": "Coursera Big Data Courses",
+        "url": "https://www.coursera.org/search?query=big%20data"
+      },
+      {
+        "name": "Udemy Spark Courses",
+        "url": "https://www.udemy.com/courses/search/?q=apache%20spark"
+      }
+    ],
+    "project": "Process a large dataset using Spark and summarize the results."
+  },
+  {
+    "skill": "Data Modeling",
+    "topics": [
+      "Entities and Relationships",
+      "Keys",
+      "Normalization",
+      "Dimensional Modeling",
+      "Star Schema",
+      "ER Diagrams"
+    ],
+    "free_resources": [
+      {
+        "name": "PostgreSQL Data Definition",
+        "url": "https://www.postgresql.org/docs/current/ddl.html"
+      },
+      {
+        "name": "dbdiagram.io",
+        "url": "https://dbdiagram.io/"
+      }
+    ],
+    "practice_resources": [
+      {
+        "name": "SQLBolt",
+        "url": "https://sqlbolt.com/"
+      }
+    ],
+    "paid_resources": [
+      {
+        "name": "Coursera Data Modeling Courses",
+        "url": "https://www.coursera.org/search?query=data%20modeling"
+      },
+      {
+        "name": "Udemy Database Design Courses",
+        "url": "https://www.udemy.com/courses/search/?q=database%20design"
+      }
+    ],
+    "project": "Design an ER model and star schema for a business scenario."
+  },
+  {
+    "skill": "Business Analysis",
+    "topics": [
+      "Requirements",
+      "Stakeholder Analysis",
+      "Process Mapping",
+      "KPIs",
+      "Gap Analysis",
+      "Documentation"
+    ],
+    "free_resources": [
+      {
+        "name": "IIBA Business Analysis Resources",
+        "url": "https://www.iiba.org/business-analysis-resources/"
+      }
+    ],
+    "practice_resources": [
+      {
+        "name": "Business Analysis Case Studies",
+        "url": "https://www.google.com/search?q=business+analysis+case+study+practice"
+      }
+    ],
+    "paid_resources": [
+      {
+        "name": "Coursera Business Analysis Courses",
+        "url": "https://www.coursera.org/search?query=business%20analysis"
+      },
+      {
+        "name": "Udemy Business Analysis Courses",
+        "url": "https://www.udemy.com/courses/search/?q=business%20analysis"
+      }
+    ],
+    "project": "Create a business requirements document and process map for a simple case."
+  },
+  {
+    "skill": "Communication",
+    "topics": [
+      "Clear Writing",
+      "Presentation Structure",
+      "Data Storytelling",
+      "Explaining Technical Work",
+      "Interview Communication"
+    ],
+    "free_resources": [
+      {
+        "name": "Toastmasters Resources",
+        "url": "https://www.toastmasters.org/resources"
+      },
+      {
+        "name": "Purdue OWL",
+        "url": "https://owl.purdue.edu/"
+      }
+    ],
+    "practice_resources": [
+      {
+        "name": "Technical Presentation Practice",
+        "url": "https://www.google.com/search?q=technical+presentation+practice"
+      }
+    ],
+    "paid_resources": [
+      {
+        "name": "Coursera Communication Courses",
+        "url": "https://www.coursera.org/search?query=communication%20skills"
+      },
+      {
+        "name": "Udemy Communication Courses",
+        "url": "https://www.udemy.com/courses/search/?q=communication%20skills"
+      }
+    ],
+    "project": "Prepare and deliver a 3-minute explanation of one technical project."
   }
 ]

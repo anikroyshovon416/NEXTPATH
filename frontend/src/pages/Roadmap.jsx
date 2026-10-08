@@ -1,586 +1,1455 @@
-import {
-  useEffect,
-  useMemo,
-  useState,
-} from "react";
-
+import { useEffect, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
 
+const API_URL = "http://127.0.0.1:8000";
+
+const fallbackResource = (skill) => ({
+  skill,
+  topics: [
+    `${skill} Fundamentals`,
+    `${skill} Core Concepts`,
+    `${skill} Guided Practice`,
+    `${skill} Mini Project`,
+  ],
+
+  free_resources: [
+    {
+      name: `${skill} Official Tutorial Search`,
+      url:
+        "https://www.google.com/search?q=" +
+        encodeURIComponent(`${skill} official tutorial`),
+    },
+  ],
+
+  practice_resources: [
+    {
+      name: `${skill} Practice`,
+      url:
+        "https://www.google.com/search?q=" +
+        encodeURIComponent(`${skill} practice exercises`),
+    },
+  ],
+
+  paid_resources: [
+    {
+      name: `Coursera ${skill} Courses`,
+      url:
+        "https://www.coursera.org/search?query=" +
+        encodeURIComponent(skill),
+    },
+    {
+      name: `Udemy ${skill} Courses`,
+      url:
+        "https://www.udemy.com/courses/search/?q=" +
+        encodeURIComponent(skill),
+    },
+  ],
+
+  project: `Build a practical mini project using ${skill}.`,
+});
+
+function getStoredJSON(key, fallbackValue) {
+  try {
+    const value = localStorage.getItem(key);
+
+    if (!value) {
+      return fallbackValue;
+    }
+
+    return JSON.parse(value);
+  } catch (error) {
+    console.error(`Could not read ${key}:`, error);
+    return fallbackValue;
+  }
+}
+
+function normalizeGapItem(item) {
+  return {
+    skill:
+      item.skill ||
+      item.name ||
+      item.skillName ||
+      "Unknown Skill",
+
+    requiredScore: Number(
+      item.requiredScore ??
+        item.required_score ??
+        item.required ??
+        0
+    ),
+
+    demonstratedScore: Number(
+      item.demonstratedScore ??
+        item.demonstrated_score ??
+        item.score ??
+        0
+    ),
+
+    gapScore: Number(
+      item.gapScore ??
+        item.gap_score ??
+        0
+    ),
+
+    gapPercentage: Number(
+      item.gapPercentage ??
+        item.gap_percentage ??
+        item.gap ??
+        0
+    ),
+  };
+}
+
+function normalizeResources(rawResources) {
+  if (!Array.isArray(rawResources)) {
+    return [];
+  }
+
+  return rawResources.map((resource) => ({
+    skill:
+      resource.skill ||
+      resource.name ||
+      "",
+
+    topics: Array.isArray(resource.topics)
+      ? resource.topics
+      : [],
+
+    free_resources:
+      resource.free_resources ||
+      resource.free ||
+      [],
+
+    practice_resources:
+      resource.practice_resources ||
+      resource.practice ||
+      [],
+
+    paid_resources:
+      resource.paid_resources ||
+      resource.paid ||
+      [],
+
+    project:
+      resource.project ||
+      "",
+  }));
+}
 
 function Roadmap() {
   const navigate = useNavigate();
 
-  const careerData = JSON.parse(
-    localStorage.getItem("nextpathTargetCareerData") || "null"
-  );
+  const [months, setMonths] = useState(() => {
+    const previous = getStoredJSON(
+      "nextpathRoadmapPreferences",
+      {}
+    );
 
-  const skillGaps = JSON.parse(
-    localStorage.getItem("nextpathSkillGaps") || "[]"
-  );
+    return Number(previous.months || 3);
+  });
 
-  const savedPreferences = JSON.parse(
-    localStorage.getItem(
-      "nextpathRoadmapPreferences"
-    ) || "null"
-  );
+  const [weeklyHours, setWeeklyHours] = useState(() => {
+    const previous = getStoredJSON(
+      "nextpathRoadmapPreferences",
+      {}
+    );
 
-  const [months, setMonths] = useState(
-    savedPreferences?.months || 3
-  );
-
-  const [weeklyHours, setWeeklyHours] = useState(
-    savedPreferences?.weeklyHours || 10
-  );
-
-  const [generated, setGenerated] = useState(
-    Boolean(
-      localStorage.getItem("nextpathRoadmapPlan")
-    )
-  );
+    return Number(previous.weeklyHours || 8);
+  });
 
   const [resources, setResources] = useState([]);
+  const [roadmap, setRoadmap] = useState(() =>
+    getStoredJSON("nextpathRoadmapPlan", [])
+  );
+
+  const [loading, setLoading] = useState(true);
+  const [resourceError, setResourceError] =
+    useState("");
+
+  const rawSkillGaps = useMemo(
+    () =>
+      getStoredJSON(
+        "nextpathSkillGaps",
+        []
+      ),
+    []
+  );
+
+  const skillGaps = useMemo(
+    () =>
+      Array.isArray(rawSkillGaps)
+        ? rawSkillGaps
+            .map(normalizeGapItem)
+            .filter(
+              (item) =>
+                item.skill &&
+                item.gapPercentage > 0
+            )
+        : [],
+    [rawSkillGaps]
+  );
 
   useEffect(() => {
-    fetch(
-      "http://127.0.0.1:8000/learning-resources"
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        setResources(data.resources || []);
-      })
-      .catch((error) => {
+    const loadResources = async () => {
+      try {
+        setLoading(true);
+        setResourceError("");
+
+        const response = await fetch(
+          `${API_URL}/learning-resources`
+        );
+
+        if (!response.ok) {
+          throw new Error(
+            `Backend returned ${response.status}`
+          );
+        }
+
+        const data = await response.json();
+
+        setResources(
+          normalizeResources(data)
+        );
+      } catch (error) {
         console.error(
           "Learning resources error:",
           error
         );
-      });
+
+        setResourceError(
+          "Could not load learning resources from the backend. " +
+            "NEXTPATH will use fallback resources for now."
+        );
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    loadResources();
   }, []);
 
-  const roadmapPlan = useMemo(() => {
-    const gaps = skillGaps.filter(
-      (item) => item.gapPercentage > 0
+  const getResourceForSkill = (skill) => {
+    const found = resources.find(
+      (resource) =>
+        resource.skill
+          .trim()
+          .toLowerCase() ===
+        skill.trim().toLowerCase()
     );
 
-    if (gaps.length === 0) {
-      return [];
+    if (!found) {
+      return fallbackResource(skill);
     }
 
-    const totalGap = gaps.reduce(
-      (sum, item) =>
-        sum + item.gapPercentage,
-      0
-    );
+    const fallback =
+      fallbackResource(skill);
 
-    const totalWeeks = months * 4;
+    return {
+      skill,
 
-    return gaps.map((item) => {
-      const weight =
-        item.gapPercentage / totalGap;
+      topics:
+        found.topics?.length > 0
+          ? found.topics
+          : fallback.topics,
 
-      const hoursPerWeek = Math.max(
-        1,
-        Number(
-          (
-            weeklyHours * weight
-          ).toFixed(1)
-        )
-      );
+      free_resources:
+        found.free_resources?.length > 0
+          ? found.free_resources
+          : fallback.free_resources,
 
-      const recommendedWeeks = Math.max(
-        1,
-        Math.round(
-          totalWeeks * weight
-        )
-      );
+      practice_resources:
+        found.practice_resources?.length > 0
+          ? found.practice_resources
+          : fallback.practice_resources,
 
-      const resource = resources.find(
-        (r) =>
-          r.skill.toLowerCase() ===
-          item.skill.toLowerCase()
-      );
+      paid_resources:
+        found.paid_resources?.length > 0
+          ? found.paid_resources
+          : fallback.paid_resources,
 
-      const topics =
-        resource?.topics || [
-          `${item.skill} fundamentals`,
-          `${item.skill} practical concepts`,
-          `${item.skill} problem solving`,
-          `${item.skill} project practice`,
-        ];
-
-      return {
-        ...item,
-        hoursPerWeek,
-        recommendedWeeks,
-        topics,
-        freeResources:
-          resource?.free_resources || [],
-        paidResources:
-          resource?.paid_resources || [],
-      };
-    });
-  }, [
-    skillGaps,
-    months,
-    weeklyHours,
-    resources,
-  ]);
+      project:
+        found.project ||
+        fallback.project,
+    };
+  };
 
   const generateRoadmap = () => {
-    const preferences = {
-      months: Number(months),
-      weeklyHours: Number(weeklyHours),
-    };
+    if (skillGaps.length === 0) {
+      alert(
+        "No skill gaps were found. Please complete the Skill Gap step first."
+      );
+      return;
+    }
+
+    const totalGap =
+      skillGaps.reduce(
+        (sum, item) =>
+          sum + item.gapPercentage,
+        0
+      ) || 1;
+
+    const totalWeeks =
+      Number(months) * 4;
+
+    const sortedGaps = [
+      ...skillGaps,
+    ].sort(
+      (a, b) =>
+        b.gapPercentage -
+        a.gapPercentage
+    );
+
+    const plan = sortedGaps.map(
+      (gapItem, index) => {
+        const resource =
+          getResourceForSkill(
+            gapItem.skill
+          );
+
+        const weight =
+          gapItem.gapPercentage /
+          totalGap;
+
+        const calculatedHours =
+          Number(weeklyHours) *
+          weight;
+
+        const calculatedWeeks =
+          totalWeeks * weight;
+
+        const hoursPerWeek = Math.max(
+          0.5,
+          Math.round(
+            calculatedHours * 10
+          ) / 10
+        );
+
+        const recommendedWeeks =
+          Math.max(
+            1,
+            Math.round(calculatedWeeks)
+          );
+
+        return {
+          priority: index + 1,
+
+          skill: gapItem.skill,
+
+          requiredScore:
+            gapItem.requiredScore,
+
+          demonstratedScore:
+            gapItem.demonstratedScore,
+
+          gapScore:
+            gapItem.gapScore,
+
+          gapPercentage:
+            gapItem.gapPercentage,
+
+          // Kept for compatibility
+          gap: gapItem.gapPercentage,
+
+          hoursPerWeek,
+
+          recommendedWeeks,
+
+          topics: resource.topics,
+
+          freeResources:
+            resource.free_resources,
+
+          practiceResources:
+            resource.practice_resources,
+
+          paidResources:
+            resource.paid_resources,
+
+          // Snake-case aliases for compatibility
+          free_resources:
+            resource.free_resources,
+
+          practice_resources:
+            resource.practice_resources,
+
+          paid_resources:
+            resource.paid_resources,
+
+          project: resource.project,
+        };
+      }
+    );
+
+    setRoadmap(plan);
 
     localStorage.setItem(
       "nextpathRoadmapPreferences",
-      JSON.stringify(preferences)
+      JSON.stringify({
+        months: Number(months),
+        weeklyHours:
+          Number(weeklyHours),
+      })
     );
 
     localStorage.setItem(
       "nextpathRoadmapPlan",
-      JSON.stringify(roadmapPlan)
+      JSON.stringify(plan)
     );
 
-    /*
-      Create initial progress structure.
-    */
+    const existingProgress =
+      getStoredJSON(
+        "nextpathRoadmapProgress",
+        {}
+      );
 
-    const existingProgress = JSON.parse(
-      localStorage.getItem(
-        "nextpathRoadmapProgress"
-      ) || "{}"
-    );
+    const newProgress = {
+      ...existingProgress,
+    };
 
-    roadmapPlan.forEach((skill) => {
-      if (!existingProgress[skill.skill]) {
-        existingProgress[skill.skill] = {
-          topics: {},
-        };
+    plan.forEach((item) => {
+      item.topics.forEach(
+        (topic) => {
+          const key =
+            `${item.skill}::${topic}`;
 
-        skill.topics.forEach((topic) => {
-          existingProgress[
-            skill.skill
-          ].topics[topic] = false;
-        });
-      }
+          if (
+            newProgress[key] ===
+            undefined
+          ) {
+            newProgress[key] =
+              false;
+          }
+        }
+      );
     });
 
     localStorage.setItem(
       "nextpathRoadmapProgress",
-      JSON.stringify(existingProgress)
+      JSON.stringify(newProgress)
     );
-
-    setGenerated(true);
   };
 
-  if (!careerData) {
-    return (
-      <Message
-        text="Select a target career first."
-        button="Choose Career"
-        onClick={() =>
-          navigate("/target-career")
-        }
-      />
-    );
-  }
+  const goToProgress = () => {
+    navigate("/progress");
+  };
 
-  if (skillGaps.length === 0) {
-    return (
-      <Message
-        text="Complete your Skill Gap Analysis first."
-        button="Open Skill Gap"
-        onClick={() =>
-          navigate("/skill-gap")
-        }
-      />
-    );
-  }
+  const goBack = () => {
+    navigate("/skill-gap");
+  };
 
   return (
-    <div
-      style={{
-        maxWidth: "1200px",
-        margin: "0 auto",
-      }}
-    >
-      <p style={label}>
-        PERSONALIZED ROADMAP
-      </p>
+    <div style={styles.page}>
+      <div style={styles.header}>
+        <div>
+          <p style={styles.eyebrow}>
+            LEARNING INTELLIGENCE
+          </p>
 
-      <h1>
-        {careerData.career} Learning Plan
-      </h1>
+          <h1 style={styles.title}>
+            Personalized Roadmap
+          </h1>
 
-      <p style={description}>
-        Tell NEXTPATH how quickly you want
-        to reach your goal and how much time
-        you can study each week.
-      </p>
-
-      <div style={inputGrid}>
-        <div style={inputCard}>
-          <label>
-            <strong>
-              Goal Duration
-            </strong>
-          </label>
-
-          <select
-            value={months}
-            onChange={(e) =>
-              setMonths(
-                Number(e.target.value)
-              )
-            }
-            style={inputStyle}
-          >
-            <option value={1}>
-              1 Month
-            </option>
-
-            <option value={2}>
-              2 Months
-            </option>
-
-            <option value={3}>
-              3 Months
-            </option>
-
-            <option value={6}>
-              6 Months
-            </option>
-          </select>
+          <p style={styles.subtitle}>
+            NEXTPATH converts your
+            verified skill gaps into a
+            practical learning plan with
+            study topics, free materials,
+            practice platforms, paid
+            course suggestions and
+            projects.
+          </p>
         </div>
 
-        <div style={inputCard}>
-          <label>
-            <strong>
-              Study Hours Per Week
-            </strong>
-          </label>
-
-          <input
-            type="number"
-            min="1"
-            max="40"
-            value={weeklyHours}
-            onChange={(e) =>
-              setWeeklyHours(
-                Number(e.target.value)
-              )
-            }
-            style={inputStyle}
-          />
+        <div style={styles.headerBadge}>
+          Evidence → Gap → Learning →
+          Re-Assessment
         </div>
       </div>
 
-      <button
-        style={{
-          ...button,
-          width: "100%",
-          marginBottom: "30px",
-        }}
-        onClick={generateRoadmap}
-      >
-        Generate Personalized Roadmap
-      </button>
+      <div style={styles.infoBanner}>
+        <strong>
+          How this roadmap works:
+        </strong>{" "}
+        skills with larger gaps receive
+        higher priority and a larger
+        share of your weekly study time.
+      </div>
 
-      {generated && (
-        <>
-          <div style={summary}>
+      {resourceError && (
+        <div style={styles.warning}>
+          {resourceError}
+        </div>
+      )}
+
+      <section style={styles.settingsCard}>
+        <div style={styles.sectionTop}>
+          <div>
+            <p style={styles.eyebrow}>
+              ROADMAP SETTINGS
+            </p>
+
+            <h2 style={styles.sectionTitle}>
+              Choose your learning
+              commitment
+            </h2>
+
+            <p style={styles.sectionText}>
+              Tell NEXTPATH how much
+              time you have. The roadmap
+              will distribute that time
+              across your remaining
+              skill gaps.
+            </p>
+          </div>
+        </div>
+
+        <div style={styles.settingsGrid}>
+          <div>
+            <label style={styles.label}>
+              Goal duration
+            </label>
+
+            <select
+              value={months}
+              onChange={(event) =>
+                setMonths(
+                  Number(
+                    event.target.value
+                  )
+                )
+              }
+              style={styles.select}
+            >
+              <option value={1}>
+                1 month
+              </option>
+
+              <option value={2}>
+                2 months
+              </option>
+
+              <option value={3}>
+                3 months
+              </option>
+
+              <option value={6}>
+                6 months
+              </option>
+            </select>
+          </div>
+
+          <div>
+            <label style={styles.label}>
+              Weekly study hours
+            </label>
+
+            <input
+              type="number"
+              min="2"
+              max="40"
+              value={weeklyHours}
+              onChange={(event) =>
+                setWeeklyHours(
+                  Math.max(
+                    2,
+                    Number(
+                      event.target.value
+                    ) || 2
+                  )
+                )
+              }
+              style={styles.input}
+            />
+          </div>
+        </div>
+
+        <div style={styles.summaryStrip}>
+          <div>
+            <span
+              style={
+                styles.summaryLabel
+              }
+            >
+              Duration
+            </span>
+
             <strong>
-              {months * 4}-Week Plan
+              {months}{" "}
+              {months === 1
+                ? "month"
+                : "months"}
             </strong>
-
-            <span>
-              {weeklyHours} hours/week
-            </span>
-
-            <span>
-              {roadmapPlan.length} skills
-              to improve
-            </span>
           </div>
 
-          <div
-            style={{
-              display: "grid",
-              gap: "20px",
-            }}
-          >
-            {roadmapPlan.map(
-              (item, index) => (
-                <RoadmapCard
-                  key={item.skill}
-                  item={item}
-                  priority={index + 1}
-                />
-              )
-            )}
+          <div>
+            <span
+              style={
+                styles.summaryLabel
+              }
+            >
+              Study time
+            </span>
+
+            <strong>
+              {weeklyHours} hrs/week
+            </strong>
           </div>
+
+          <div>
+            <span
+              style={
+                styles.summaryLabel
+              }
+            >
+              Remaining skills
+            </span>
+
+            <strong>
+              {skillGaps.length}
+            </strong>
+          </div>
+        </div>
+
+        <button
+          onClick={generateRoadmap}
+          style={styles.primaryButton}
+          disabled={loading}
+        >
+          {loading
+            ? "Loading Resources..."
+            : roadmap.length > 0
+            ? "Regenerate Personalized Roadmap"
+            : "Generate Personalized Roadmap"}
+        </button>
+      </section>
+
+      {skillGaps.length === 0 && (
+        <div style={styles.emptyState}>
+          <div style={styles.emptyIcon}>
+            🧩
+          </div>
+
+          <h3>
+            No skill gaps are available
+            yet
+          </h3>
+
+          <p>
+            Complete the Target Career,
+            Required Skills and
+            Assessment steps first.
+          </p>
 
           <button
-            style={{
-              ...button,
-              width: "100%",
-              marginTop: "25px",
-            }}
-            onClick={() =>
-              navigate("/progress")
+            onClick={goBack}
+            style={
+              styles.secondaryButton
             }
           >
-            Start Learning & Track Progress →
+            Go to Skill Gap
           </button>
+        </div>
+      )}
+
+      {roadmap.length > 0 && (
+        <>
+          <div style={styles.planHeading}>
+            <div>
+              <p style={styles.eyebrow}>
+                YOUR LEARNING PLAN
+              </p>
+
+              <h2 style={styles.sectionTitle}>
+                Priority-based roadmap
+              </h2>
+            </div>
+
+            <div style={styles.planCount}>
+              {roadmap.length} skills
+            </div>
+          </div>
+
+          <div style={styles.roadmapList}>
+            {roadmap.map((item) => (
+              <article
+                key={item.skill}
+                style={styles.skillCard}
+              >
+                <div
+                  style={
+                    styles.cardHeader
+                  }
+                >
+                  <div
+                    style={
+                      styles.priorityBadge
+                    }
+                  >
+                    Priority #
+                    {item.priority}
+                  </div>
+
+                  <div
+                    style={
+                      styles.skillHeaderText
+                    }
+                  >
+                    <h2
+                      style={
+                        styles.skillTitle
+                      }
+                    >
+                      {item.skill}
+                    </h2>
+
+                    <p
+                      style={
+                        styles.skillDescription
+                      }
+                    >
+                      Focus on closing
+                      this skill gap
+                      before
+                      re-assessment.
+                    </p>
+                  </div>
+                </div>
+
+                <div style={styles.metricsGrid}>
+                  <Metric
+                    label="Current Gap"
+                    value={`${Math.round(
+                      item.gapPercentage
+                    )}%`}
+                  />
+
+                  <Metric
+                    label="Required"
+                    value={`${item.requiredScore}/10`}
+                  />
+
+                  <Metric
+                    label="Current Score"
+                    value={`${item.demonstratedScore}/10`}
+                  />
+
+                  <Metric
+                    label="Study / Week"
+                    value={`${item.hoursPerWeek} hrs`}
+                  />
+
+                  <Metric
+                    label="Suggested Time"
+                    value={`${item.recommendedWeeks} weeks`}
+                  />
+                </div>
+
+                <div
+                  style={
+                    styles.progressTrack
+                  }
+                >
+                  <div
+                    style={{
+                      ...styles.progressFill,
+                      width: `${Math.max(
+                        3,
+                        100 -
+                          item.gapPercentage
+                      )}%`,
+                    }}
+                  />
+                </div>
+
+                <p
+                  style={
+                    styles.progressCaption
+                  }
+                >
+                  Current readiness for
+                  this skill:{" "}
+                  {Math.max(
+                    0,
+                    Math.round(
+                      100 -
+                        item.gapPercentage
+                    )
+                  )}
+                  %
+                </p>
+
+                <div
+                  style={
+                    styles.contentGrid
+                  }
+                >
+                  <section
+                    style={
+                      styles.contentPanel
+                    }
+                  >
+                    <div
+                      style={
+                        styles.panelTitle
+                      }
+                    >
+                      📘 Topics to Learn
+                    </div>
+
+                    <ol
+                      style={
+                        styles.topicList
+                      }
+                    >
+                      {item.topics.map(
+                        (
+                          topic,
+                          topicIndex
+                        ) => (
+                          <li
+                            key={topic}
+                            style={
+                              styles.topicItem
+                            }
+                          >
+                            <span
+                              style={
+                                styles.topicNumber
+                              }
+                            >
+                              {topicIndex +
+                                1}
+                            </span>
+
+                            <span>
+                              {topic}
+                            </span>
+                          </li>
+                        )
+                      )}
+                    </ol>
+                  </section>
+
+                  <section
+                    style={
+                      styles.contentPanel
+                    }
+                  >
+                    <div
+                      style={
+                        styles.panelTitle
+                      }
+                    >
+                      📚 Free Study
+                      Materials
+                    </div>
+
+                    <ResourceLinks
+                      resources={
+                        item.freeResources
+                      }
+                      emptyText="No free material available."
+                    />
+                  </section>
+
+                  <section
+                    style={
+                      styles.contentPanel
+                    }
+                  >
+                    <div
+                      style={
+                        styles.panelTitle
+                      }
+                    >
+                      🧪 Practice
+                      Platforms
+                    </div>
+
+                    <ResourceLinks
+                      resources={
+                        item.practiceResources
+                      }
+                      emptyText="No practice platform available."
+                    />
+                  </section>
+
+                  <section
+                    style={
+                      styles.contentPanel
+                    }
+                  >
+                    <div
+                      style={
+                        styles.panelTitle
+                      }
+                    >
+                      💳 Paid Course
+                      Suggestions
+                    </div>
+
+                    <p
+                      style={
+                        styles.smallNote
+                      }
+                    >
+                      Platform/search
+                      links are used
+                      because individual
+                      course names,
+                      prices and
+                      availability can
+                      change.
+                    </p>
+
+                    <ResourceLinks
+                      resources={
+                        item.paidResources
+                      }
+                      emptyText="No paid course suggestion available."
+                    />
+                  </section>
+                </div>
+
+                <section
+                  style={
+                    styles.projectBox
+                  }
+                >
+                  <div
+                    style={
+                      styles.projectIcon
+                    }
+                  >
+                    🛠
+                  </div>
+
+                  <div>
+                    <div
+                      style={
+                        styles.projectLabel
+                      }
+                    >
+                      RECOMMENDED
+                      PRACTICAL PROJECT
+                    </div>
+
+                    <div
+                      style={
+                        styles.projectTitle
+                      }
+                    >
+                      {item.project}
+                    </div>
+
+                    <p
+                      style={
+                        styles.projectText
+                      }
+                    >
+                      Complete this
+                      project as evidence
+                      that you can apply
+                      the skill, not only
+                      study the theory.
+                    </p>
+                  </div>
+                </section>
+              </article>
+            ))}
+          </div>
+
+          <div style={styles.bottomActions}>
+            <button
+              onClick={goBack}
+              style={
+                styles.secondaryButton
+              }
+            >
+              ← Back to Skill Gap
+            </button>
+
+            <button
+              onClick={goToProgress}
+              style={
+                styles.primaryButton
+              }
+            >
+              Start Progress Tracking →
+            </button>
+          </div>
         </>
       )}
     </div>
   );
 }
 
-
-function RoadmapCard({
-  item,
-  priority,
-}) {
+function Metric({ label, value }) {
   return (
-    <div style={roadmapCard}>
-      <div style={topRow}>
-        <div>
-          <small>
-            Priority #{priority}
-          </small>
+    <div style={styles.metricCard}>
+      <span style={styles.metricLabel}>
+        {label}
+      </span>
 
-          <h2>
-            {item.skill}
-          </h2>
-        </div>
+      <strong style={styles.metricValue}>
+        {value}
+      </strong>
+    </div>
+  );
+}
 
-        <div style={gapBadge}>
-          {item.gapPercentage}% Gap
-        </div>
-      </div>
+function ResourceLinks({
+  resources,
+  emptyText,
+}) {
+  if (
+    !Array.isArray(resources) ||
+    resources.length === 0
+  ) {
+    return (
+      <p style={styles.smallNote}>
+        {emptyText}
+      </p>
+    );
+  }
 
-      <div style={metrics}>
-        <MiniMetric
-          title="Study"
-          value={`${item.hoursPerWeek} hrs/week`}
-        />
+  return (
+    <div style={styles.resourceList}>
+      {resources.map(
+        (resource, index) => (
+          <a
+            key={`${resource.name}-${index}`}
+            href={resource.url}
+            target="_blank"
+            rel="noreferrer"
+            style={styles.resourceLink}
+          >
+            <span>
+              {resource.name}
+            </span>
 
-        <MiniMetric
-          title="Recommended"
-          value={`${item.recommendedWeeks} weeks`}
-        />
-
-        <MiniMetric
-          title="Current Readiness"
-          value={`${item.readinessPercentage}%`}
-        />
-      </div>
-
-      <h3>Topics to Learn</h3>
-
-      <ul>
-        {item.topics.map((topic) => (
-          <li key={topic}>
-            {topic}
-          </li>
-        ))}
-      </ul>
-
-      <h3>Free Study Materials</h3>
-
-      {item.freeResources.length === 0 ? (
-        <p style={muted}>
-          Add a free learning resource
-          for this skill.
-        </p>
-      ) : (
-        item.freeResources.map(
-          (resource) => (
-            <a
-              key={resource.url}
-              href={resource.url}
-              target="_blank"
-              rel="noreferrer"
-              style={resourceLink}
+            <span
+              style={
+                styles.externalIcon
+              }
             >
-              {resource.title}
-              {" — "}
-              {resource.provider}
-            </a>
-          )
-        )
-      )}
-
-      <h3>Paid Courses</h3>
-
-      {item.paidResources.length === 0 ? (
-        <p style={muted}>
-          Add a verified paid course
-          for this skill.
-        </p>
-      ) : (
-        item.paidResources.map(
-          (resource) => (
-            <a
-              key={resource.url}
-              href={resource.url}
-              target="_blank"
-              rel="noreferrer"
-              style={resourceLink}
-            >
-              {resource.title}
-              {" — "}
-              {resource.provider}
-            </a>
-          )
+              ↗
+            </span>
+          </a>
         )
       )}
     </div>
   );
 }
 
+const styles = {
+  page: {
+    maxWidth: "1280px",
+    margin: "0 auto",
+    padding: "8px 6px 60px",
+  },
 
-function MiniMetric({
-  title,
-  value,
-}) {
-  return (
-    <div style={miniMetric}>
-      <small>{title}</small>
-      <strong>{value}</strong>
-    </div>
-  );
-}
+  header: {
+    display: "flex",
+    justifyContent: "space-between",
+    alignItems: "flex-start",
+    gap: "24px",
+    marginBottom: "24px",
+    flexWrap: "wrap",
+  },
 
+  eyebrow: {
+    margin: "0 0 8px",
+    fontSize: "12px",
+    fontWeight: "800",
+    letterSpacing: "1.4px",
+    color: "#60a5fa",
+  },
 
-function Message({
-  text,
-  button: buttonText,
-  onClick,
-}) {
-  return (
-    <div style={roadmapCard}>
-      <h2>{text}</h2>
+  title: {
+    margin: 0,
+    fontSize: "36px",
+    lineHeight: 1.1,
+    color: "#f8fafc",
+  },
 
-      <button
-        style={button}
-        onClick={onClick}
-      >
-        {buttonText}
-      </button>
-    </div>
-  );
-}
+  subtitle: {
+    maxWidth: "760px",
+    marginTop: "12px",
+    color: "#94a3b8",
+    lineHeight: 1.7,
+  },
 
+  headerBadge: {
+    padding: "10px 14px",
+    borderRadius: "999px",
+    background: "#0f1d35",
+    border: "1px solid #1e3a5f",
+    color: "#93c5fd",
+    fontSize: "13px",
+    fontWeight: "700",
+  },
 
-const label = {
-  color: "#C9151E",
-  fontWeight: "800",
-};
+  infoBanner: {
+    padding: "16px 18px",
+    marginBottom: "20px",
+    borderRadius: "12px",
+    background: "#0c2435",
+    border: "1px solid #164e63",
+    color: "#bae6fd",
+    lineHeight: 1.6,
+  },
 
-const description = {
-  color: "#6B7280",
-  lineHeight: "1.7",
-};
+  warning: {
+    padding: "14px 16px",
+    marginBottom: "18px",
+    borderRadius: "12px",
+    background: "#33240a",
+    border: "1px solid #854d0e",
+    color: "#fde68a",
+  },
 
-const inputGrid = {
-  display: "grid",
-  gridTemplateColumns:
-    "repeat(auto-fit, minmax(250px, 1fr))",
-  gap: "18px",
-  margin: "25px 0",
-};
+  settingsCard: {
+    padding: "24px",
+    borderRadius: "18px",
+    background: "#111827",
+    border: "1px solid #263244",
+    marginBottom: "28px",
+  },
 
-const inputCard = {
-  background: "#FFFFFF",
-  padding: "20px",
-  borderRadius: "14px",
-  border: "1px solid #E5E7EB",
-};
+  sectionTop: {
+    marginBottom: "22px",
+  },
 
-const inputStyle = {
-  width: "100%",
-  padding: "12px",
-  marginTop: "10px",
-  borderRadius: "8px",
-  border: "1px solid #D1D5DB",
-  boxSizing: "border-box",
-};
+  sectionTitle: {
+    margin: 0,
+    color: "#f8fafc",
+    fontSize: "24px",
+  },
 
-const button = {
-  background: "#C9151E",
-  color: "#FFFFFF",
-  border: "none",
-  padding: "14px 20px",
-  borderRadius: "10px",
-  cursor: "pointer",
-  fontWeight: "800",
-};
+  sectionText: {
+    marginTop: "8px",
+    color: "#94a3b8",
+    lineHeight: 1.6,
+  },
 
-const summary = {
-  background: "#111827",
-  color: "#FFFFFF",
-  display: "flex",
-  justifyContent: "space-between",
-  flexWrap: "wrap",
-  padding: "20px",
-  borderRadius: "14px",
-  marginBottom: "22px",
-  gap: "15px",
-};
+  settingsGrid: {
+    display: "grid",
+    gridTemplateColumns:
+      "repeat(auto-fit, minmax(220px, 1fr))",
+    gap: "18px",
+    marginBottom: "18px",
+  },
 
-const roadmapCard = {
-  background: "#FFFFFF",
-  border: "1px solid #E5E7EB",
-  borderRadius: "16px",
-  padding: "24px",
-};
+  label: {
+    display: "block",
+    color: "#cbd5e1",
+    fontWeight: "700",
+    marginBottom: "8px",
+  },
 
-const topRow = {
-  display: "flex",
-  justifyContent: "space-between",
-  alignItems: "flex-start",
-};
+  select: {
+    width: "100%",
+    padding: "12px 14px",
+    borderRadius: "10px",
+    border: "1px solid #334155",
+    background: "#0b1220",
+    color: "#f8fafc",
+    outline: "none",
+  },
 
-const gapBadge = {
-  background: "#FEE2E2",
-  color: "#B91C1C",
-  padding: "7px 12px",
-  borderRadius: "999px",
-  fontWeight: "800",
-};
+  input: {
+    width: "100%",
+    boxSizing: "border-box",
+    padding: "12px 14px",
+    borderRadius: "10px",
+    border: "1px solid #334155",
+    background: "#0b1220",
+    color: "#f8fafc",
+    outline: "none",
+  },
 
-const metrics = {
-  display: "grid",
-  gridTemplateColumns:
-    "repeat(auto-fit, minmax(150px, 1fr))",
-  gap: "10px",
-  margin: "18px 0",
-};
+  summaryStrip: {
+    display: "grid",
+    gridTemplateColumns:
+      "repeat(auto-fit, minmax(150px, 1fr))",
+    gap: "12px",
+    marginBottom: "20px",
+  },
 
-const miniMetric = {
-  background: "#F9FAFB",
-  padding: "12px",
-  borderRadius: "10px",
-  display: "flex",
-  flexDirection: "column",
-  gap: "5px",
-};
+  summaryLabel: {
+    display: "block",
+    fontSize: "12px",
+    color: "#64748b",
+    textTransform: "uppercase",
+    marginBottom: "4px",
+  },
 
-const resourceLink = {
-  display: "block",
-  padding: "10px",
-  marginBottom: "8px",
-  background: "#F9FAFB",
-  borderRadius: "8px",
-  color: "#1D4ED8",
-  textDecoration: "none",
-};
+  primaryButton: {
+    padding: "13px 20px",
+    borderRadius: "10px",
+    border: "none",
+    background:
+      "linear-gradient(135deg, #2563eb, #4f46e5)",
+    color: "white",
+    fontWeight: "800",
+    cursor: "pointer",
+  },
 
-const muted = {
-  color: "#6B7280",
+  secondaryButton: {
+    padding: "13px 20px",
+    borderRadius: "10px",
+    border: "1px solid #334155",
+    background: "#111827",
+    color: "#e2e8f0",
+    fontWeight: "700",
+    cursor: "pointer",
+  },
+
+  emptyState: {
+    textAlign: "center",
+    padding: "50px 20px",
+    borderRadius: "18px",
+    border: "1px dashed #334155",
+    color: "#94a3b8",
+  },
+
+  emptyIcon: {
+    fontSize: "42px",
+  },
+
+  planHeading: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent: "space-between",
+    margin: "34px 0 18px",
+  },
+
+  planCount: {
+    padding: "8px 12px",
+    borderRadius: "999px",
+    background: "#172033",
+    color: "#93c5fd",
+    fontWeight: "700",
+  },
+
+  roadmapList: {
+    display: "grid",
+    gap: "22px",
+  },
+
+  skillCard: {
+    padding: "24px",
+    borderRadius: "18px",
+    border: "1px solid #263244",
+    background: "#0f172a",
+  },
+
+  cardHeader: {
+    display: "flex",
+    gap: "16px",
+    alignItems: "flex-start",
+    marginBottom: "20px",
+  },
+
+  priorityBadge: {
+    padding: "7px 10px",
+    borderRadius: "9px",
+    background: "#172554",
+    color: "#bfdbfe",
+    fontSize: "12px",
+    fontWeight: "800",
+    whiteSpace: "nowrap",
+  },
+
+  skillHeaderText: {
+    flex: 1,
+  },
+
+  skillTitle: {
+    margin: 0,
+    color: "#f8fafc",
+    fontSize: "25px",
+  },
+
+  skillDescription: {
+    margin: "5px 0 0",
+    color: "#94a3b8",
+  },
+
+  metricsGrid: {
+    display: "grid",
+    gridTemplateColumns:
+      "repeat(auto-fit, minmax(140px, 1fr))",
+    gap: "10px",
+  },
+
+  metricCard: {
+    padding: "14px",
+    borderRadius: "12px",
+    background: "#111827",
+    border: "1px solid #273449",
+  },
+
+  metricLabel: {
+    display: "block",
+    color: "#64748b",
+    fontSize: "12px",
+    marginBottom: "6px",
+  },
+
+  metricValue: {
+    color: "#f8fafc",
+    fontSize: "18px",
+  },
+
+  progressTrack: {
+    width: "100%",
+    height: "8px",
+    borderRadius: "999px",
+    background: "#1e293b",
+    marginTop: "20px",
+    overflow: "hidden",
+  },
+
+  progressFill: {
+    height: "100%",
+    borderRadius: "999px",
+    background:
+      "linear-gradient(90deg, #2563eb, #22c55e)",
+  },
+
+  progressCaption: {
+    marginTop: "7px",
+    color: "#64748b",
+    fontSize: "12px",
+  },
+
+  contentGrid: {
+    display: "grid",
+    gridTemplateColumns:
+      "repeat(auto-fit, minmax(270px, 1fr))",
+    gap: "14px",
+    marginTop: "20px",
+  },
+
+  contentPanel: {
+    padding: "18px",
+    background: "#111827",
+    border: "1px solid #273449",
+    borderRadius: "14px",
+  },
+
+  panelTitle: {
+    fontWeight: "800",
+    color: "#e2e8f0",
+    marginBottom: "14px",
+  },
+
+  topicList: {
+    padding: 0,
+    listStyle: "none",
+    margin: 0,
+  },
+
+  topicItem: {
+    display: "flex",
+    gap: "10px",
+    alignItems: "center",
+    padding: "8px 0",
+    color: "#cbd5e1",
+    borderBottom:
+      "1px solid rgba(51,65,85,0.45)",
+  },
+
+  topicNumber: {
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "center",
+    minWidth: "24px",
+    height: "24px",
+    borderRadius: "50%",
+    background: "#1e3a8a",
+    color: "#dbeafe",
+    fontSize: "11px",
+    fontWeight: "800",
+  },
+
+  resourceList: {
+    display: "grid",
+    gap: "9px",
+  },
+
+  resourceLink: {
+    display: "flex",
+    alignItems: "center",
+    justifyContent:
+      "space-between",
+    textDecoration: "none",
+    padding: "11px 12px",
+    borderRadius: "9px",
+    background: "#0b1220",
+    border: "1px solid #334155",
+    color: "#93c5fd",
+    fontWeight: "650",
+  },
+
+  externalIcon: {
+    fontSize: "16px",
+    color: "#60a5fa",
+  },
+
+  smallNote: {
+    color: "#64748b",
+    lineHeight: 1.5,
+    fontSize: "12px",
+  },
+
+  projectBox: {
+    display: "flex",
+    gap: "15px",
+    alignItems: "flex-start",
+    marginTop: "20px",
+    padding: "18px",
+    borderRadius: "14px",
+    background:
+      "linear-gradient(135deg, #14261f, #10231c)",
+    border: "1px solid #22543d",
+  },
+
+  projectIcon: {
+    fontSize: "28px",
+  },
+
+  projectLabel: {
+    color: "#86efac",
+    fontSize: "11px",
+    fontWeight: "900",
+    letterSpacing: "1px",
+  },
+
+  projectTitle: {
+    color: "#f0fdf4",
+    fontWeight: "800",
+    fontSize: "17px",
+    marginTop: "5px",
+  },
+
+  projectText: {
+    margin: "6px 0 0",
+    color: "#86a995",
+    lineHeight: 1.5,
+    fontSize: "13px",
+  },
+
+  bottomActions: {
+    display: "flex",
+    justifyContent:
+      "space-between",
+    gap: "12px",
+    marginTop: "28px",
+    flexWrap: "wrap",
+  },
 };
 
 export default Roadmap;
